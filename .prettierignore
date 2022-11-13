@@ -1,0 +1,11 @@
+# Ignore everything
+/*
+
+# Except these files & folders
+!/app
+!/pages
+!.eslintrc.json
+!.prettierrc
+!tsconfig.json
+!next.config.js
+!package.json
