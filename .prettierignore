@@ -9,3 +9,5 @@
 !tsconfig.json
 !next.config.js
 !package.json
+!postcss.config.js
+!tailwind.config.js
