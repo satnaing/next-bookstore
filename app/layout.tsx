@@ -1,4 +1,13 @@
-import './globals.css'
+import { Playfair_Display, Montserrat } from "@next/font/google"
+import "./globals.css"
+
+const playfairDisplay = Playfair_Display({
+  variable: "--font-playfair",
+})
+
+const montserrat = Montserrat({
+  variable: "--font-montserrat",
+})
 
 export default function RootLayout({
   children,
@@ -6,13 +15,9 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      {/*
-        <head /> will contain the components returned by the nearest parent
-        head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
-      */}
+    <html lang="en" className={playfairDisplay.variable}>
       <head />
-      <body>{children}</body>
+      <body className={montserrat.variable}>{children}</body>
     </html>
   )
 }
