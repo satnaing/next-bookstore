@@ -6,6 +6,10 @@
   body {
     @apply bg-skin-base text-skin-dark;
   }
+  a,
+  button {
+    @apply outline-skin-accent;
+  }
 
   [data-state="open"] > .dropdown-caret {
     @apply -rotate-180;
