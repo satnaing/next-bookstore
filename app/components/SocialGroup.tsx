@@ -5,13 +5,14 @@ import TelegramIcon from "app/icons/TelegramIcon"
 import MailIcon from "app/icons/MailIcon"
 
 type Props = {
+  className?: string
   placeBottom?: boolean
 }
 
-const SocialGroup = ({ placeBottom = false }: Props) => {
+const SocialGroup = ({ className = "", placeBottom = false }: Props) => {
   return (
     <ul
-      className={`my-6 flex justify-center gap-4 ${
+      className={`${className} my-6 flex justify-center gap-4 ${
         placeBottom ? "mt-auto" : ""
       }`}
     >
