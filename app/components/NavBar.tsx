@@ -24,7 +24,7 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="sticky top-0 px-4 shadow md:px-12">
+      <header className="sticky top-0 z-20 bg-skin-base px-4 shadow md:px-12">
         <NavigationMenu.Root
           aria-label="primary"
           className="main-navigation relative flex items-center justify-between py-4"
@@ -118,13 +118,13 @@ const NavBar = () => {
         </NavigationMenu.Root>
       </header>
       <div
-        className={`fixed top-0 left-0 h-screen w-full bg-skin-dark transition-all delay-300 duration-500 md:hidden ${
+        className={`fixed top-0 left-0 z-30 h-screen w-full bg-skin-dark transition-all delay-300 duration-500 md:hidden ${
           openNav ? "opacity-50" : "hidden opacity-0"
         }`}
         onClick={() => setOpenNav(false)}
       />
       <div
-        className={`fixed top-0 flex h-screen max-h-screen w-10/12 flex-col items-center overflow-y-scroll bg-skin-base p-4 transition-transform duration-300 md:hidden ${
+        className={`fixed top-0 z-30 flex h-screen max-h-screen w-10/12 flex-col items-center overflow-y-scroll bg-skin-base p-4 transition-transform duration-300 md:hidden ${
           openNav ? "translate-x-0" : "-translate-x-full"
         }`}
       >
