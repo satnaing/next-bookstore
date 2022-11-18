@@ -45,10 +45,14 @@ const NavBar = () => {
           </div>
 
           <NavigationMenu.List className="flex basis-1/3 gap-x-2 text-xl md:gap-x-4">
-            <NavigationMenu.Item className="hidden md:list-item">
+            <NavigationMenu.Item
+              className="dropdown-menu hidden after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:duration-300 after:ease-out
+            md:list-item
+            "
+            >
               <NavigationMenu.Trigger
                 id="learn"
-                className="flex h-full items-center gap-2 px-2"
+                className="flex h-full items-center gap-1 outline-8"
                 aria-controls="category-content"
               >
                 Category{" "}
@@ -99,11 +103,11 @@ const NavBar = () => {
                     nav.position === "main"
                       ? "hidden md:list-item"
                       : "list-item"
-                  }`}
+                  } after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100`}
                 >
                   <Link
                     href={nav.href}
-                    className={`flex items-center gap-x-2 py-1 px-2`}
+                    className="flex items-center gap-x-2 py-1 pl-1 pr-2"
                   >
                     {nav.icon}{" "}
                     <span className="hidden md:inline">{nav.name}</span>
