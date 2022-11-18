@@ -16,7 +16,7 @@ const TopBar = () => {
               <NavigationMenu.Item key={nav.name}>
                 <Link
                   href={nav.href}
-                  className="flex items-center gap-x-2 px-1"
+                  className="flex items-center gap-x-2 px-1 hover:opacity-75"
                 >
                   {nav.name}
                 </Link>
