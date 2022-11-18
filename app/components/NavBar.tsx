@@ -24,7 +24,7 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="px-4 shadow md:px-12">
+      <header className="sticky top-0 px-4 shadow md:px-12">
         <NavigationMenu.Root
           aria-label="primary"
           className="main-navigation relative flex items-center justify-between py-4"
