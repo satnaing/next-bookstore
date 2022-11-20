@@ -14,7 +14,7 @@ const HeroSection = () => {
           className="drop-shadow-xl"
         />
       </div>
-      <div className="info-wrapper flex flex-col gap-y-4 lg:justify-end">
+      <div className="info-wrapper flex flex-col gap-y-4 md:justify-center lg:justify-end">
         <h1 className="font-serif text-4xl font-bold lg:text-5xl xl:text-6xl">
           Best Place to Find <br /> Your Favourite <br /> Books
         </h1>
