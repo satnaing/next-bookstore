@@ -38,7 +38,7 @@ const TopBar = () => {
             </NavigationMenu.Trigger>
             <NavigationMenu.Content
               id="site-languages"
-              className="absolute top-7 z-10 border bg-skin-base p-1 shadow-lg"
+              className="absolute top-7 z-30 border bg-skin-base p-1 shadow-lg"
             >
               <ul className="List one">
                 <li>
