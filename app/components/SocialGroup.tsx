@@ -13,7 +13,7 @@ const SocialGroup = ({ className = "", placeBottom = false }: Props) => {
   return (
     <ul
       className={`${className} my-6 flex justify-center gap-4 ${
-        placeBottom ? "mt-auto" : ""
+        placeBottom ? "mt-auto mb-0" : ""
       }`}
     >
       {socialData.map(social => (
