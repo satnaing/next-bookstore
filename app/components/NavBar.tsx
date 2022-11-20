@@ -24,10 +24,10 @@ const NavBar = () => {
 
   return (
     <>
-      <header className="sticky top-0 z-20 bg-skin-base px-4 shadow md:px-12">
+      <header className="sticky top-0 z-20 bg-skin-base px-4 shadow md:px-8">
         <NavigationMenu.Root
           aria-label="primary"
-          className="main-navigation relative flex items-center justify-between py-4"
+          className=" main-navigation relative m-auto flex max-w-6xl items-center justify-between py-4"
         >
           <div className="flex basis-1/3 justify-start md:hidden">
             <button title="menu" className="p-1" onClick={handleNavClick}>
