@@ -63,7 +63,7 @@ const NavBar = () => {
               </NavigationMenu.Trigger>
               <NavigationMenu.Content
                 id="category-content"
-                className="absolute top-14 -left-1/2 bg-skin-base p-4 shadow-lg"
+                className="absolute top-14 bg-skin-base p-4 shadow-lg lg:-left-1/2"
               >
                 <div className="flex gap-x-4">
                   <div className="flex basis-1/2 flex-col gap-y-4">
