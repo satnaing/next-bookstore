@@ -6,7 +6,7 @@ import InstagramSection from "./layouts/InstagramSection"
 
 export default function Home() {
   return (
-    <div className="h-[1800px]">
+    <div>
       <TopBar />
       <NavBar />
       <main>
