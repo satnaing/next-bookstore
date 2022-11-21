@@ -1,16 +1,15 @@
-import { defaultStroke } from "app/utils/utilFuncs"
+import { defaultStroke } from "app/common/utils/utilFuncs"
 
-const TelegramIcon = ({ className = "" }: { className?: string }) => {
+const PlusIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)
   return (
     <svg
       className={`${className} inline-block h-6 w-6 stroke-black ${stroke}`}
-      viewBox="0 0 24 24"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0V19l3.249-3.277"
+        d="M6 12h6m6 0h-6m0 0V6m0 6v6"
         strokeLinecap="round"
         strokeLinejoin="round"
       ></path>
@@ -18,4 +17,4 @@ const TelegramIcon = ({ className = "" }: { className?: string }) => {
   )
 }
 
-export default TelegramIcon
+export default PlusIcon

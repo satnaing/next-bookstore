@@ -1,7 +1,7 @@
-import NavBar from "./components/NavBar"
-import TopBar from "./components/TopBar"
+import TopBar from "@/common-layouts/TopBar"
+import NavBar from "@/common-layouts/NavBar"
+import Footer from "@/common-layouts/Footer"
 import BooksSection from "./layouts/BooksSection"
-import Footer from "./layouts/Footer"
 import HeroSection from "./layouts/HeroSection"
 import InstagramSection from "./layouts/InstagramSection"
 

@@ -1,6 +1,6 @@
-import { defaultStroke } from "app/utils/utilFuncs"
+import { defaultStroke } from "app/common/utils/utilFuncs"
 
-const MenuIcon = ({ className = "" }: { className?: string }) => {
+const FacebookIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)
   return (
     <svg
@@ -10,7 +10,7 @@ const MenuIcon = ({ className = "" }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M3 5h8M3 12h13M3 19h18"
+        d="M17 2h-3a5 5 0 00-5 5v3H6v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3V2z"
         strokeLinecap="round"
         strokeLinejoin="round"
       ></path>
@@ -18,4 +18,4 @@ const MenuIcon = ({ className = "" }: { className?: string }) => {
   )
 }
 
-export default MenuIcon
+export default FacebookIcon

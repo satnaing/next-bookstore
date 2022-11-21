@@ -1,7 +1,7 @@
-import CartIcon from "app/icons/CartIcon"
-import HeartIcon from "app/icons/HeartIcon"
-import SearchIcon from "app/icons/SearchIcon"
-import UserIcon from "app/icons/UserIcon"
+import CartIcon from "app/common/icons/CartIcon"
+import HeartIcon from "app/common/icons/HeartIcon"
+import SearchIcon from "app/common/icons/SearchIcon"
+import UserIcon from "app/common/icons/UserIcon"
 
 type Position = "top" | "top-only" | "main" | "main-mobile"
 

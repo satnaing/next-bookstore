@@ -1,6 +1,6 @@
-import { defaultStroke } from "app/utils/utilFuncs"
+import { defaultStroke } from "app/common/utils/utilFuncs"
 
-const UserIcon = ({ className = "" }: { className?: string }) => {
+const CancelIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)
   return (
     <svg
@@ -10,7 +10,7 @@ const UserIcon = ({ className = "" }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M5 20v-1a7 7 0 017-7v0a7 7 0 017 7v1M12 12a4 4 0 100-8 4 4 0 000 8z"
+        d="M6.758 17.243L12.001 12m5.243-5.243L12 12m0 0L6.758 6.757M12.001 12l5.243 5.243"
         strokeLinecap="round"
         strokeLinejoin="round"
       ></path>
@@ -18,4 +18,4 @@ const UserIcon = ({ className = "" }: { className?: string }) => {
   )
 }
 
-export default UserIcon
+export default CancelIcon

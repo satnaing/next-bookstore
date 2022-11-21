@@ -1,6 +1,6 @@
-import ItemCard from "@/components/ItemCard"
-import CaretDownIcon from "app/icons/CaretDownIcon"
 import Link from "next/link"
+import ItemCard from "@/common-components/ItemCard"
+import CaretDownIcon from "@/icons/CaretDownIcon"
 
 type Props = {
   title: string

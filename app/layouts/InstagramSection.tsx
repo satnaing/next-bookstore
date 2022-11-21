@@ -1,9 +1,9 @@
 import Image from "next/image"
-import igOne from "../../public/instagram-photos/ig_1.jpg"
-import igTwo from "../../public/instagram-photos/ig_2.jpg"
-import igThree from "../../public/instagram-photos/ig_3.jpg"
-import igFour from "../../public/instagram-photos/ig_4.jpg"
-import igFive from "../../public/instagram-photos/ig_5.jpg"
+import igOne from "@/public/instagram-photos/ig_1.jpg"
+import igTwo from "@/public/instagram-photos/ig_2.jpg"
+import igThree from "@/public/instagram-photos/ig_3.jpg"
+import igFour from "@/public/instagram-photos/ig_4.jpg"
+import igFive from "@/public/instagram-photos/ig_5.jpg"
 
 const igPhotos = [
   { id: 1, image: igOne, desc: "Instagram Photo 1" },

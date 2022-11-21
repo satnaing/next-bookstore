@@ -1,8 +1,8 @@
 import Link from "next/link"
 import * as Collapsible from "@radix-ui/react-collapsible"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
-import MinusIcon from "app/icons/MinusIcon"
-import PlusIcon from "app/icons/PlusIcon"
+import MinusIcon from "@/icons/MinusIcon"
+import PlusIcon from "@/icons/PlusIcon"
 
 type Props = {
   title: string

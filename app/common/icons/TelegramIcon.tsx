@@ -1,6 +1,6 @@
-import { defaultStroke } from "app/utils/utilFuncs"
+import { defaultStroke } from "app/common/utils/utilFuncs"
 
-const MailIcon = ({ className = "" }: { className?: string }) => {
+const TelegramIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)
   return (
     <svg
@@ -10,13 +10,12 @@ const MailIcon = ({ className = "" }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M7 9l5 3.5L17 9"
+        d="M21 5L2 12.5l7 1M21 5l-2.5 15L9 13.5M21 5L9 13.5m0 0V19l3.249-3.277"
         strokeLinecap="round"
         strokeLinejoin="round"
       ></path>
-      <path d="M2 17V7a2 2 0 012-2h16a2 2 0 012 2v10a2 2 0 01-2 2H4a2 2 0 01-2-2z"></path>
     </svg>
   )
 }
 
-export default MailIcon
+export default TelegramIcon

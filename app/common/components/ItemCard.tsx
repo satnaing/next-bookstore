@@ -1,6 +1,6 @@
-import HeartIcon from "app/icons/HeartIcon"
 import Image from "next/image"
-import sampleBook from "../../public/we-were-liars-book.jpeg"
+import HeartIcon from "@/icons/HeartIcon"
+import sampleBook from "@/public/we-were-liars-book.jpeg"
 
 type Props = {
   className?: string

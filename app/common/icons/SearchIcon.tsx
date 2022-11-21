@@ -1,4 +1,4 @@
-import { defaultStroke } from "app/utils/utilFuncs"
+import { defaultStroke } from "app/common/utils/utilFuncs"
 
 const SearchIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)

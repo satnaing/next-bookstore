@@ -1,6 +1,6 @@
 "use client"
 
-import SearchIcon from "app/icons/SearchIcon"
+import SearchIcon from "@/icons/SearchIcon"
 
 type Props = {
   className?: string

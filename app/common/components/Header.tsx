@@ -3,11 +3,11 @@
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import CollapsibleMenu from "./CollapsibleMenu"
-import SearchIcon from "app/icons/SearchIcon"
-import CaretDownIcon from "app/icons/CaretDownIcon"
-import CartIcon from "app/icons/CartIcon"
-import HeartIcon from "app/icons/HeartIcon"
-import UserIcon from "app/icons/UserIcon"
+import SearchIcon from "@/icons/SearchIcon"
+import CaretDownIcon from "@/icons/CaretDownIcon"
+import CartIcon from "@/icons/CartIcon"
+import HeartIcon from "@/icons/HeartIcon"
+import UserIcon from "@/icons/UserIcon"
 
 const Header = () => {
   return (

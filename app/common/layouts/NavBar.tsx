@@ -4,12 +4,12 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import * as Collapsible from "@radix-ui/react-collapsible"
-import CollapsibleMenu from "./CollapsibleMenu"
-import SocialGroup from "./SocialGroup"
-import navLinks from "app/utils/navLinks"
-import CaretDownIcon from "app/icons/CaretDownIcon"
-import MenuIcon from "app/icons/MenuIcon"
-import CancelIcon from "app/icons/CancelIcon"
+import CollapsibleMenu from "@/common-components/CollapsibleMenu"
+import SocialGroup from "@/common-components/SocialGroup"
+import CaretDownIcon from "@/icons/CaretDownIcon"
+import MenuIcon from "@/icons/MenuIcon"
+import CancelIcon from "@/icons/CancelIcon"
+import navLinks from "app/common/utils/navLinks"
 
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false)

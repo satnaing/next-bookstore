@@ -1,8 +1,8 @@
 import Link from "next/link"
-import FacebookIcon from "app/icons/FacebookIcon"
-import InstagramIcon from "app/icons/InstagramIcon"
-import TelegramIcon from "app/icons/TelegramIcon"
-import MailIcon from "app/icons/MailIcon"
+import FacebookIcon from "@/icons/FacebookIcon"
+import InstagramIcon from "@/icons/InstagramIcon"
+import TelegramIcon from "@/icons/TelegramIcon"
+import MailIcon from "@/icons/MailIcon"
 
 type Props = {
   className?: string

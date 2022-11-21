@@ -1,6 +1,6 @@
 import Link from "next/link"
-import SocialGroup from "@/components/SocialGroup"
-import HeartIcon from "app/icons/HeartIcon"
+import SocialGroup from "@/common-components/SocialGroup"
+import HeartIcon from "@/icons/HeartIcon"
 
 const Footer = () => {
   return (

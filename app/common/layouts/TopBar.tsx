@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
-import navLinks from "app/utils/navLinks"
-import CaretDownIcon from "app/icons/CaretDownIcon"
+import navLinks from "@/utils/navLinks"
+import CaretDownIcon from "@/icons/CaretDownIcon"
 
 const TopBar = () => {
   return (
