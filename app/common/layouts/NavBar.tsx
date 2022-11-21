@@ -266,26 +266,26 @@ const LinkItem = ({ title, children }: { title: string; children: string }) => {
 }
 
 const mysteryMenuList = [
-  { name: "Crime", href: "/crime" },
-  { name: "Detective", href: "/detective" },
-  { name: "Mysteries", href: "/mysteries" },
-  { name: "spy", href: "/spy" },
+  { name: "Crime", href: "/categories/crime" },
+  { name: "Detective", href: "/categories/detective" },
+  { name: "Mysteries", href: "/categories/mysteries" },
+  { name: "spy", href: "/categories/spy" },
 ]
 
 const literatureList = [
-  { name: "Colleges", href: "/colleges" },
-  { name: "Dictionaries", href: "/dictionaries" },
-  { name: "IT & Engineering", href: "/it-and-engineering" },
-  { name: "Sales & Marketing", href: "/sales-and-marketing" },
-  { name: "English & IELTS", href: "/english-and-ielts" },
-  { name: "Science & Maths", href: "/science-and-maths" },
+  { name: "Classic", href: "/categories/classic" },
+  { name: "Genre Fiction", href: "/categories/genre-fiction" },
+  { name: "Sci-Fi & Fantasy", href: "/categories/scifi-and-fantasy" },
+  { name: "Romance", href: "/categories/romance" },
 ]
 
 const educationMenuList = [
-  { name: "Classic", href: "/classic" },
-  { name: "Genre Fiction", href: "/genre-fiction" },
-  { name: "Sci-Fi & Fantasy", href: "/scifi-and-fantasy" },
-  { name: "Romance", href: "/romance" },
+  { name: "Colleges", href: "/categories/colleges" },
+  { name: "Dictionaries", href: "/categories/dictionaries" },
+  { name: "IT & Engineering", href: "/categories/it-and-engineering" },
+  { name: "Sales & Marketing", href: "/categories/sales-and-marketing" },
+  { name: "English & IELTS", href: "/categories/english-and-ielts" },
+  { name: "Science & Maths", href: "/categories/science-and-maths" },
 ]
 
 export default NavBar
