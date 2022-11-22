@@ -27,3 +27,12 @@
     @apply flex basis-1/3 justify-end;
   }
 }
+
+@layer components {
+  .padding-x {
+    @apply px-4 md:px-8;
+  }
+  .max-width {
+    @apply mx-auto max-w-6xl;
+  }
+}
