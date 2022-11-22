@@ -3,13 +3,6 @@
     "development"
   ],
   "hints": {
-    "compat-api/css": [
-      "default",
-      {
-        "ignore": [
-          "@layer"
-        ]
-      }
-    ]
+    "compat-api/css": "off"
   }
 }
