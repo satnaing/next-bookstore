@@ -4,7 +4,7 @@ import HeartIcon from "@/icons/HeartIcon"
 
 const Footer = () => {
   return (
-    <footer>
+    <footer className="mt-auto shadow-inner">
       <div className="footer-container mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 md:grid-cols-4 md:grid-rows-3 md:gap-x-6 md:gap-y-0 md:px-8">
         <div className="bookstore-desc col-span-2 md:row-span-2">
           <h2 className="my-2 font-serif text-2xl font-semibold">
