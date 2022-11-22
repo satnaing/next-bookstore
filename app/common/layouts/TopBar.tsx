@@ -8,7 +8,7 @@ import CaretDownIcon from "@/icons/CaretDownIcon"
 const TopBar = () => {
   return (
     <div className="hidden bg-skin-card px-12 md:block">
-      <NavigationMenu.Root className="flex justify-between text-sm">
+      <NavigationMenu.Root className="max-width flex justify-between text-sm">
         <NavigationMenu.List className="flex gap-x-2">
           {navLinks
             .filter(nav => ["top", "top-only"].includes(nav.position))
