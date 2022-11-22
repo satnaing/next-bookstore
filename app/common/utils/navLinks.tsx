@@ -15,7 +15,7 @@ type NavLinks = {
 const navLinks: NavLinks = [
   {
     name: "About Us",
-    href: "/about",
+    href: "/about-us",
     icon: null,
     position: "top",
   },
