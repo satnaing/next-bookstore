@@ -13,7 +13,7 @@ export default function Page() {
       <NavBar />
       <main className="padding-x py-6">
         <h1 className="text-xl font-bold">My Cart</h1>
-        <div className="container my-4">
+        <div className="my-4">
           <table>
             <thead className="hidden">
               <tr>
@@ -24,8 +24,8 @@ export default function Page() {
               </tr>
             </thead>
             <tbody>
-              <tr className="grid grid-cols-[1fr_2fr_auto] grid-rows-[2fr_1fr_1fr_1fr] gap-x-2 border-b py-2 font-sans">
-                <td className="row-span-4">
+              <tr className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr_1fr] gap-x-2 border-b py-2 font-sans">
+                <td className="row-span-4 w-32">
                   <Image src={sampleBook} alt="we were younger" />
                 </td>
                 <td className="col-start-2 row-start-1">
@@ -100,7 +100,7 @@ export default function Page() {
             <hr />
             <button
               type="button"
-              className="my-2 border-2 border-skin-accent py-1 font-sans shadow hover:shadow-md"
+              className="my-2 border-2 border-skin-accent bg-skin-fill py-1 font-sans shadow hover:shadow-md"
             >
               Continue Shopping
             </button>
