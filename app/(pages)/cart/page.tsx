@@ -12,32 +12,41 @@ export default function Page() {
       <TopBar />
       <NavBar />
       <main className="padding-x py-6">
-        <h1 className="text-xl font-bold">My Cart</h1>
+        <h1 className="text-xl font-bold md:text-3xl">My Cart</h1>
         <div className="my-4">
-          <table>
-            <thead className="hidden">
+          <table className="w-full">
+            <thead className="hidden bg-skin-fill font-sans font-semibold md:table-header-group">
               <tr>
-                <th>Products</th>
-                <th>Price</th>
-                <th>Quantity</th>
-                <th>Total</th>
+                <th colSpan={2} className="py-1">
+                  Products
+                </th>
+                <th className="py-1 md:text-right">Price</th>
+                <th className="py-1">Quantity</th>
+                <th colSpan={2} className="py-1">
+                  Total
+                </th>
               </tr>
             </thead>
             <tbody>
-              <tr className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr_1fr] gap-x-2 border-b py-2 font-sans">
-                <td className="row-span-4 w-32">
-                  <Image src={sampleBook} alt="we were younger" />
+              <tr className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr_1fr] gap-x-2 border-b py-2 font-sans md:table-row">
+                <td className="row-span-4 w-32 md:w-20">
+                  <Image
+                    src={sampleBook}
+                    alt="we were younger"
+                    className="md:py-2"
+                  />
                 </td>
-                <td className="col-start-2 row-start-1">
+                <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-2">
                   <span className="font-medium italic line-clamp-2">
                     The Almanack of Naval Ravikant: A Guide to Wealth and
                     Happiness
                   </span>
                 </td>
-                <td className="col-span-2 col-start-2 row-start-2">
-                  Price: <span className="font-medium">7,500Ks</span>
+                <td className="col-span-2 col-start-2 row-start-2 md:text-right">
+                  <span className="md:hidden">Price: </span>
+                  <span className="font-medium">7,500Ks</span>
                 </td>
-                <td className="col-span-2 col-start-2 row-start-3">
+                <td className="col-span-2 col-start-2 row-start-3 md:text-center">
                   <button
                     type="button"
                     title="Reduce Quantity"
@@ -54,10 +63,11 @@ export default function Page() {
                     +
                   </button>
                 </td>
-                <td className="col-span-2 col-start-2 row-start-4">
-                  Total: <span className="text-lg font-medium">15,000</span>
+                <td className="col-span-2 col-start-2 row-start-4 md:text-right">
+                  <span className="md:hidden">Total: </span>
+                  <span className="text-lg font-medium">15,000Ks</span>
                 </td>
-                <td className="col-span-1 col-start-3 row-span-1 row-start-1">
+                <td className="col-span-1 col-start-3 row-span-1 row-start-1 md:text-center">
                   <button title="Remove" type="button">
                     <CancelIcon />
                   </button>
@@ -65,6 +75,7 @@ export default function Page() {
               </tr>
             </tbody>
           </table>
+          <hr />
           <div className="others my-4 flex flex-col gap-4">
             <div className="order-notes-wrapper">
               <label
