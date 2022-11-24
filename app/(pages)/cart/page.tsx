@@ -22,7 +22,7 @@ export default function Page() {
                 <thead className="hidden bg-skin-fill font-sans font-semibold md:table-header-group">
                   <tr>
                     <th colSpan={2} className="py-1">
-                      Products
+                      Book Title
                     </th>
                     <th className="py-1 md:text-right">Price</th>
                     <th className="py-1">Quantity</th>
