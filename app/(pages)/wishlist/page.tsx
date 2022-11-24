@@ -14,7 +14,7 @@ export default function Page() {
       <NavBar />
       <main className="py-6">
         <section className="max-width padding-x">
-          <h1 className="text-xl font-bold md:text-2xl">Wishlist</h1>
+          <h1 className="text-xl font-bold md:text-2xl">My Wishlist</h1>
           <div className="my-4">
             <div className="table-wrapper lg:col-span-2">
               <table className="w-full">
@@ -70,6 +70,12 @@ export default function Page() {
                 </tbody>
               </table>
               <hr />
+              <button
+                type="button"
+                className="mt-6 w-full rounded border-2 border-skin-accent py-1 font-sans text-skin-accent shadow hover:bg-skin-fill hover:shadow-md md:hidden lg:hidden"
+              >
+                Continue Shopping
+              </button>
               <div className="fixed bottom-0 left-0 mt-6 w-full items-center justify-between md:static md:flex">
                 <Link
                   href="/"
