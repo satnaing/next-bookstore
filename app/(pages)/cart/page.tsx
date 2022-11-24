@@ -1,12 +1,12 @@
+import Link from "next/link"
+import Image from "next/image"
 import TopBar from "@/common-layouts/TopBar"
 import NavBar from "@/common-layouts/NavBar"
 import Footer from "@/common-layouts/Footer"
-import sampleBook from "@/public/we-were-liars-book.jpeg"
-import Image from "next/image"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
-import Link from "next/link"
 import CaretDownIcon from "@/icons/CaretDownIcon"
+import sampleBook from "@/public/we-were-liars-book.jpeg"
 
 export default function Page() {
   return (
@@ -15,7 +15,7 @@ export default function Page() {
       <NavBar />
       <main className="py-6">
         <section className="max-width padding-x">
-          <h1 className="text-xl font-bold md:text-3xl">My Cart</h1>
+          <h1 className="text-xl font-bold md:text-2xl">My Cart</h1>
           <div className="my-4 lg:grid lg:grid-cols-3 lg:gap-x-6">
             <div className="table-wrapper lg:col-span-2">
               <table className="w-full">
@@ -123,7 +123,7 @@ export default function Page() {
               <hr />
               <button
                 type="button"
-                className="my-2 rounded border-2 border-skin-accent bg-skin-fill py-1 font-sans shadow hover:shadow-md lg:hidden"
+                className="my-2 rounded border-2 border-skin-accent py-1 font-sans text-skin-accent shadow hover:bg-skin-fill hover:shadow-md lg:hidden"
               >
                 Continue Shopping
               </button>
