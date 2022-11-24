@@ -123,7 +123,7 @@ export default function Page() {
               <hr />
               <button
                 type="button"
-                className="my-2 border-2 border-skin-accent bg-skin-fill py-1 font-sans shadow hover:shadow-md lg:hidden"
+                className="my-2 rounded border-2 border-skin-accent bg-skin-fill py-1 font-sans shadow hover:shadow-md lg:hidden"
               >
                 Continue Shopping
               </button>
