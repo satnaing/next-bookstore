@@ -3,6 +3,7 @@ import NavBar from "@/common-layouts/NavBar"
 import Footer from "@/common-layouts/Footer"
 import Image from "next/image"
 import sampleBook from "@/public/we-were-liars-book.jpeg"
+import HeartIcon from "@/icons/HeartIcon"
 
 let mockBooks: number[] = []
 for (let index = 1; index < 21; index++) {
@@ -72,6 +73,22 @@ export default function Page({ params, searchParams }: Props) {
                 </button>
               </div>
               <span className="text-xl font-semibold">MMK 7386Ks</span>
+            </div>
+
+            <div className="my-6 flex flex-col-reverse gap-4">
+              <button
+                type="button"
+                className="flex w-full items-center justify-center gap-x-4 rounded bg-skin-accent py-2 text-center text-lg font-medium text-skin-base"
+              >
+                Add To Cart
+              </button>
+              <button
+                type="button"
+                className="flex w-full items-center justify-center gap-x-4 rounded border-2 border-skin-accent bg-skin-base py-2 text-center text-lg font-medium text-skin-accent"
+              >
+                <HeartIcon className="stroke-skin-accent stroke-2" />
+                Add To Wishlist
+              </button>
             </div>
           </div>
         </div>
