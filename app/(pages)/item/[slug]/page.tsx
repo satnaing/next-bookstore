@@ -13,7 +13,7 @@ for (let index = 1; index < 21; index++) {
 
 type Props = {
   params: { category: string }
-  searchParams: { id: string }
+  searchParams?: { id: string }
 }
 
 export default function Page({ params, searchParams }: Props) {
