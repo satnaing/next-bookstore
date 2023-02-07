@@ -42,6 +42,14 @@
       "relation": "oneToMany",
       "target": "api::order-detail.order-detail",
       "mappedBy": "book"
+    },
+    "image": {
+      "allowedTypes": [
+        "images"
+      ],
+      "type": "media",
+      "multiple": true,
+      "required": true
     }
   }
 }
