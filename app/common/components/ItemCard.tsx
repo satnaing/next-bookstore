@@ -1,26 +1,40 @@
 import Image from "next/image"
 import HeartIcon from "@/icons/HeartIcon"
-import sampleBook from "@/public/we-were-liars-book.jpeg"
 
 type Props = {
   className?: string
+  title: string
+  price: number
+  slug: string
+  image: string
 }
 
-const ItemCard = ({ className = "" }: Props) => {
+const ItemCard = ({ className = "", title, price, slug, image }: Props) => {
   return (
     <article
       className={`flex flex-col gap-y-2 rounded font-sans shadow hover:shadow-lg ${className}`}
     >
-      <div className="image-wrapper rounded bg-skin-card p-4 sm:p-8">
-        <Image src={sampleBook} alt="We Were Liars Book" />
-      </div>
+      <a
+        href={`/item/${slug}`}
+        title={title}
+        className="image-wrapper rounded bg-skin-card p-4 sm:p-8"
+      >
+        <div className="relative h-44 w-full overflow-hidden transition-transform duration-200 hover:scale-105 md:h-32 lg:h-44">
+          <Image
+            src={image}
+            fill
+            alt="We Were Liars Book"
+            className="object-contain"
+          />
+        </div>
+      </a>
       <div className="content px-4 pb-4">
         <header className="h-10 line-clamp-2">
-          <h3 className="text-sm">We were liars</h3>
+          <h3 className="text-sm">{title}</h3>
         </header>
         <div className="price font-medium">
           <span>MMK: </span>
-          <span>7500Ks</span>
+          <span>{price.toLocaleString()}</span>
         </div>
         <div className="buttons flex gap-x-2">
           <button
