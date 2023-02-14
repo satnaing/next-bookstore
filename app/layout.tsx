@@ -1,4 +1,5 @@
 import { Playfair_Display, Montserrat } from "@next/font/google"
+import Providers from "./queries/providers"
 import "./globals.css"
 
 const playfairDisplay = Playfair_Display({
@@ -17,7 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={playfairDisplay.variable}>
       <head />
-      <body className={montserrat.variable}>{children}</body>
+      <body className={montserrat.variable}>
+        <Providers>{children}</Providers>
+      </body>
     </html>
   )
 }
