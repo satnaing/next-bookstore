@@ -3,7 +3,9 @@ import getQueryClient from "./getQueryClient"
 import Home from "../(pages)/(index)/page"
 
 export async function getBooks() {
-  const res = await fetch("http://localhost:1337/api/books?populate=image")
+  const res = await fetch(
+    "http://localhost:1337/api/books?populate=image&pagination[limit]=5"
+  )
   // The return value is *not* serialized
   // You can return Date, Map, Set, etc.
 
