@@ -25,6 +25,11 @@
       "relation": "manyToMany",
       "target": "api::book.book",
       "mappedBy": "categories"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name",
+      "required": true
     }
   }
 }

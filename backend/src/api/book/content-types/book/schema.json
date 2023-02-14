@@ -55,6 +55,10 @@
       "type": "uid",
       "targetField": "title",
       "required": true
+    },
+    "in_stock": {
+      "type": "boolean",
+      "default": true
     }
   }
 }
