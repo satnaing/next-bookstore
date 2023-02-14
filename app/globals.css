@@ -26,6 +26,10 @@
   .main-navigation > div:last-child {
     @apply flex basis-1/3 justify-end;
   }
+
+  .book-desc p {
+    @apply my-2;
+  }
 }
 
 @layer components {
