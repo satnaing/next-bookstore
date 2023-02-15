@@ -1,5 +1,5 @@
 import Link from "next/link"
-import ItemCard from "@/common-components/ItemCard"
+import BookRow from "@/common-components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 
 type Props = {
@@ -14,12 +14,7 @@ const BooksSection = ({ title }: Props) => {
         <SeeAll href="/" />
       </div>
       <div className="item-wrapper my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5">
-        {[1, 2, 3, 4, 5].map(num => (
-          <ItemCard
-            key={num}
-            className="last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex"
-          />
-        ))}
+        <BookRow />
       </div>
       <div className="mt-8 flex items-center justify-center md:hidden">
         <SeeAll href="/" bottom />
