@@ -1,5 +1,5 @@
 import { Playfair_Display, Montserrat } from "@next/font/google"
-import Providers from "./queries/providers"
+import Providers from "./api/providers"
 import "./globals.css"
 
 const playfairDisplay = Playfair_Display({
