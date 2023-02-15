@@ -25,6 +25,10 @@
       "relation": "oneToMany",
       "target": "api::book.book",
       "mappedBy": "author_id"
+    },
+    "slug": {
+      "type": "uid",
+      "targetField": "name"
     }
   }
 }
