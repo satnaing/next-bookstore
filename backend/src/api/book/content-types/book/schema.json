@@ -54,7 +54,7 @@
     "slug": {
       "type": "uid",
       "targetField": "title",
-      "required": true
+      "required": false
     },
     "in_stock": {
       "type": "boolean",
