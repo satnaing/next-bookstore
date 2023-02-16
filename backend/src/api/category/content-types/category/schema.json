@@ -30,6 +30,15 @@
       "type": "uid",
       "targetField": "name",
       "required": true
+    },
+    "featured": {
+      "type": "boolean",
+      "default": false
+    },
+    "featured_order": {
+      "type": "integer",
+      "unique": true,
+      "default": 1
     }
   }
 }
