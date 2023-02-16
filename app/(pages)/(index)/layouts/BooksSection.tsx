@@ -1,25 +1,49 @@
+"use client"
+
 import Link from "next/link"
+import { useQuery } from "@tanstack/react-query"
 import BookRow from "@/common-components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
+import { getFeaturedCategories } from "app/api"
 
-type Props = {
-  title: string
-}
+type Categories = {
+  name: string
+  slug: string
+}[]
 
-const BooksSection = ({ title }: Props) => {
+const BooksSection = ({ categories }: { categories: any }) => {
+  const { data } = useQuery({
+    queryKey: ["categories", { filters: true }],
+    queryFn: getFeaturedCategories,
+    initialData: categories,
+  })
+
+  const categoriesArray: Categories = data.data.map(
+    ({ attributes }: { attributes: any }) => ({
+      name: attributes.name,
+      slug: attributes.slug,
+    })
+  )
+
   return (
-    <section className="mx-auto max-w-6xl px-4 py-6 md:px-8">
-      <div className="flex items-baseline justify-between">
-        <h2 className="text-2xl font-bold capitalize md:text-3xl">{title}</h2>
-        <SeeAll href="/" />
-      </div>
-      <div className="item-wrapper my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5">
-        <BookRow />
-      </div>
-      <div className="mt-8 flex items-center justify-center md:hidden">
-        <SeeAll href="/" bottom />
-      </div>
-    </section>
+    <>
+      {categoriesArray.map(({ name, slug }) => (
+        <section key={slug} className="mx-auto max-w-6xl px-4 py-6 md:px-8">
+          <div className="flex items-baseline justify-between">
+            <h2 className="text-2xl font-bold capitalize md:text-2xl">
+              {name}
+            </h2>
+            <SeeAll href={`/categories/${slug}`} />
+          </div>
+          <div className="item-wrapper my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5">
+            <BookRow key={slug} slug={slug} />
+          </div>
+          <div className="mt-8 flex items-center justify-center md:hidden">
+            <SeeAll href={`/categories/${slug}`} bottom />
+          </div>
+        </section>
+      ))}
+    </>
   )
 }
 

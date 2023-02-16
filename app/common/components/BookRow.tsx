@@ -1,17 +1,21 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query"
-import { getBooks } from "app/api/hydratedData"
 import ItemCard from "@/common-components/ItemCard"
 import CardSkeletons from "@/skeletons/CardSkeletons"
+import { getBooksBySlug } from "app/api"
 
-export default function BookRow() {
+type Props = {
+  slug: string
+}
+
+export default function BookRow({ slug }: Props) {
   const { data, isLoading, isError } = useQuery({
-    queryKey: ["books"],
-    queryFn: getBooks,
+    queryKey: ["books", { filters: { category: slug }, limit: 5 }],
+    queryFn: () => getBooksBySlug(slug, 5),
   })
 
-  if (isLoading) return <CardSkeletons num={5} />
+  if (isLoading) return <CardSkeletons num={5} slug={slug} />
 
   if (isError) return <div>is Error ...</div>
 
