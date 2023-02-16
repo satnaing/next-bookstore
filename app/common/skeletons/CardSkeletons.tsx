@@ -1,14 +1,14 @@
 import Skeleton from "react-loading-skeleton"
 import "react-loading-skeleton/dist/skeleton.css"
 
-const CardSkeletons = ({ num }: { num: number }) => {
+const CardSkeletons = ({ num, slug }: { num: number; slug: string }) => {
   return (
     <>
       {Array(num)
-        .fill(0)
+        .fill(Math.random())
         .map(n => (
           <div
-            key={n}
+            key={`${slug}${n}`}
             className="flex flex-col gap-y-2 rounded border-2 border-gray-100 
             last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex"
           >
