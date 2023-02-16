@@ -17,7 +17,7 @@ const ItemCard = ({ className = "", title, price, slug, image }: Props) => {
       <a
         href={`/item/${slug}`}
         title={title}
-        className="image-wrapper rounded bg-skin-card p-4 sm:p-8 md:p-4 lg:p-8"
+        className="image-wrapper rounded border-2 border-skin-card bg-skin-card p-4 sm:p-8 md:p-4 lg:p-8"
       >
         <div className="relative h-44 w-full overflow-hidden transition-transform duration-200 hover:scale-105">
           <Image src={image} fill alt={title} className="object-contain" />
