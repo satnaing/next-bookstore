@@ -1,3 +1,6 @@
+import Footer from "@/common-layouts/Footer"
+import NavBar from "@/common-layouts/NavBar"
+import TopBar from "@/common-layouts/TopBar"
 import { Playfair_Display, Montserrat } from "@next/font/google"
 import Providers from "./api/providers"
 import "./globals.css"
@@ -19,7 +22,14 @@ export default function RootLayout({
     <html lang="en" className={playfairDisplay.variable}>
       <head />
       <body className={montserrat.variable}>
-        <Providers>{children}</Providers>
+        <div className="flex min-h-screen flex-col">
+          <Providers>
+            <TopBar />
+            <NavBar />
+            {children}
+            <Footer />
+          </Providers>
+        </div>
       </body>
     </html>
   )
