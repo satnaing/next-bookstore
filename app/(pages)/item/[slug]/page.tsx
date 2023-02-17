@@ -2,7 +2,6 @@ import TopBar from "@/common-layouts/TopBar"
 import NavBar from "@/common-layouts/NavBar"
 import Footer from "@/common-layouts/Footer"
 import BookDetails from "./BookDetails"
-import ScrollUp from "@/common-components/ScrollUp"
 
 let mockBooks: number[] = []
 for (let index = 1; index < 21; index++) {
@@ -22,7 +21,6 @@ export default function Page({ params }: Props) {
         <BookDetails slug={params.slug} />
       </main>
       <Footer />
-      <ScrollUp />
     </div>
   )
 }

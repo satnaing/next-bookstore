@@ -1,7 +1,6 @@
 import TopBar from "@/common-layouts/TopBar"
 import NavBar from "@/common-layouts/NavBar"
 import Footer from "@/common-layouts/Footer"
-import ScrollUp from "@/common-components/ScrollUp"
 import { getBooksByCategory } from "app/api"
 import BooksContainer from "./layouts/BooksContainer"
 
@@ -33,7 +32,6 @@ export default async function Page({ params, searchParams }: Props) {
         />
       </main>
       <Footer />
-      <ScrollUp />
     </div>
   )
 }
