@@ -32,8 +32,6 @@ export default function BooksContainer({
   const startItem = (page - 1) * pageSize + 1
   const lastItem = page * pageSize < total ? page * pageSize : total
 
-  console.log(data)
-
   return (
     <>
       <div className="item-wrapper my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5">
