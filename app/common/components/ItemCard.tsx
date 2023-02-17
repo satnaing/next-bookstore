@@ -21,7 +21,17 @@ const ItemCard = ({ className = "", title, price, slug, image }: Props) => {
         className="image-wrapper rounded border-2 border-skin-card bg-skin-card p-4 sm:p-8 md:p-4 lg:p-8"
       >
         <div className="relative h-44 w-full overflow-hidden transition-transform duration-200 hover:scale-105">
-          <Image src={image} fill alt={title} className="object-contain" />
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="
+            (min-width: 1024px) 20vw,
+            (min-width: 768px) 25vw,
+            (min-width: 640px) 33vw,
+            50vw"
+            className="object-contain"
+          />
         </div>
       </Link>
       <div className="content px-4 pb-4">
