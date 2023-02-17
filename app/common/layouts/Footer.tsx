@@ -1,12 +1,16 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 import SocialGroup from "@/common-components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
 
-type Props = {
-  hideOnMobile?: boolean
-}
+const Footer = () => {
+  const pathname = usePathname()
 
-const Footer = ({ hideOnMobile = false }: Props) => {
+  // hide Footer on /cart and /wishlist on mobile
+  const hideOnMobile = ["/cart", "/wishlist"].includes(pathname || "")
+
   return (
     <footer
       className={`mt-auto shadow-inner ${
