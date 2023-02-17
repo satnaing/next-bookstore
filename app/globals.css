@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-skin-base text-skin-dark;
+    @apply scroll-smooth bg-skin-base text-skin-dark;
   }
   a,
   button {
