@@ -1,8 +1,5 @@
 import Link from "next/link"
 import Image from "next/image"
-import TopBar from "@/common-layouts/TopBar"
-import NavBar from "@/common-layouts/NavBar"
-import Footer from "@/common-layouts/Footer"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
@@ -10,11 +7,9 @@ import sampleBook from "@/public/we-were-liars-book.jpeg"
 
 export default function Page() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <TopBar />
-      <NavBar />
-      <main className="py-6">
-        <section className="max-width padding-x">
+    <>
+      <main className="main-container">
+        <section>
           <h1 className="text-xl font-bold md:text-2xl">My Cart</h1>
           <div className="my-4 lg:grid lg:grid-cols-3 lg:gap-x-6">
             <div className="table-wrapper lg:col-span-2">
@@ -157,9 +152,6 @@ export default function Page() {
           Checkout
         </button>
       </div>
-      <div className="hidden lg:block">
-        <Footer />
-      </div>
-    </div>
+    </>
   )
 }

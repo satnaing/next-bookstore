@@ -1,15 +1,10 @@
 import Image from "next/image"
-import TopBar from "@/common-layouts/TopBar"
-import NavBar from "@/common-layouts/NavBar"
-import Footer from "@/common-layouts/Footer"
 import aboutBanner from "@/public/about.webp"
 import booksCollection from "@/public/books-collection.webp"
 
 export default function Page() {
   return (
-    <div className="flex min-h-screen flex-col">
-      <TopBar />
-      <NavBar />
+    <>
       <div className="relative h-64 w-full">
         <Image
           src={aboutBanner}
@@ -51,7 +46,6 @@ export default function Page() {
           />
         </div>
       </main>
-      <Footer />
-    </div>
+    </>
   )
 }

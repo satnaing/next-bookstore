@@ -1,6 +1,3 @@
-import TopBar from "@/common-layouts/TopBar"
-import NavBar from "@/common-layouts/NavBar"
-import Footer from "@/common-layouts/Footer"
 import BookDetails from "./BookDetails"
 
 let mockBooks: number[] = []
@@ -14,13 +11,8 @@ type Props = {
 
 export default function Page({ params }: Props) {
   return (
-    <div className="flex min-h-screen flex-col">
-      <TopBar />
-      <NavBar />
-      <main className="padding-x max-width w-full py-6 font-sans">
-        <BookDetails slug={params.slug} />
-      </main>
-      <Footer />
-    </div>
+    <main className="main-container font-sans">
+      <BookDetails slug={params.slug} />
+    </main>
   )
 }
