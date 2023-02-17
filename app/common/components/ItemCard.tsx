@@ -1,5 +1,6 @@
 import Image from "next/image"
 import HeartIcon from "@/icons/HeartIcon"
+import Link from "next/link"
 
 type Props = {
   className?: string
@@ -14,7 +15,7 @@ const ItemCard = ({ className = "", title, price, slug, image }: Props) => {
     <article
       className={`flex flex-col gap-y-2 rounded font-sans shadow hover:shadow-lg ${className}`}
     >
-      <a
+      <Link
         href={`/item/${slug}`}
         title={title}
         className="image-wrapper rounded border-2 border-skin-card bg-skin-card p-4 sm:p-8 md:p-4 lg:p-8"
@@ -22,7 +23,7 @@ const ItemCard = ({ className = "", title, price, slug, image }: Props) => {
         <div className="relative h-44 w-full overflow-hidden transition-transform duration-200 hover:scale-105">
           <Image src={image} fill alt={title} className="object-contain" />
         </div>
-      </a>
+      </Link>
       <div className="content px-4 pb-4">
         <header className="h-10 line-clamp-2">
           <h3 className="text-sm">{title}</h3>
