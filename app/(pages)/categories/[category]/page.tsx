@@ -1,8 +1,9 @@
 import TopBar from "@/common-layouts/TopBar"
 import NavBar from "@/common-layouts/NavBar"
 import Footer from "@/common-layouts/Footer"
-import ItemCard from "@/common-components/ItemCard"
-import Pagination from "@/common-components/Pagination"
+import ScrollUp from "@/common-components/ScrollUp"
+import { getBooksByCategory } from "app/api"
+import BooksContainer from "./layouts/BooksContainer"
 
 let mockBooks: number[] = []
 for (let index = 1; index < 21; index++) {
@@ -32,6 +33,7 @@ export default function Page({ params, searchParams }: Props) {
         </div>
       </main>
       <Footer />
+      <ScrollUp />
     </div>
   )
 }
