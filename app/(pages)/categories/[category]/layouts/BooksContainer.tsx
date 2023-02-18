@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query"
 import ItemCard from "@/common-components/ItemCard"
 import Pagination from "@/common-components/Pagination"
 import CardSkeletons from "@/skeletons/CardSkeletons"
+import scrollToTop from "@/utils/scrollToTop"
 import { getBooksByCategory } from "app/api"
 
 type Props = {
@@ -33,7 +34,7 @@ export default function BooksContainer({
   const lastItem = page * pageSize < total ? page * pageSize : total
 
   return (
-    <>
+    <div onLoad={() => scrollToTop()}>
       <div className="item-wrapper my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5">
         {data.data.map(({ attributes }: { attributes: any }) => {
           const { slug, price, title, image } = attributes
