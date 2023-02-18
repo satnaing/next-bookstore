@@ -1,45 +1,67 @@
+"use client"
+
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
-const Pagination = () => {
+type Props = {
+  pageCount: number
+  currentPage: number
+}
+
+type Pages = {
+  page: number
+  slug: string
+}[]
+
+const Pagination = ({ pageCount, currentPage = 1 }: Props) => {
+  const pathname = usePathname()
+  let pages: Pages = []
+  for (let i = 1; i <= pageCount; i++) {
+    pages.push({ page: i, slug: `${pathname}?page=${i}` })
+  }
   return (
     <nav aria-label="pagination">
-      <ul className="pagination flex items-center gap-x-1 font-sans">
+      <ul className="pagination flex items-center gap-x-3 font-sans">
         <li className="pagination__item pagination__item--previous-page">
-          <Link href="#">
-            <CaretDownIcon className="rotate-90 scale-90" />
-            Previous
-          </Link>
+          {currentPage < 2 ? (
+            <span className="flex cursor-not-allowed opacity-50">
+              <CaretDownIcon className="rotate-90 scale-90" />
+              Previous
+            </span>
+          ) : (
+            <Link href={`${pathname}?page=${currentPage - 1}`} className="flex">
+              <CaretDownIcon className="rotate-90 scale-90" />
+              Previous
+            </Link>
+          )}
         </li>
-        <li className="pagination__item">
-          <Link href="#" className="px-3">
-            <span className="sr-only">page </span>1
-          </Link>
-        </li>
-        <li className="pagination__item">
-          <Link href="#" className="px-3">
-            <span className="sr-only">page </span>2
-          </Link>
-        </li>
-        <li className="pagination__item pagination__item--is-active">
-          <Link href="#" className="px-3" aria-current="page">
-            <span className="sr-only">page</span>3
-          </Link>
-        </li>
-        <li className="pagination__item">
-          <Link href="#" className="px-3">
-            <span className="sr-only">page </span>4
-          </Link>
-        </li>
-        <li className="pagination__item">
-          <Link href="#" className="px-3">
-            <span className="sr-only">page </span>5
-          </Link>
-        </li>
+        {pages.map(({ page, slug }) => (
+          <li key={slug} className="">
+            <Link
+              href={`${slug}`}
+              className={`${
+                currentPage === page
+                  ? "rounded-sm border border-skin-dark bg-skin-card"
+                  : "border border-skin-base"
+              } px-3 py-1`}
+            >
+              <span className="sr-only">page </span>
+              {page}
+            </Link>
+          </li>
+        ))}
+
         <li className="pagination__item pagination__item--next-page">
-          <Link href="#">
-            Next <CaretDownIcon className="-rotate-90 scale-90" />
-          </Link>
+          {currentPage < pageCount ? (
+            <Link href={`${pathname}?page=${currentPage + 1}`} className="flex">
+              Next <CaretDownIcon className="-rotate-90 scale-90" />
+            </Link>
+          ) : (
+            <span className="flex cursor-not-allowed opacity-50">
+              Next <CaretDownIcon className="-rotate-90 scale-90" />
+            </span>
+          )}
         </li>
       </ul>
     </nav>

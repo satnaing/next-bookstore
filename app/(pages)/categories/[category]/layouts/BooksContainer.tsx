@@ -54,8 +54,10 @@ export default function BooksContainer({
         <span className="font-sans">
           Showing {startItem} ~ {lastItem} of {total}
         </span>
-        <Pagination />
+        {pageCount > 1 && (
+          <Pagination pageCount={pageCount} currentPage={page} />
+        )}
       </div>
-    </>
+    </div>
   )
 }
