@@ -7,7 +7,8 @@
       "@/common-components/*": ["app/common/components/*"],
       "@/common-layouts/*": ["app/common/layouts/*"],
       "@/icons/*": ["app/common/icons/*"],
-      "@/skeletons/*": ["app/common/skeletons/*"]
+      "@/skeletons/*": ["app/common/skeletons/*"],
+      "@/lib/*": ["lib/*"]
     },
     "target": "es5",
     "lib": ["dom", "dom.iterable", "esnext"],
