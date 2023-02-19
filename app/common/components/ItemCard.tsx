@@ -1,6 +1,9 @@
+"use client"
+
 import Image from "next/image"
 import HeartIcon from "@/icons/HeartIcon"
 import Link from "next/link"
+import { useCartStore } from "@/lib/store"
 
 type Props = {
   className?: string
@@ -12,6 +15,7 @@ type Props = {
 }
 
 const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
+  const { addToCart } = useCartStore()
   return (
     <article
       className={`flex flex-col gap-y-2 rounded font-sans shadow hover:shadow-lg ${className}`}
@@ -46,6 +50,9 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
         <div className="buttons flex gap-x-2">
           <button
             type="button"
+            onClick={() =>
+              addToCart({ id, image, price, quantity: 1, slug, title })
+            }
             className="flex-1 rounded bg-skin-accent px-1 text-sm font-semibold text-white hover:bg-[#F26E5D] active:bg-skin-accent"
           >
             Add To Cart
