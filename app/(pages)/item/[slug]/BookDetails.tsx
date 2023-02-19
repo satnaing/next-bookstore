@@ -1,12 +1,14 @@
 "use client"
 
+import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useQuery } from "@tanstack/react-query"
 import ReactMarkdown from "react-markdown"
 import SocialGroup from "@/common-components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
-import { useQuery } from "@tanstack/react-query"
 import { getBook } from "app/api"
+import { useCartStore } from "@/lib/store"
 import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
 
 type Props = {
@@ -14,6 +16,12 @@ type Props = {
 }
 
 export default function BookDetails({ slug }: Props) {
+  // quantity state
+  const [quantity, setQuantity] = useState(1)
+
+  // client global state
+  const { cart, addToCart } = useCartStore()
+
   // This useQuery could just as well happen in some deeper child to
   // the "HydratedPosts"-component, data will be available immediately either way
   const { data, isLoading, isError } = useQuery({
@@ -25,6 +33,7 @@ export default function BookDetails({ slug }: Props) {
 
   if (isError) return <div>is Error ...</div>
 
+  const id = data.data[0].id
   const bookData = data.data[0].attributes
   const bookImageObj = bookData.image.data[0].attributes
   const authorName = bookData.author_id.data.attributes.name
@@ -88,14 +97,16 @@ export default function BookDetails({ slug }: Props) {
             <button
               type="button"
               title="Reduce Quantity"
+              onClick={() => setQuantity(prev => prev - (prev > 1 ? 1 : 0))}
               className="rounded border bg-skin-card px-2 text-2xl leading-none md:px-3 md:text-3xl"
             >
               -
             </button>
-            <span className="mx-2 md:mx-4 md:text-2xl">2</span>
+            <span className="mx-2 md:mx-4 md:text-2xl">{quantity}</span>
             <button
               type="button"
               title="Reduce Quantity"
+              onClick={() => setQuantity(prev => prev + 1)}
               className="rounded border bg-skin-card px-2 text-2xl leading-none md:px-3 md:text-3xl"
             >
               +
@@ -109,6 +120,16 @@ export default function BookDetails({ slug }: Props) {
         <div className="my-6 flex flex-col-reverse gap-4 md:flex-row md:gap-8">
           <button
             type="button"
+            onClick={() =>
+              addToCart({
+                id,
+                slug,
+                title: bookData.title,
+                image: bookImageObj.url,
+                price: bookData.price,
+                quantity,
+              })
+            }
             className="flex w-full items-center justify-center gap-x-4 rounded bg-skin-accent py-2 text-center text-lg font-medium text-skin-base"
           >
             Add To Cart
