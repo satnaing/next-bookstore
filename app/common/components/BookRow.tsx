@@ -21,12 +21,13 @@ export default function BookRow({ slug }: Props) {
 
   return (
     <>
-      {data.data.map(({ attributes }: { attributes: any }) => {
+      {data.data.map(({ id, attributes }: { id: number; attributes: any }) => {
         const { slug, price, title, image } = attributes
         return (
           <ItemCard
-            key={slug}
+            key={id}
             className="last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex"
+            id={id}
             price={price}
             slug={slug}
             title={title}

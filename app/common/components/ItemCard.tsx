@@ -4,13 +4,14 @@ import Link from "next/link"
 
 type Props = {
   className?: string
+  id: number
   title: string
   price: number
   slug: string
   image: string
 }
 
-const ItemCard = ({ className = "", title, price, slug, image }: Props) => {
+const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
   return (
     <article
       className={`flex flex-col gap-y-2 rounded font-sans shadow hover:shadow-lg ${className}`}
