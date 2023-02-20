@@ -48,7 +48,7 @@ export default function CartItems() {
               {cart.length < 1 ? (
                 <tr>
                   <td colSpan={6} className="h-56 w-full text-center">
-                    <span>Your cart is empty!</span>
+                    <span>Cart is empty!</span>
                   </td>
                 </tr>
               ) : (
