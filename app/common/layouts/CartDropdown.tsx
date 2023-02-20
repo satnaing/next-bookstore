@@ -60,7 +60,9 @@ const CartDropdown = () => {
           <div className="mb-4 max-h-80 overflow-y-auto">
             {cart.length < 1 ? (
               <div className="flex h-36 items-center justify-center">
-                <div className="mx-3 w-64 text-center">Cart is empty!</div>
+                <div className="mx-3 w-64 text-center opacity-75">
+                  Cart is empty!
+                </div>
               </div>
             ) : (
               cart.map(item => (
