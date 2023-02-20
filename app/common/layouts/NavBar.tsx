@@ -10,6 +10,7 @@ import CaretDownIcon from "@/icons/CaretDownIcon"
 import MenuIcon from "@/icons/MenuIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import navLinks from "app/common/utils/navLinks"
+import CartDropdown from "./CartDropdown"
 
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false)
@@ -46,9 +47,8 @@ const NavBar = () => {
 
           <NavigationMenu.List className="flex basis-1/3 gap-x-2 text-xl md:gap-x-4">
             <NavigationMenu.Item
-              className="dropdown-menu hidden after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:duration-300 after:ease-out
-            md:list-item
-            "
+              className="dropdown-menu hidden after:block after:w-0 after:border after:border-skin-accent 
+              after:opacity-0 after:transition-all after:duration-300 after:ease-out md:list-item"
             >
               <NavigationMenu.Trigger
                 id="learn"
@@ -107,13 +107,16 @@ const NavBar = () => {
                 >
                   <Link
                     href={nav.href}
-                    className="flex items-center gap-x-2 py-1 pl-1 pr-2"
+                    className="flex h-full items-center gap-x-2 py-1 pl-1 pr-2"
                   >
                     {nav.icon}{" "}
                     <span className="hidden md:inline">{nav.name}</span>
                   </Link>
                 </NavigationMenu.Item>
               ))}
+
+            {/* Cart Dropdown */}
+            <CartDropdown />
           </NavigationMenu.List>
         </NavigationMenu.Root>
       </header>

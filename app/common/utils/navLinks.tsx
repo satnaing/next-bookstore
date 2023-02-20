@@ -1,4 +1,3 @@
-import CartIcon from "app/common/icons/CartIcon"
 import HeartIcon from "app/common/icons/HeartIcon"
 import SearchIcon from "app/common/icons/SearchIcon"
 import UserIcon from "app/common/icons/UserIcon"
@@ -48,12 +47,6 @@ const navLinks: NavLinks = [
     href: "/wishlist",
     icon: <HeartIcon />,
     position: "main",
-  },
-  {
-    name: "Cart",
-    href: "/cart",
-    icon: <CartIcon />,
-    position: "main-mobile",
   },
 ]
 
