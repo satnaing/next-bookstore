@@ -30,6 +30,17 @@
   .book-desc p {
     @apply my-2;
   }
+
+  /* For Webkit-based browsers (Chrome, Safari and Opera) */
+  .cart-dropdown div::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* For IE, Edge and Firefox */
+  .cart-dropdown div {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
+  }
 }
 
 @layer components {
