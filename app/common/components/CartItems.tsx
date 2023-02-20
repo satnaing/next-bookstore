@@ -58,7 +58,7 @@ export default function CartItems() {
                     className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr_1fr] gap-x-2 border-b py-2 font-sans md:table-row"
                   >
                     <td className="row-span-4 w-32 md:w-20">
-                      <div className="relative h-36 w-full">
+                      <div className="relative h-44 w-full md:h-36">
                         <Image
                           src={item.image}
                           alt={item.title}
