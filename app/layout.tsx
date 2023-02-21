@@ -1,7 +1,8 @@
-import Footer from "@/common-layouts/Footer"
-import NavBar from "@/common-layouts/NavBar"
-import TopBar from "@/common-layouts/TopBar"
 import { Playfair_Display, Montserrat } from "@next/font/google"
+import TopBar from "@/common-layouts/TopBar"
+import NavBar from "@/common-layouts/NavBar"
+import Footer from "@/common-layouts/Footer"
+import Toast from "@/common-layouts/Toast"
 import Providers from "./api/providers"
 import "./globals.css"
 
@@ -28,6 +29,7 @@ export default function RootLayout({
             <NavBar />
             {children}
             <Footer />
+            <Toast />
           </Providers>
         </div>
       </body>
