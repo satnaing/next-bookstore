@@ -1,7 +1,8 @@
 import { create } from "zustand"
 import { persist } from "zustand/middleware"
 
-export type CartItem = {
+/* ===== Cart Store ===== */
+type CartItem = {
   id: number
   slug: string
   title: string
@@ -27,11 +28,12 @@ export const useCartStore = create<CartState>()(
         set(state => updateItemQuantity(state.cart, id, action)),
     }),
     {
-      name: "bear-storage",
+      name: "cart-storage",
     }
   )
 )
 
+/* ===== Cart Store Util Functions ===== */
 function addCartItem(state: CartItem[], bookObj: CartItem) {
   const cartArray = state.filter(item => item.id !== bookObj.id)
   return { cart: [...cartArray, bookObj] }
@@ -57,4 +59,31 @@ function updateItemQuantity(
   }
 
   return { cart: [...state] }
+}
+
+/* ===== Toast Store ===== */
+type ToastObj = {
+  status: "success" | "info" | "error" | "warning"
+  message: string
+}
+
+type ToastState = {
+  toast: boolean
+  toastObj?: ToastObj
+  setToast: (obj?: ToastObj) => void
+}
+
+export const useToastStore = create<ToastState>()(set => ({
+  toast: false,
+  toastObj: { status: "info", message: "" },
+  setToast: obj => set(state => setToast(state, obj)),
+}))
+
+function setToast(state: ToastState, toastObj?: ToastObj) {
+  if (!toastObj) return { toast: !state.toastObj }
+
+  return {
+    toast: !state.toast,
+    toastObj,
+  }
 }
