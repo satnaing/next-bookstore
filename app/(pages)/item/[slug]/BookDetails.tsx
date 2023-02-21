@@ -8,7 +8,7 @@ import ReactMarkdown from "react-markdown"
 import SocialGroup from "@/common-components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
 import { getBook } from "app/api"
-import { useCartStore } from "@/lib/store"
+import { useCartStore, useToastStore } from "@/lib/store"
 import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
 
 type Props = {
@@ -20,7 +20,8 @@ export default function BookDetails({ slug }: Props) {
   const [quantity, setQuantity] = useState(1)
 
   // client global state
-  const { cart, addToCart } = useCartStore()
+  const { addToCart } = useCartStore()
+  const { setToast } = useToastStore()
 
   // This useQuery could just as well happen in some deeper child to
   // the "HydratedPosts"-component, data will be available immediately either way
@@ -42,6 +43,21 @@ export default function BookDetails({ slug }: Props) {
       name: category.attributes.name,
       slug: category.attributes.slug,
     }))
+
+  const handleAddToCart = () => {
+    addToCart({
+      id,
+      slug,
+      title: bookData.title,
+      image: bookImageObj.url,
+      price: bookData.price,
+      quantity,
+    })
+    setToast({
+      status: "success",
+      message: "The book has been added to cart",
+    })
+  }
 
   return (
     <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
@@ -120,16 +136,7 @@ export default function BookDetails({ slug }: Props) {
         <div className="my-6 flex flex-col-reverse gap-4 md:flex-row md:gap-8">
           <button
             type="button"
-            onClick={() =>
-              addToCart({
-                id,
-                slug,
-                title: bookData.title,
-                image: bookImageObj.url,
-                price: bookData.price,
-                quantity,
-              })
-            }
+            onClick={handleAddToCart}
             className="flex w-full items-center justify-center gap-x-4 rounded bg-skin-accent py-2 text-center text-lg font-medium text-skin-base"
           >
             Add To Cart
