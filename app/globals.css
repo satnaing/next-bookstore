@@ -53,4 +53,17 @@
   .main-container {
     @apply mx-auto w-full max-w-6xl px-4 py-6 md:px-8;
   }
+
+  .success {
+    @apply border-teal-500 text-teal-500;
+  }
+  .info {
+    @apply border-cyan-500 text-cyan-500;
+  }
+  .warning {
+    @apply border-amber-500 text-amber-500;
+  }
+  .error {
+    @apply border-rose-600 text-rose-600;
+  }
 }
