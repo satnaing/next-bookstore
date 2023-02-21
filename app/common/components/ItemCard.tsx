@@ -1,9 +1,9 @@
 "use client"
 
+import Link from "next/link"
 import Image from "next/image"
 import HeartIcon from "@/icons/HeartIcon"
-import Link from "next/link"
-import { useCartStore } from "@/lib/store"
+import { useCartStore, useToastStore } from "@/lib/store"
 
 type Props = {
   className?: string
@@ -15,7 +15,26 @@ type Props = {
 }
 
 const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
-  const { addToCart } = useCartStore()
+  const { cart, addToCart } = useCartStore()
+  const { setToast } = useToastStore()
+
+  const handleAddToCart = () => {
+    const alreadyAdded = cart.find(item => item.id === id)
+
+    if (alreadyAdded) {
+      setToast({
+        status: "info",
+        message: "The book is already added",
+      })
+    } else {
+      addToCart({ id, image, price, quantity: 1, slug, title })
+      setToast({
+        status: "success",
+        message: "The book has been added to cart",
+      })
+    }
+  }
+
   return (
     <article
       className={`flex flex-col gap-y-2 rounded font-sans shadow hover:shadow-lg ${className}`}
@@ -50,9 +69,7 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
         <div className="buttons flex gap-x-2">
           <button
             type="button"
-            onClick={() =>
-              addToCart({ id, image, price, quantity: 1, slug, title })
-            }
+            onClick={handleAddToCart}
             className="flex-1 rounded bg-skin-accent px-1 text-sm font-semibold text-white hover:bg-[#F26E5D] active:bg-skin-accent"
           >
             Add To Cart
