@@ -4,6 +4,7 @@ import { useQuery } from "@tanstack/react-query"
 import ItemCard from "@/common-components/ItemCard"
 import CardSkeletons from "@/skeletons/CardSkeletons"
 import { getBooksBySlug } from "app/api"
+import { Book } from "@/types/bookQuery.types"
 
 type Props = {
   slug: string
@@ -21,7 +22,7 @@ export default function BookRow({ slug }: Props) {
 
   return (
     <>
-      {data.data.map(({ id, attributes }: { id: number; attributes: any }) => {
+      {data.data.map(({ id, attributes }) => {
         const { slug, price, title, image } = attributes
         return (
           <ItemCard

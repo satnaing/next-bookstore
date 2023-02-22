@@ -10,6 +10,7 @@ import HeartIcon from "@/icons/HeartIcon"
 import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
 import { getBook } from "app/api"
 import { useCartStore, useToastStore } from "@/lib/store"
+import { Book } from "@/types/bookQuery.types"
 
 type Props = {
   slug: string
@@ -39,7 +40,7 @@ export default function BookDetails({ slug }: Props) {
   const bookImageObj = bookData.image.data[0].attributes
   const authorName = bookData.author_id.data.attributes.name
   const categories: { name: string; slug: string }[] =
-    bookData.categories.data.map((category: any) => ({
+    bookData.categories.data.map(category => ({
       name: category.attributes.name,
       slug: category.attributes.slug,
     }))

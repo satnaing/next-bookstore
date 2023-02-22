@@ -9,7 +9,7 @@ const useCart = () => {
 
   // Server State
   const cartIds = cart.map(item => item.id)
-  const { data, isLoading, isError } = useQuery<Book>({
+  const { data, isLoading, isError } = useQuery({
     queryKey: ["cart", { cartIds }],
     queryFn: () => getBooksByIds(cartIds),
   })

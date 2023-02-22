@@ -1,6 +1,8 @@
+import { Book } from "@/types/bookQuery.types"
+
 const qs = require("qs")
 
-export async function getBook(slug: string) {
+export async function getBook(slug: string): Promise<Book> {
   const res = await fetch(
     `http://localhost:1337/api/books?filters[slug][$eq]]=${slug}&populate=*`
   )
@@ -28,7 +30,7 @@ export async function getFeaturedCategories() {
   return res.json()
 }
 
-export async function getBooksBySlug(slug: string, limit = 25) {
+export async function getBooksBySlug(slug: string, limit = 25): Promise<Book> {
   const res = await fetch(
     `http://localhost:1337/api/books?filters[categories][slug][$eq]]=${slug}&populate=*&pagination[limit]=${limit}`
   )
@@ -42,7 +44,10 @@ export async function getBooksBySlug(slug: string, limit = 25) {
   return res.json()
 }
 
-export async function getBooksByCategory(slug: string, pageNum = 1) {
+export async function getBooksByCategory(
+  slug: string,
+  pageNum = 1
+): Promise<Book> {
   const res = await fetch(
     `http://localhost:1337/api/books?filters[categories][slug][$eq]]=${slug}&populate=*&pagination[page]=${pageNum}&pagination[pageSize]=10`
   )
@@ -56,7 +61,7 @@ export async function getBooksByCategory(slug: string, pageNum = 1) {
   return res.json()
 }
 
-export async function getBooksByIds(ids: number[]) {
+export async function getBooksByIds(ids: number[]): Promise<Book> {
   const idArray = ids.length < 1 ? null : ids
   const query = qs.stringify(
     {

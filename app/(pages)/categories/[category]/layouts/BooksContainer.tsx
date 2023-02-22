@@ -6,9 +6,10 @@ import Pagination from "@/common-components/Pagination"
 import CardSkeletons from "@/skeletons/CardSkeletons"
 import scrollToTop from "@/utils/scrollToTop"
 import { getBooksByCategory } from "app/api"
+import { Book } from "@/types/bookQuery.types"
 
 type Props = {
-  initialData: any
+  initialData: Book
   category: string
   currentPage: number
 }
@@ -36,22 +37,20 @@ export default function BooksContainer({
   return (
     <div onLoad={() => scrollToTop()}>
       <div className="item-wrapper my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5">
-        {data.data.map(
-          ({ id, attributes }: { id: number; attributes: any }) => {
-            const { slug, price, title, image } = attributes
-            return (
-              <ItemCard
-                key={id}
-                id={id}
-                className="last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex"
-                price={price}
-                slug={slug}
-                title={title}
-                image={image.data[0].attributes.url}
-              />
-            )
-          }
-        )}
+        {data.data.map(({ id, attributes }) => {
+          const { slug, price, title, image } = attributes
+          return (
+            <ItemCard
+              key={id}
+              id={id}
+              className="last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex"
+              price={price}
+              slug={slug}
+              title={title}
+              image={image.data[0].attributes.url}
+            />
+          )
+        })}
       </div>
       <div className="my-10 flex flex-col items-center gap-y-2 lg:flex-row lg:justify-between">
         <span className="font-sans">
