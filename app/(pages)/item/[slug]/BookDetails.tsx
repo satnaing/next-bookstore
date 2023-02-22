@@ -7,9 +7,9 @@ import { useQuery } from "@tanstack/react-query"
 import ReactMarkdown from "react-markdown"
 import SocialGroup from "@/common-components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
+import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
 import { getBook } from "app/api"
 import { useCartStore, useToastStore } from "@/lib/store"
-import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
 
 type Props = {
   slug: string
@@ -45,14 +45,7 @@ export default function BookDetails({ slug }: Props) {
     }))
 
   const handleAddToCart = () => {
-    addToCart({
-      id,
-      slug,
-      title: bookData.title,
-      image: bookImageObj.url,
-      price: bookData.price,
-      quantity,
-    })
+    addToCart({ id, quantity })
     setToast({
       status: "success",
       message: "The book has been added to cart",

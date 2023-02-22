@@ -27,7 +27,7 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
         message: "The book is already added",
       })
     } else {
-      addToCart({ id, image, price, quantity: 1, slug, title })
+      addToCart({ id, quantity: 1 })
       setToast({
         status: "success",
         message: "The book has been added to cart",
