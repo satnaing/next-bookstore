@@ -14,10 +14,17 @@ const useCart = () => {
     queryFn: () => getBooksIds(cartIds),
   })
 
-  if (cart.length < 1) return { cartData: [], totalPrice: 0, totalQuantity: 0 }
+  if (cart.length < 1)
+    return { cartData: [], totalPrice: "0", totalQuantity: 0 }
 
   if (isLoading || isError)
-    return { cartData: [], totalPrice: 0, totalQuantity: 0, isLoading, isError }
+    return {
+      cartData: [],
+      totalPrice: "0",
+      totalQuantity: 0,
+      isLoading,
+      isError,
+    }
 
   const map = new Map<number, number>()
   cart.forEach(item => {
