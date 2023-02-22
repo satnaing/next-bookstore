@@ -74,9 +74,12 @@ const CartDropdown = () => {
                   </div>
                 </div>
                 <div className="col-start-2 row-start-1 w-36">
-                  <span className="font-medium italic line-clamp-2">
+                  <Link
+                    href={`/item/${item.slug}`}
+                    className="!inline font-medium italic underline decoration-slate-400 decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid md:line-clamp-4"
+                  >
                     {item.title}
-                  </span>
+                  </Link>
                 </div>
                 <div className="col-span-2 col-start-2 row-start-2">
                   <span className="">Price: </span>
@@ -116,7 +119,7 @@ const CartDropdown = () => {
                     type="button"
                     onClick={() => removeFromCart(item.id)}
                   >
-                    <CancelIcon />
+                    <CancelIcon className="stroke-slate-600 hover:stroke-2" />
                   </button>
                 </div>
               </div>

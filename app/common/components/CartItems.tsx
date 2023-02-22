@@ -65,9 +65,12 @@ export default function CartItems() {
                         </div>
                       </td>
                       <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-2">
-                        <span className="font-medium italic line-clamp-2 md:line-clamp-4">
+                        <Link
+                          href={`/item/${item.slug}`}
+                          className="!inline font-medium italic underline decoration-slate-400 decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid md:line-clamp-4"
+                        >
                           {item.title}
-                        </span>
+                        </Link>
                       </td>
                       <td className="col-span-2 col-start-2 row-start-2 md:text-right">
                         <span className="md:hidden">Price: </span>
@@ -113,7 +116,7 @@ export default function CartItems() {
                           type="button"
                           onClick={() => removeFromCart(item.id)}
                         >
-                          <CancelIcon />
+                          <CancelIcon className="stroke-slate-600 hover:stroke-2" />
                         </button>
                       </td>
                     </tr>
