@@ -4,10 +4,6 @@ import { persist } from "zustand/middleware"
 /* ===== Cart Store ===== */
 type CartItem = {
   id: number
-  slug: string
-  title: string
-  image: string
-  price: number
   quantity: number
 }
 
