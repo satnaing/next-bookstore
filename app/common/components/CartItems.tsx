@@ -1,30 +1,17 @@
 "use client"
 
-import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
+import useCart from "@/hooks/useCart"
 import { useCartStore } from "@/lib/store"
 
 export default function CartItems() {
-  const [mounted, setMounted] = useState(false)
   const { cart, removeFromCart, updateQuantity } = useCartStore()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
-
-  const totalPrice = cart
-    .reduce(
-      (accumulator: number, currentItem) =>
-        accumulator + currentItem.price * currentItem.quantity,
-      0
-    )
-    .toLocaleString()
-
-  if (!mounted) return <div>Loading...</div>
+  const { cartData, totalPrice } = useCart()
 
   return (
     <section>
@@ -52,7 +39,7 @@ export default function CartItems() {
                   </td>
                 </tr>
               ) : (
-                cart.map(item => (
+                cartData.map(item => (
                   <tr
                     key={item.id}
                     className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr_1fr] gap-x-2 border-b py-2 font-sans md:table-row"

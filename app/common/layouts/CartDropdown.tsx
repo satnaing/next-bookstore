@@ -1,34 +1,24 @@
 "use client"
-import { useEffect, useState } from "react"
+
 import Image from "next/image"
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import CartIcon from "@/icons/CartIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import { useCartStore } from "@/lib/store"
+import CartDropdownSkeleton from "@/skeletons/CartDropdownSkeleton"
+import useCart from "@/hooks/useCart"
 
 const CartDropdown = () => {
-  const [mounted, setMounted] = useState(false)
   const { cart, removeFromCart, updateQuantity } = useCartStore()
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const { cartData, totalPrice, totalQuantity, isLoading, isError } = useCart()
 
-  const totalPrice = cart
-    .reduce(
-      (accumulator: number, currentItem) =>
-        accumulator + currentItem.price * currentItem.quantity,
-      0
-    )
-    .toLocaleString()
-
-  const totalQuantity = cart.reduce(
-    (accumulator: number, currentItem) => accumulator + currentItem.quantity,
-    0
-  )
-
-  // if (!mounted) return <div>Loading...</div>
+  // const [mounted, setMounted] = useState(false)
+  // useEffect(() => {
+  //   setMounted(true)
+  // }, [])
+  // if (!mounted) return <div>loading</div>
 
   return (
     <NavigationMenu.Item
@@ -42,7 +32,7 @@ const CartDropdown = () => {
       >
         <CartIcon />
         <span className="hidden md:inline">Cart</span>
-        {mounted && totalQuantity > 0 && (
+        {totalQuantity > 0 && (
           <span className="bg-skin absolute -right-2 -top-2 inline-block rounded-full bg-skin-accent py-1 px-2 text-xs text-skin-base md:-left-1 md:right-auto md:-top-1">
             {totalQuantity}
           </span>
@@ -56,83 +46,83 @@ const CartDropdown = () => {
         <div className="mb-4 text-center font-sans text-base font-bold">
           My Shopping Cart
         </div>
-        {mounted && (
-          <div className="mb-4 max-h-80 overflow-y-auto">
-            {cart.length < 1 ? (
-              <div className="flex h-36 items-center justify-center">
-                <div className="mx-3 w-64 text-center opacity-75">
-                  Cart is empty!
+        <div className="mb-4 max-h-80 overflow-y-auto">
+          {cart.length < 1 ? (
+            <div className="flex h-36 items-center justify-center">
+              <div className="mx-3 w-64 text-center opacity-75">
+                Cart is empty!
+              </div>
+            </div>
+          ) : isLoading ? (
+            cart.map(c => <CartDropdownSkeleton key={c.id} />)
+          ) : (
+            cartData.map(item => (
+              <div
+                key={item.id}
+                className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr] gap-x-2 border-b py-2 font-sans text-sm"
+              >
+                <div className="row-span-4 w-24">
+                  <div className="relative h-32 w-full">
+                    <Image
+                      src={item.image}
+                      alt={item.title}
+                      className="object-contain py-1"
+                      fill
+                      sizes="(min-width: 640px) 20vw, 50vw"
+                      priority
+                    />
+                  </div>
+                </div>
+                <div className="col-start-2 row-start-1 w-36">
+                  <span className="font-medium italic line-clamp-2">
+                    {item.title}
+                  </span>
+                </div>
+                <div className="col-span-2 col-start-2 row-start-2">
+                  <span className="">Price: </span>
+                  <span className="font-medium">
+                    {item.price.toLocaleString()}Ks
+                  </span>
+                </div>
+                <div className="col-span-2 col-start-2 row-start-3">
+                  <button
+                    type="button"
+                    title="Reduce Quantity"
+                    onClick={() => updateQuantity(item.id, "decrease")}
+                    className={`rounded border bg-skin-card py-1 px-3 leading-none ${
+                      item.quantity < 2
+                        ? "cursor-not-allowed bg-skin-card opacity-75"
+                        : ""
+                    }`}
+                    tabIndex={item.quantity < 2 ? -1 : 0}
+                  >
+                    -
+                  </button>
+                  <span className="mx-2 inline-block w-4 text-center">
+                    {item.quantity}
+                  </span>
+                  <button
+                    type="button"
+                    title="Reduce Quantity"
+                    onClick={() => updateQuantity(item.id, "increase")}
+                    className="rounded border bg-skin-card py-1 px-3 leading-none"
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="col-span-1 col-start-3 row-span-1 row-start-1">
+                  <button
+                    title="Remove"
+                    type="button"
+                    onClick={() => removeFromCart(item.id)}
+                  >
+                    <CancelIcon />
+                  </button>
                 </div>
               </div>
-            ) : (
-              cart.map(item => (
-                <div
-                  key={item.id}
-                  className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr] gap-x-2 border-b py-2 font-sans text-sm"
-                >
-                  <div className="row-span-4 w-24">
-                    <div className="relative h-32 w-full">
-                      <Image
-                        src={item.image}
-                        alt={item.title}
-                        className="object-contain py-1"
-                        fill
-                        sizes="(min-width: 640px) 20vw, 50vw"
-                        priority
-                      />
-                    </div>
-                  </div>
-                  <div className="col-start-2 row-start-1 w-36">
-                    <span className="font-medium italic line-clamp-2">
-                      {item.title}
-                    </span>
-                  </div>
-                  <div className="col-span-2 col-start-2 row-start-2">
-                    <span className="">Price: </span>
-                    <span className="font-medium">
-                      {item.price.toLocaleString()}Ks
-                    </span>
-                  </div>
-                  <div className="col-span-2 col-start-2 row-start-3">
-                    <button
-                      type="button"
-                      title="Reduce Quantity"
-                      onClick={() => updateQuantity(item.id, "decrease")}
-                      className={`rounded border bg-skin-card py-1 px-3 leading-none ${
-                        item.quantity < 2
-                          ? "cursor-not-allowed bg-skin-card opacity-75"
-                          : ""
-                      }`}
-                      tabIndex={item.quantity < 2 ? -1 : 0}
-                    >
-                      -
-                    </button>
-                    <span className="mx-2 inline-block w-4 text-center">
-                      {item.quantity}
-                    </span>
-                    <button
-                      type="button"
-                      title="Reduce Quantity"
-                      onClick={() => updateQuantity(item.id, "increase")}
-                      className="rounded border bg-skin-card py-1 px-3 leading-none"
-                    >
-                      +
-                    </button>
-                  </div>
-                  <div className="col-span-1 col-start-3 row-span-1 row-start-1">
-                    <button
-                      title="Remove"
-                      type="button"
-                      onClick={() => removeFromCart(item.id)}
-                    >
-                      <CancelIcon />
-                    </button>
-                  </div>
-                </div>
-              ))
-            )}
-          </div>
-        )}
+            ))
+          )}
+        </div>
 
         <hr />
         <div className="my-2 flex items-baseline justify-between">
@@ -158,8 +148,6 @@ const CartDropdown = () => {
           >
             View Cart
           </Link>
-          {/* <button type="button">Checkout</button>
-          <button type="button">View Cart</button> */}
         </div>
       </NavigationMenu.Content>
     </NavigationMenu.Item>
