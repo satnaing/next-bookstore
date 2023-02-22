@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
-import { getBooksIds } from "app/api"
+import { getBooksByIds } from "app/api"
 import { useCartStore } from "../../../lib/store"
 import { Book } from "../types/bookQuery.types"
 
@@ -11,7 +11,7 @@ const useCart = () => {
   const cartIds = cart.map(item => item.id)
   const { data, isLoading, isError } = useQuery<Book>({
     queryKey: ["cart", { cartIds }],
-    queryFn: () => getBooksIds(cartIds),
+    queryFn: () => getBooksByIds(cartIds),
   })
 
   if (cart.length < 1)
