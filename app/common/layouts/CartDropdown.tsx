@@ -12,13 +12,7 @@ import useCart from "@/hooks/useCart"
 const CartDropdown = () => {
   const { cart, removeFromCart, updateQuantity } = useCartStore()
 
-  const { cartData, totalPrice, totalQuantity, isLoading, isError } = useCart()
-
-  // const [mounted, setMounted] = useState(false)
-  // useEffect(() => {
-  //   setMounted(true)
-  // }, [])
-  // if (!mounted) return <div>loading</div>
+  const { cartData, totalPrice, totalQuantity, isLoading } = useCart()
 
   return (
     <NavigationMenu.Item
