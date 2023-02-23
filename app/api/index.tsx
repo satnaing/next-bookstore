@@ -1,4 +1,5 @@
 import { Book } from "@/types/bookQuery.types"
+import { Category } from "@/types/categoryQuery.types"
 
 const qs = require("qs")
 
@@ -16,7 +17,7 @@ export async function getBook(slug: string): Promise<Book> {
   return res.json()
 }
 
-export async function getFeaturedCategories() {
+export async function getFeaturedCategories(): Promise<Category> {
   const res = await fetch(
     `http://localhost:1337/api/categories?filters[featured][$eq]=true&sort=featured_order`
   )

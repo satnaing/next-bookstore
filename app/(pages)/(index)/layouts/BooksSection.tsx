@@ -5,25 +5,19 @@ import { useQuery } from "@tanstack/react-query"
 import BookRow from "@/common-components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import { getFeaturedCategories } from "app/api"
+import { Category } from "@/types/categoryQuery.types"
 
-type Categories = {
-  name: string
-  slug: string
-}[]
-
-const BooksSection = ({ categories }: { categories: any }) => {
+const BooksSection = ({ categories }: { categories: Category }) => {
   const { data } = useQuery({
     queryKey: ["categories", { filters: true }],
     queryFn: getFeaturedCategories,
     initialData: categories,
   })
 
-  const categoriesArray: Categories = data.data.map(
-    ({ attributes }: { attributes: any }) => ({
-      name: attributes.name,
-      slug: attributes.slug,
-    })
-  )
+  const categoriesArray = data.data.map(({ attributes }) => ({
+    name: attributes.name,
+    slug: attributes.slug,
+  }))
 
   return (
     <>
