@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import HeartIcon from "@/icons/HeartIcon"
-import { useCartStore, useToastStore } from "@/lib/store"
+import { useCartStore, useToastStore, useWishlistStore } from "@/lib/store"
 
 type Props = {
   className?: string
@@ -16,6 +16,7 @@ type Props = {
 
 const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
   const { cart, addToCart } = useCartStore()
+  const { wishlist, addToWishlist, removeFromWishlist } = useWishlistStore()
   const { setToast } = useToastStore()
 
   const handleAddToCart = () => {
@@ -31,6 +32,23 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
       setToast({
         status: "success",
         message: "The book has been added to cart",
+      })
+    }
+  }
+
+  const alreadyWishlisted = wishlist.find(item => item === id)
+  const handleAddToWishlist = () => {
+    if (alreadyWishlisted) {
+      removeFromWishlist(id)
+      setToast({
+        status: "info",
+        message: "The book has been removed from wishlist",
+      })
+    } else {
+      addToWishlist(id)
+      setToast({
+        status: "success",
+        message: "The book has been added to wishlist",
       })
     }
   }
@@ -78,8 +96,13 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
             type="button"
             className="basis-1/4 rounded border border-slate-300 p-1 hover:bg-skin-fill active:bg-skin-base"
             title="Add To Wishlist"
+            onClick={handleAddToWishlist}
           >
-            <HeartIcon className="!stroke-skin-accent stroke-2" />
+            <HeartIcon
+              className={`!stroke-skin-accent stroke-2 ${
+                alreadyWishlisted ? "fill-skin-accent" : ""
+              }`}
+            />
           </button>
         </div>
       </div>

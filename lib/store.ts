@@ -57,6 +57,39 @@ function updateItemQuantity(
   return { cart: [...state] }
 }
 
+/* ===== Cart Store ===== */
+type WishlistState = {
+  wishlist: number[]
+  addToWishlist: (id: number) => void
+  removeFromWishlist: (id: number) => void
+  updateQuantity?: (id: number, action: "increase" | "decrease") => void
+}
+
+export const useWishlistStore = create<WishlistState>()(
+  persist(
+    set => ({
+      wishlist: [],
+      addToWishlist: (id: number) =>
+        set(state => addWishlistItem(state.wishlist, id)),
+      removeFromWishlist: (id: number) =>
+        set(state => removeFromWishlistItem(state.wishlist, id)),
+    }),
+    {
+      name: "wishlist-storage",
+    }
+  )
+)
+
+function addWishlistItem(state: number[], id: number) {
+  const wishlistArray = state.filter(item => item !== id)
+  return { wishlist: [...wishlistArray, id] }
+}
+
+function removeFromWishlistItem(state: number[], id: number) {
+  const wishlistArray = state.filter(item => item !== id)
+  return { wishlist: [...wishlistArray] }
+}
+
 /* ===== Toast Store ===== */
 type ToastObj = {
   status: "success" | "info" | "error" | "warning"
