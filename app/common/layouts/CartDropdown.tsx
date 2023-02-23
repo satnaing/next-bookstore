@@ -70,7 +70,7 @@ const CartDropdown = () => {
                 <div className="col-start-2 row-start-1 w-36">
                   <Link
                     href={`/item/${item.slug}`}
-                    className="!inline font-medium italic underline decoration-slate-400 decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid md:line-clamp-4"
+                    className="font-medium italic underline decoration-slate-400 decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid"
                   >
                     {item.title}
                   </Link>
