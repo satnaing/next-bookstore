@@ -16,7 +16,7 @@ type Props = {
 
 const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
   const { cart, addToCart } = useCartStore()
-  const { wishlist, addToWishlist, removeFromWishlist } = useWishlistStore()
+  const { wishlist, toggleWishlist } = useWishlistStore()
   const { setToast } = useToastStore()
 
   const handleAddToCart = () => {
@@ -39,18 +39,17 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
   const alreadyWishlisted = wishlist.find(item => item === id)
   const handleAddToWishlist = () => {
     if (alreadyWishlisted) {
-      removeFromWishlist(id)
       setToast({
         status: "info",
         message: "The book has been removed from wishlist",
       })
     } else {
-      addToWishlist(id)
       setToast({
         status: "success",
         message: "The book has been added to wishlist",
       })
     }
+    toggleWishlist(id)
   }
 
   return (

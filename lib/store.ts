@@ -62,6 +62,7 @@ type WishlistState = {
   wishlist: number[]
   addToWishlist: (id: number) => void
   removeFromWishlist: (id: number) => void
+  toggleWishlist: (id: number) => void
   updateQuantity?: (id: number, action: "increase" | "decrease") => void
 }
 
@@ -73,6 +74,8 @@ export const useWishlistStore = create<WishlistState>()(
         set(state => addWishlistItem(state.wishlist, id)),
       removeFromWishlist: (id: number) =>
         set(state => removeFromWishlistItem(state.wishlist, id)),
+      toggleWishlist: (id: number) =>
+        set(state => toggleWishlistItem(state.wishlist, id)),
     }),
     {
       name: "wishlist-storage",
@@ -88,6 +91,15 @@ function addWishlistItem(state: number[], id: number) {
 function removeFromWishlistItem(state: number[], id: number) {
   const wishlistArray = state.filter(item => item !== id)
   return { wishlist: [...wishlistArray] }
+}
+
+function toggleWishlistItem(state: number[], id: number) {
+  const status = state.find(item => item === id)
+  const wishlistArray = state.filter(item => item !== id)
+
+  if (status) return { wishlist: [...wishlistArray] }
+
+  return { wishlist: [...wishlistArray, id] }
 }
 
 /* ===== Toast Store ===== */

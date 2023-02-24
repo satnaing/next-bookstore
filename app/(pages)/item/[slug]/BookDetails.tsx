@@ -9,8 +9,7 @@ import SocialGroup from "@/common-components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
 import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
 import { getBook } from "app/api"
-import { useCartStore, useToastStore } from "@/lib/store"
-import { Book } from "@/types/bookQuery.types"
+import { useCartStore, useToastStore, useWishlistStore } from "@/lib/store"
 
 type Props = {
   slug: string
@@ -22,6 +21,7 @@ export default function BookDetails({ slug }: Props) {
 
   // client global state
   const { addToCart } = useCartStore()
+  const { wishlist, toggleWishlist } = useWishlistStore()
   const { setToast } = useToastStore()
 
   // This useQuery could just as well happen in some deeper child to
@@ -52,6 +52,8 @@ export default function BookDetails({ slug }: Props) {
       message: "The book has been added to cart",
     })
   }
+
+  const hasWishlisted = wishlist.find(item => item === id)
 
   return (
     <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
@@ -137,10 +139,15 @@ export default function BookDetails({ slug }: Props) {
           </button>
           <button
             type="button"
+            onClick={() => toggleWishlist(id)}
             className="flex w-full items-center justify-center gap-x-4 rounded border-2 border-skin-accent bg-skin-base py-2 text-center text-lg font-medium text-skin-accent"
           >
-            <HeartIcon className="stroke-skin-accent stroke-2" />
-            Add To Wishlist
+            <HeartIcon
+              className={`stroke-skin-accent stroke-2 ${
+                hasWishlisted ? "fill-skin-accent" : ""
+              }`}
+            />
+            {hasWishlisted ? "Wishlisted" : "Add To Wishlist"}
           </button>
         </div>
 
