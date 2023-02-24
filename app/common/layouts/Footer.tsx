@@ -14,7 +14,7 @@ const Footer = () => {
   return (
     <footer
       className={`mt-auto shadow-inner ${
-        hideOnMobile ? "hidden lg:block" : ""
+        hideOnMobile ? "hidden md:block" : ""
       }`}
     >
       <div className="footer-container mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 md:grid-cols-4 md:grid-rows-3 md:gap-x-6 md:gap-y-0 md:px-8">
