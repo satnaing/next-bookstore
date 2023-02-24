@@ -11,18 +11,18 @@
     "format": "prettier --write ."
   },
   "dependencies": {
-    "@next/font": "^13.1.6",
+    "@next/font": "^13.2.1",
     "@radix-ui/react-collapsible": "^1.0.1",
     "@radix-ui/react-navigation-menu": "^1.1.1",
     "@radix-ui/react-toast": "^1.1.2",
-    "@tanstack/react-query": "^4.24.4",
-    "@tanstack/react-query-devtools": "^4.24.6",
-    "@types/node": "18.11.18",
-    "@types/react": "18.0.27",
-    "@types/react-dom": "18.0.10",
-    "eslint": "8.32.0",
-    "eslint-config-next": "^13.1.6",
-    "next": "^13.1.7-canary.17",
+    "@tanstack/react-query": "^4.24.10",
+    "@tanstack/react-query-devtools": "^4.24.10",
+    "@types/node": "18.14.1",
+    "@types/react": "18.0.28",
+    "@types/react-dom": "18.0.11",
+    "eslint": "8.34.0",
+    "eslint-config-next": "^13.2.1",
+    "next": "^13.2.1",
     "qs": "^6.11.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -36,9 +36,9 @@
     "autoprefixer": "^10.4.13",
     "cz-conventional-changelog": "^3.3.0",
     "postcss": "^8.4.21",
-    "prettier": "^2.8.3",
-    "prettier-plugin-tailwindcss": "^0.2.1",
-    "tailwindcss": "^3.2.4"
+    "prettier": "^2.8.4",
+    "prettier-plugin-tailwindcss": "^0.2.3",
+    "tailwindcss": "^3.2.7"
   },
   "config": {
     "commitizen": {
