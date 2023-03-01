@@ -53,7 +53,22 @@ export default function BookDetails({ slug }: Props) {
     })
   }
 
-  const hasWishlisted = wishlist.find(item => item === id)
+  const hasWishlisted = wishlist.find(item => item.id === id)
+  const handleAddToWishlist = () => {
+    setToast({
+      status: hasWishlisted ? "info" : "success",
+      message: `The book has been ${
+        hasWishlisted ? "removed from" : "added to"
+      } wishlist`,
+    })
+    toggleWishlist({
+      id,
+      slug,
+      title: bookData.title,
+      image: bookImageObj.url,
+      price: bookData.price,
+    })
+  }
 
   return (
     <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
@@ -139,7 +154,7 @@ export default function BookDetails({ slug }: Props) {
           </button>
           <button
             type="button"
-            onClick={() => toggleWishlist(id)}
+            onClick={handleAddToWishlist}
             className="flex w-full items-center justify-center gap-x-4 rounded border-2 border-skin-accent bg-skin-base py-2 text-center text-lg font-medium text-skin-accent"
           >
             <HeartIcon

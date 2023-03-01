@@ -36,20 +36,15 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
     }
   }
 
-  const alreadyWishlisted = wishlist.find(item => item === id)
+  const hasWished = wishlist.some(item => item.id === id)
   const handleAddToWishlist = () => {
-    if (alreadyWishlisted) {
-      setToast({
-        status: "info",
-        message: "The book has been removed from wishlist",
-      })
-    } else {
-      setToast({
-        status: "success",
-        message: "The book has been added to wishlist",
-      })
-    }
-    toggleWishlist(id)
+    setToast({
+      status: hasWished ? "info" : "success",
+      message: `The book has been ${
+        hasWished ? "removed from" : "added to"
+      } wishlist`,
+    })
+    toggleWishlist({ id, slug, title, image, price })
   }
 
   return (
@@ -99,7 +94,7 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
           >
             <HeartIcon
               className={`!stroke-skin-accent stroke-2 ${
-                alreadyWishlisted ? "fill-skin-accent" : ""
+                hasWished ? "fill-skin-accent" : ""
               }`}
             />
           </button>
