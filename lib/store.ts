@@ -57,25 +57,27 @@ function updateItemQuantity(
   return { cart: [...state] }
 }
 
-/* ===== Cart Store ===== */
+/* ===== Wishlist Store ===== */
+export type WishlistItem = {
+  id: number
+  slug: string
+  image: string
+  title: string
+  price: number
+  inStock?: boolean
+}
+
 type WishlistState = {
-  wishlist: number[]
-  addToWishlist: (id: number) => void
-  removeFromWishlist: (id: number) => void
-  toggleWishlist: (id: number) => void
-  updateQuantity?: (id: number, action: "increase" | "decrease") => void
+  wishlist: WishlistItem[]
+  toggleWishlist: (item: WishlistItem) => void
 }
 
 export const useWishlistStore = create<WishlistState>()(
   persist(
     set => ({
       wishlist: [],
-      addToWishlist: (id: number) =>
-        set(state => addWishlistItem(state.wishlist, id)),
-      removeFromWishlist: (id: number) =>
-        set(state => removeFromWishlistItem(state.wishlist, id)),
-      toggleWishlist: (id: number) =>
-        set(state => toggleWishlistItem(state.wishlist, id)),
+      toggleWishlist: (item: WishlistItem) =>
+        set(state => toggleWishlistItem(state.wishlist, item)),
     }),
     {
       name: "wishlist-storage",
@@ -83,23 +85,13 @@ export const useWishlistStore = create<WishlistState>()(
   )
 )
 
-function addWishlistItem(state: number[], id: number) {
-  const wishlistArray = state.filter(item => item !== id)
-  return { wishlist: [...wishlistArray, id] }
-}
+function toggleWishlistItem(wishlist: WishlistItem[], item: WishlistItem) {
+  const status = wishlist.some(wItem => wItem.id === item.id)
+  const filteredWishlist = wishlist.filter(wItem => wItem.id !== item.id)
 
-function removeFromWishlistItem(state: number[], id: number) {
-  const wishlistArray = state.filter(item => item !== id)
-  return { wishlist: [...wishlistArray] }
-}
+  if (status) return { wishlist: [...filteredWishlist] }
 
-function toggleWishlistItem(state: number[], id: number) {
-  const status = state.find(item => item === id)
-  const wishlistArray = state.filter(item => item !== id)
-
-  if (status) return { wishlist: [...wishlistArray] }
-
-  return { wishlist: [...wishlistArray, id] }
+  return { wishlist: [...filteredWishlist, item] }
 }
 
 /* ===== Toast Store ===== */
