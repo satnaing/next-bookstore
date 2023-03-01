@@ -39,6 +39,20 @@
     -ms-overflow-style: none; /* IE and Edge */
     scrollbar-width: none; /* Firefox */
   }
+
+  /* Scrollbar for Wishlist */
+  .wishlist-table::-webkit-scrollbar {
+    width: 10px;
+  }
+  .wishlist-table::-webkit-scrollbar-track {
+    @apply bg-skin-base;
+  }
+  .wishlist-table::-webkit-scrollbar-thumb {
+    @apply bg-skin-dark bg-opacity-10;
+  }
+  .wishlist-table::-webkit-scrollbar-thumb:hover {
+    @apply bg-skin-dark bg-opacity-30;
+  }
 }
 
 @layer components {
