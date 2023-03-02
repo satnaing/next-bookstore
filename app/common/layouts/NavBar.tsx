@@ -67,13 +67,13 @@ const NavBar = () => {
               >
                 <div className="flex gap-x-4">
                   <div className="flex basis-1/2 flex-col gap-y-4">
-                    <LinkItem title="Popular Now">
-                      Build high-quality, accessible design systems and web
-                      apps.
+                    <LinkItem title="Best Seller" href="best-seller">
+                      Discover the most captivating literary works that have won
+                      the hearts of bookworms
                     </LinkItem>
-                    <LinkItem title="New Books">
-                      A quick tutorial to get you up and running with Radix
-                      Primitives.
+                    <LinkItem title="New Arrivals" href="new-arrivals">
+                      Explore the latest and greatest literary works of fresh
+                      titles and exciting authors
                     </LinkItem>
                   </div>
                   <div className="basis-1/2 divide-y">
@@ -174,20 +174,20 @@ const NavBar = () => {
                     <li>
                       <NavigationMenu.Link asChild>
                         <Link
-                          href="/popular-now"
+                          href="/categories/best-seller"
                           className="block p-2 underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
                         >
-                          Popular Now
+                          Best Seller
                         </Link>
                       </NavigationMenu.Link>
                     </li>
                     <li>
                       <NavigationMenu.Link asChild>
                         <Link
-                          href="/new-books"
+                          href="/categories/new-arrivals"
                           className="block p-2 underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
                         >
-                          New Books
+                          New Arrivals
                         </Link>
                       </NavigationMenu.Link>
                     </li>
@@ -259,9 +259,17 @@ const NavBar = () => {
   )
 }
 
-const LinkItem = ({ title, children }: { title: string; children: string }) => {
+const LinkItem = ({
+  title,
+  href,
+  children,
+}: {
+  title: string
+  href: string
+  children: string
+}) => {
   return (
-    <Link href="/popular-now" className="p-2 hover:bg-skin-fill">
+    <Link href={`/categories/${href}`} className="p-2 hover:bg-skin-fill">
       <div className="font-bold">{title}</div>
       <p className="font-sans text-sm">{children}</p>
     </Link>
@@ -269,7 +277,7 @@ const LinkItem = ({ title, children }: { title: string; children: string }) => {
 }
 
 const mysteryMenuList = [
-  { name: "Crime", href: "/categories/crime" },
+  { name: "Crime & Thrillers", href: "/categories/crime-and-thrillers" },
   { name: "Detective", href: "/categories/detective" },
   { name: "Mysteries", href: "/categories/mysteries" },
   { name: "spy", href: "/categories/spy" },
@@ -278,14 +286,17 @@ const mysteryMenuList = [
 const literatureList = [
   { name: "Classic", href: "/categories/classic" },
   { name: "Genre Fiction", href: "/categories/genre-fiction" },
-  { name: "Sci-Fi & Fantasy", href: "/categories/scifi-and-fantasy" },
+  { name: "Sci-Fi & Fantasy", href: "/categories/sci-fi-and-fantasy" },
   { name: "Romance", href: "/categories/romance" },
 ]
 
 const educationMenuList = [
   { name: "Colleges", href: "/categories/colleges" },
   { name: "Dictionaries", href: "/categories/dictionaries" },
-  { name: "IT & Engineering", href: "/categories/it-and-engineering" },
+  {
+    name: "Architecture & Engineering",
+    href: "/categories/architecture-and-engineering",
+  },
   { name: "Sales & Marketing", href: "/categories/sales-and-marketing" },
   { name: "English & IELTS", href: "/categories/english-and-ielts" },
   { name: "Science & Maths", href: "/categories/science-and-maths" },
