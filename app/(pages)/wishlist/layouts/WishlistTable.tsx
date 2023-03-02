@@ -5,8 +5,13 @@ import { useQuery } from "@tanstack/react-query"
 import CancelIcon from "@/icons/CancelIcon"
 import scrollToTop from "@/utils/scrollToTop"
 import useMounted from "@/hooks/useMounted"
-import { useWishlistStore, WishlistItem } from "@/lib/store"
 import { getBooksByIds } from "app/api"
+import {
+  useCartStore,
+  useToastStore,
+  useWishlistStore,
+  WishlistItem,
+} from "@/lib/store"
 
 const fetchBooks = async (wishlistIds: number[]): Promise<WishlistItem[]> => {
   const response = await getBooksByIds(wishlistIds)
@@ -28,10 +33,11 @@ const fetchBooks = async (wishlistIds: number[]): Promise<WishlistItem[]> => {
 }
 
 export default function WishlistTable() {
-  const { wishlist } = useWishlistStore()
+  const { wishlist, toggleWishlist } = useWishlistStore()
+  const { addToCart } = useCartStore()
+  const { setToast } = useToastStore()
 
   const wishlistIds = wishlist.map(item => item.id)
-  // const wishlistIds = obj.map(item => item.id)
   const { data, isLoading, isError } = useQuery({
     queryKey: ["wishlist", { wishlistIds }],
     queryFn: () => fetchBooks(wishlistIds),
@@ -42,6 +48,23 @@ export default function WishlistTable() {
 
   if (isLoading) return null
   if (isError) return null
+
+  const handleAddToCart = (id: number) => {
+    addToCart({ id, quantity: 1 })
+    setToast({
+      status: "success",
+      message: "The book has been added to cart",
+    })
+    toggleWishlist(id)
+  }
+
+  const removeFromWishlist = (id: number) => {
+    toggleWishlist(id)
+    setToast({
+      status: "success",
+      message: "The book has been removed from wishlist",
+    })
+  }
 
   return (
     <div
@@ -108,14 +131,21 @@ export default function WishlistTable() {
                 <td className="col-span-2 col-start-2 row-start-4 md:text-right">
                   <button
                     type="button"
+                    onClick={() => handleAddToCart(item.id)}
                     className="rounded border-2 border-skin-accent py-1 px-2 text-sm font-medium text-skin-accent hover:bg-skin-fill"
                   >
                     Add To Cart
                   </button>
                 </td>
                 <td className="col-span-1 col-start-3 row-span-1 row-start-1 md:text-center">
-                  <button title="Remove" type="button">
-                    <CancelIcon />
+                  <button
+                    title="Remove"
+                    type="button"
+                    onClick={() => {
+                      removeFromWishlist(item.id)
+                    }}
+                  >
+                    <CancelIcon className="stroke-slate-600 hover:stroke-2" />
                   </button>
                 </td>
               </tr>
