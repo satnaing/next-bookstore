@@ -1,12 +1,14 @@
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import Link from "next/link"
-import WishlistTable from "./layouts/WishlistTable"
+import AddAllToCart from "./components/AddAllToCart"
+import WishlistTable from "./components/WishlistTable"
+import WishlistTitle from "./components/WishlistTitle"
 
 export default function Page() {
   return (
     <main className="main-container">
       <section>
-        <h1 className="text-xl font-bold md:text-2xl">My Wishlist</h1>
+        <WishlistTitle />
         <div className="my-4">
           <div className="table-wrapper min-h-[18rem] lg:col-span-2">
             <WishlistTable />
@@ -25,12 +27,7 @@ export default function Page() {
                 <CaretDownIcon className="rotate-90 stroke-skin-dark stroke-1" />{" "}
                 Continue Shopping
               </Link>
-              <button
-                type="button"
-                className="w-full bg-skin-accent py-2 px-2 font-sans text-lg font-medium text-skin-base hover:bg-[#F26E5D] md:w-auto md:rounded md:py-1"
-              >
-                Add All To Cart
-              </button>
+              <AddAllToCart />
             </div>
           </div>
         </div>
