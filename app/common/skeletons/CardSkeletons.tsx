@@ -4,7 +4,7 @@ import "react-loading-skeleton/dist/skeleton.css"
 const CardSkeletons = ({ num, slug }: { num: number; slug: string }) => {
   // Generate Unique set of numbers array
   let numbers = new Set()
-  while (numbers.size < length) {
+  while (numbers.size < num) {
     let randomNum = Math.floor(Math.random() * (num - 1 + 1)) + 1
     numbers.add(randomNum)
   }
