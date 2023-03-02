@@ -69,15 +69,15 @@ export type WishlistItem = {
 
 type WishlistState = {
   wishlist: WishlistItem[]
-  toggleWishlist: (item: WishlistItem) => void
+  toggleWishlist: (id: number, item?: WishlistItem) => void
 }
 
 export const useWishlistStore = create<WishlistState>()(
   persist(
     set => ({
       wishlist: [],
-      toggleWishlist: (item: WishlistItem) =>
-        set(state => toggleWishlistItem(state.wishlist, item)),
+      toggleWishlist: (id: number, item?: WishlistItem) =>
+        set(state => toggleWishlistItem(state.wishlist, id, item)),
     }),
     {
       name: "wishlist-storage",
@@ -85,13 +85,18 @@ export const useWishlistStore = create<WishlistState>()(
   )
 )
 
-function toggleWishlistItem(wishlist: WishlistItem[], item: WishlistItem) {
-  const status = wishlist.some(wItem => wItem.id === item.id)
-  const filteredWishlist = wishlist.filter(wItem => wItem.id !== item.id)
+function toggleWishlistItem(
+  wishlist: WishlistItem[],
+  id: number,
+  item?: WishlistItem
+) {
+  const status = wishlist.some(wItem => wItem.id === id)
+  const filteredWishlist = wishlist.filter(wItem => wItem.id !== id)
 
   if (status) return { wishlist: [...filteredWishlist] }
 
-  return { wishlist: [...filteredWishlist, item] }
+  const newWishlist = item ? [...filteredWishlist, item] : [...filteredWishlist]
+  return { wishlist: newWishlist }
 }
 
 /* ===== Toast Store ===== */

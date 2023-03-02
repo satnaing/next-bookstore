@@ -61,7 +61,7 @@ export default function BookDetails({ slug }: Props) {
         hasWishlisted ? "removed from" : "added to"
       } wishlist`,
     })
-    toggleWishlist({
+    toggleWishlist(id, {
       id,
       slug,
       title: bookData.title,
