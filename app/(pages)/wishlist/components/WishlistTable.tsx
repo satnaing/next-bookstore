@@ -1,6 +1,7 @@
 "use client"
 
 import Image from "next/image"
+import Link from "next/link"
 import { useQuery } from "@tanstack/react-query"
 import CancelIcon from "@/icons/CancelIcon"
 import scrollToTop from "@/utils/scrollToTop"
@@ -112,9 +113,12 @@ export default function WishlistTable() {
                   </div>
                 </td>
                 <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-2">
-                  <span className="font-medium italic line-clamp-2 md:line-clamp-4">
+                  <Link
+                    href={`/item/${item.slug}`}
+                    className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 opacity-75 line-clamp-2 hover:decoration-solid hover:opacity-100 md:!inline md:line-clamp-4"
+                  >
                     {item.title}
-                  </span>
+                  </Link>
                 </td>
                 <td className="col-span-2 col-start-2 row-start-2 md:text-center">
                   <span className="md:hidden">Status: </span>
