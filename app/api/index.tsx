@@ -88,3 +88,17 @@ export async function getBooksByIds(ids: number[]): Promise<Book> {
 
   return res.json()
 }
+
+export async function getBooksByTitle(searchTearm: string): Promise<Book> {
+  const res = await fetch(
+    `http://localhost:1337/api/books?filters[title][$containsi]=${searchTearm}&populate=*`
+  )
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch books")
+  }
+
+  return res.json()
+}

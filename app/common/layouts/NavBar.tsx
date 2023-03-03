@@ -7,6 +7,7 @@ import * as Collapsible from "@radix-ui/react-collapsible"
 import CollapsibleMenu from "@/common-components/CollapsibleMenu"
 import SocialGroup from "@/common-components/SocialGroup"
 import CaretDownIcon from "@/icons/CaretDownIcon"
+import SearchDialog from "@/common-components/SearchDialog"
 import MenuIcon from "@/icons/MenuIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import navLinks from "app/common/utils/navLinks"
@@ -92,6 +93,10 @@ const NavBar = () => {
                   </div>
                 </div>
               </NavigationMenu.Content>
+            </NavigationMenu.Item>
+
+            <NavigationMenu.Item className="after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100">
+              <SearchDialog />
             </NavigationMenu.Item>
 
             {navLinks

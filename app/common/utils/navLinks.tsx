@@ -31,12 +31,6 @@ const navLinks: NavLinks = [
     position: "top-only",
   },
   {
-    name: "Search",
-    href: "/search",
-    icon: <SearchIcon />,
-    position: "main-mobile",
-  },
-  {
     name: "Account",
     href: "/account",
     icon: <UserIcon />,
