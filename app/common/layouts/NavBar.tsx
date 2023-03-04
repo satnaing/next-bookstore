@@ -7,11 +7,11 @@ import * as Collapsible from "@radix-ui/react-collapsible"
 import CollapsibleMenu from "@/common-components/CollapsibleMenu"
 import SocialGroup from "@/common-components/SocialGroup"
 import CaretDownIcon from "@/icons/CaretDownIcon"
+import CartDropdown from "@/common-components/CartDropdown"
 import SearchDialog from "@/common-components/SearchDialog"
 import MenuIcon from "@/icons/MenuIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import navLinks from "app/common/utils/navLinks"
-import CartDropdown from "./CartDropdown"
 
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false)
