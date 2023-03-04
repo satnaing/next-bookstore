@@ -5,7 +5,7 @@ export default async function Page() {
     <main className="main-container">
       <h1 className="text-2xl font-bold capitalize">My Account</h1>
       <div className="divide-skin-[#DCD8D2] my-8 flex flex-col divide-y-2 md:flex-row md:divide-y-0 md:divide-x-2">
-        <section className="flex-1 pb-8 md:pr-10 xl:pr-20">
+        <section className="flex-1 pb-8 md:pb-0 md:pr-10 xl:pr-20">
           <h2 className="text-xl font-bold">Login</h2>
           <form action="" className="mt-4">
             <label className="font-sans font-medium">
@@ -40,7 +40,7 @@ export default async function Page() {
             </button>
           </form>
         </section>
-        <section className="flex-1 pt-8 md:pl-10 xl:pl-20">
+        <section className="flex-1 pt-8 md:pt-0 md:pl-10 xl:pl-20">
           <h2 className="text-xl font-bold">Register</h2>
           <form action="" className="mt-4">
             <label className="font-sans font-medium">
