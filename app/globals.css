@@ -76,6 +76,6 @@
     @apply border-amber-500 text-amber-500;
   }
   .error {
-    @apply border-rose-600 text-rose-600;
+    @apply border-rose-600 stroke-rose-600 text-rose-600;
   }
 }
