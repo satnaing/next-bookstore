@@ -67,7 +67,7 @@
   }
 
   .success {
-    @apply border-teal-500 text-teal-500;
+    @apply border-teal-500 stroke-teal-500 text-teal-500;
   }
   .info {
     @apply border-cyan-500 text-cyan-500;
