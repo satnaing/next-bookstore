@@ -125,3 +125,23 @@ function setToast(state: ToastState, toastObj?: ToastObj) {
     toastObj,
   }
 }
+
+// Auth Store
+type AuthState = {
+  token: string
+  setToken: (token: string) => void
+  removeToken: (token: string) => void
+}
+
+export const useAuthStore = create<AuthState>()(
+  persist(
+    set => ({
+      token: "",
+      setToken: token => set({ token }),
+      removeToken: () => set({ token: "" }),
+    }),
+    {
+      name: "bearer",
+    }
+  )
+)

@@ -11,6 +11,7 @@ import Input from "@/common-components/Input"
 import AlertIcon from "@/icons/AlertIcon"
 import SuccessIcon from "@/icons/SuccessIcon"
 import scrollToTop from "@/utils/scrollToTop"
+import { useAuthStore } from "@/lib/store"
 
 type Inputs = {
   fullName: string
@@ -29,6 +30,7 @@ export default function RegisterForm() {
     watch,
     formState: { errors },
   } = useForm<Inputs>()
+  const { setToken } = useAuthStore()
 
   const [errorMsg, setErrorMsg] = React.useState<string | null>(null)
   const [open, setOpen] = React.useState(false)
@@ -57,6 +59,7 @@ export default function RegisterForm() {
       }
     },
     onSuccess: (data, variables, context) => {
+      setToken(data.data.jwt)
       setErrorMsg(null)
       setOpen(true)
     },
