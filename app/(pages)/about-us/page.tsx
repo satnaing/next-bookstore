@@ -12,7 +12,7 @@ export default function Page() {
           className="object-cover brightness-50"
           fill
         />
-        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-2xl font-bold capitalize text-skin-base">
+        <h1 className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 font-serif text-2xl font-bold capitalize text-skin-base">
           About Us
         </h1>
       </div>

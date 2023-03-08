@@ -9,7 +9,7 @@ export default function WishlistTitle() {
 
   const numOfWishlist = wishlist.length > 0 ? `(${wishlist.length})` : ``
   return (
-    <h1 className="text-xl font-bold md:text-2xl">
+    <h1 className="font-serif text-xl font-semibold md:text-2xl">
       My Wishlist {mounted && numOfWishlist}
     </h1>
   )

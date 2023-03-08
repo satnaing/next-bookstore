@@ -125,6 +125,7 @@ const NavBar = () => {
           </NavigationMenu.List>
         </NavigationMenu.Root>
       </header>
+
       <div
         className={`fixed top-0 left-0 z-30 h-screen w-full bg-skin-dark transition-all delay-300 duration-500 md:hidden ${
           openNav ? "opacity-50" : "hidden opacity-0"
@@ -144,9 +145,12 @@ const NavBar = () => {
         >
           <CancelIcon className="scale-125" />
         </button>
-        <div className="flex flex-col items-center">
+        <div className="flex flex-col items-center gap-2">
           <div className="font-serif text-2xl font-medium">Next Book Store</div>
-          <p>One of the best book stores in Myanmar</p>
+          <p className="text-center">
+            One of the best book stores <br />
+            in Myanmar
+          </p>
         </div>
 
         <NavigationMenu.Root
@@ -157,7 +161,7 @@ const NavBar = () => {
             <NavigationMenu.Item className={`flex w-full flex-col`}>
               <Link
                 href="/"
-                className={`flex items-center gap-x-2 py-1 px-2 text-2xl`}
+                className={`flex items-center gap-x-2 py-1 px-2 text-xl`}
               >
                 <span>Home</span>
               </Link>
@@ -166,7 +170,7 @@ const NavBar = () => {
               <Collapsible.Root>
                 <Collapsible.Trigger
                   aria-controls="category-content-mobile"
-                  className="flex h-full w-full items-center justify-between px-2 text-2xl"
+                  className="flex h-full w-full items-center justify-between px-2 text-xl"
                 >
                   Category{" "}
                   <CaretDownIcon
@@ -180,7 +184,7 @@ const NavBar = () => {
                       <NavigationMenu.Link asChild>
                         <Link
                           href="/categories/best-seller"
-                          className="block p-2 underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
+                          className="block p-2 font-serif underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
                         >
                           Best Seller
                         </Link>
@@ -190,7 +194,7 @@ const NavBar = () => {
                       <NavigationMenu.Link asChild>
                         <Link
                           href="/categories/new-arrivals"
-                          className="block p-2 underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
+                          className="block p-2 font-serif underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
                         >
                           New Arrivals
                         </Link>
@@ -231,7 +235,7 @@ const NavBar = () => {
               >
                 <Link
                   href={nav.href}
-                  className={`flex items-center gap-x-2 py-1 px-2 text-2xl`}
+                  className={`flex items-center gap-x-2 py-1 px-2 text-xl`}
                 >
                   <span>{nav.name}</span> {nav.icon}
                 </Link>
@@ -241,7 +245,7 @@ const NavBar = () => {
             <NavigationMenu.Item className={`flex w-full flex-col`}>
               <Link
                 href="/about-us"
-                className={`flex items-center gap-x-2 py-1 px-2 text-2xl`}
+                className={`flex items-center gap-x-2 py-1 px-2 text-xl`}
               >
                 <span>About Us</span>
               </Link>
@@ -250,7 +254,7 @@ const NavBar = () => {
             <NavigationMenu.Item className={`flex w-full flex-col`}>
               <Link
                 href="/contact-us"
-                className={`flex items-center gap-x-2 py-1 px-2 text-2xl`}
+                className={`flex items-center gap-x-2 py-1 px-2 text-xl`}
               >
                 <span>Contact Us</span>
               </Link>
@@ -275,7 +279,7 @@ const LinkItem = ({
 }) => {
   return (
     <Link href={`/categories/${href}`} className="p-2 hover:bg-skin-fill">
-      <div className="font-bold">{title}</div>
+      <div className="font-serif font-medium">{title}</div>
       <p className="font-sans text-sm">{children}</p>
     </Link>
   )

@@ -24,7 +24,7 @@ const BooksSection = ({ categories }: { categories: Category }) => {
       {categoriesArray.map(({ name, slug }) => (
         <section key={slug} className="mx-auto max-w-6xl px-4 py-6 md:px-8">
           <div className="flex items-baseline justify-between">
-            <h2 className="text-2xl font-bold capitalize md:text-2xl">
+            <h2 className="font-serif text-2xl font-medium capitalize md:text-2xl">
               {name}
             </h2>
             <SeeAll href={`/categories/${slug}`} />

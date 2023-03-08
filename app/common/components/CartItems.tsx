@@ -18,7 +18,7 @@ export default function CartItems() {
 
   return (
     <section className="mb-20 lg:mb-auto">
-      <h1 className="text-xl font-bold md:text-2xl">My Cart</h1>
+      <h1 className="font-serif text-xl font-semibold md:text-2xl">My Cart</h1>
       <div className="my-4 lg:grid lg:grid-cols-3 lg:gap-x-6">
         <div className="table-wrapper lg:col-span-2 ">
           <div className="lg:min-h-[20.25rem]">

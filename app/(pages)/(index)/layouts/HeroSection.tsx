@@ -6,7 +6,7 @@ import bookPic from "@/public/open-book.webp"
 const HeroSection = () => {
   return (
     <div className="mx-auto flex max-w-6xl flex-col gap-y-4 px-4 py-6 md:flex-row-reverse md:px-8 lg:pb-24">
-      <div className="image-wrapper p-4 lg:p-0">
+      <div className="image-wrapper flex-1 p-4 lg:p-0">
         <Image
           src={bookPic}
           alt="Open Book"
@@ -14,8 +14,8 @@ const HeroSection = () => {
           className="drop-shadow-xl"
         />
       </div>
-      <div className="info-wrapper flex flex-col gap-y-4 md:justify-center lg:justify-end">
-        <h1 className="font-serif text-4xl font-bold lg:text-5xl xl:text-6xl">
+      <div className="info-wrapper flex flex-1 flex-col gap-y-4 md:justify-center lg:justify-end">
+        <h1 className="font-serif text-4xl font-semibold lg:text-5xl xl:text-6xl">
           Best Place to Find <br /> Your Favourite <br /> Books
         </h1>
 

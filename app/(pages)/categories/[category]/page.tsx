@@ -18,7 +18,9 @@ export default async function Page({ params, searchParams }: Props) {
 
   return (
     <main className="main-container">
-      <h1 className="text-2xl font-bold capitalize">{params.category}</h1>
+      <h1 className="font-serif text-2xl font-semibold capitalize">
+        {params.category}
+      </h1>
       <BooksContainer
         initialData={initialData}
         category={params.category}

@@ -37,7 +37,7 @@ const CartDropdown = () => {
         id="cart-content"
         className="absolute top-14 right-0 bg-skin-base p-4 shadow-lg"
       >
-        <div className="mb-4 text-center font-sans text-base font-bold">
+        <div className="mb-4 text-center font-serif text-base font-semibold">
           My Shopping Cart
         </div>
         <div className="mb-4 max-h-80 overflow-y-auto">

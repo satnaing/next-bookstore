@@ -17,9 +17,7 @@ const CollapsibleMenu = ({ title, mobile = false, menuList }: Props) => {
   return (
     <Collapsible.Root className={`${mobile ? "py-0" : "py-3"}`}>
       <Collapsible.Trigger
-        className={`flex w-full items-center justify-between p-2 text-lg ${
-          mobile ? "font-medium" : "font-bold"
-        } hover:bg-skin-fill`}
+        className={`flex w-full items-center justify-between p-2 font-serif text-lg font-medium hover:bg-skin-fill`}
       >
         {title}
         <PlusIcon className="plus-icon" />
