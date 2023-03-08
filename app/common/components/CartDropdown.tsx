@@ -3,11 +3,11 @@
 import Image from "next/image"
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
+import CartDropdownSkeleton from "@/skeletons/CartDropdownSkeleton"
 import CartIcon from "@/icons/CartIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import { useCartStore } from "@/lib/store"
-import CartDropdownSkeleton from "@/skeletons/CartDropdownSkeleton"
-import useCart from "@/hooks/useCart"
+import { useCart } from "@/hooks"
 
 const CartDropdown = () => {
   const { cart, removeFromCart, updateQuantity } = useCartStore()

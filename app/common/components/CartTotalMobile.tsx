@@ -1,7 +1,7 @@
 "use client"
 
 import CartIcon from "@/icons/CartIcon"
-import useCart from "@/hooks/useCart"
+import { useCart } from "@/hooks"
 
 export default function CartTotalMobile() {
   const { totalPrice } = useCart()

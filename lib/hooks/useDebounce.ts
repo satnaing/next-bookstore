@@ -1,6 +1,6 @@
 import { Dispatch, SetStateAction, useEffect, useState } from "react"
 
-export default function useDebounce<T>(
+export function useDebounce<T>(
   value: T,
   delay: number
 ): [T, Dispatch<SetStateAction<T>>] {

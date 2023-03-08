@@ -1,6 +1,6 @@
 "use client"
 
-import useMounted from "@/hooks/useMounted"
+import { useMounted } from "@/hooks"
 import { useWishlistStore } from "@/lib/store"
 
 export default function WishlistTitle() {

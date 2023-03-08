@@ -2,7 +2,7 @@ import { useQuery } from "@tanstack/react-query"
 import { getBooksByIds } from "@/lib/api"
 import { useCartStore } from "@/lib/store"
 
-const useCart = () => {
+export const useCart = () => {
   // Client Global State
   const { cart } = useCartStore()
 
@@ -62,5 +62,3 @@ const useCart = () => {
 
   return { cartData, totalPrice, totalQuantity, isLoading, isError }
 }
-
-export default useCart

@@ -5,8 +5,8 @@ import Link from "next/link"
 import { useQuery } from "@tanstack/react-query"
 import CancelIcon from "@/icons/CancelIcon"
 import scrollToTop from "@/utils/scrollToTop"
-import useMounted from "@/hooks/useMounted"
 import { getBooksByIds } from "@/lib/api"
+import { useMounted } from "@/hooks"
 import {
   useCartStore,
   useToastStore,

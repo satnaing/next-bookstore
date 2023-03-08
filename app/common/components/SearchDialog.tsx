@@ -6,8 +6,8 @@ import Image from "next/image"
 import * as Dialog from "@radix-ui/react-dialog"
 import { useQuery } from "@tanstack/react-query"
 import SearchIcon from "@/icons/SearchIcon"
-import useDebounce from "@/hooks/useDebounce"
 import { getBooksByTitle } from "@/lib/api"
+import { useDebounce } from "@/hooks"
 import { Book } from "@/types/Book"
 
 const SearchDialog = () => {

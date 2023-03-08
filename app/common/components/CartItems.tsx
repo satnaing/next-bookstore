@@ -3,13 +3,12 @@
 import Link from "next/link"
 import Image from "next/image"
 import Breadcrumb from "@/common-components/Breadcrumb"
+import CartItemSkeleton from "@/skeletons/CartItemSkeleton"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
-import useCart from "@/hooks/useCart"
-import useMounted from "@/hooks/useMounted"
 import { useCartStore } from "@/lib/store"
-import CartItemSkeleton from "@/skeletons/CartItemSkeleton"
+import { useCart, useMounted } from "@/hooks"
 
 export default function CartItems() {
   const { cartData, totalPrice, isLoading } = useCart()

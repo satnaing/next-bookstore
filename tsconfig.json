@@ -9,7 +9,7 @@
       "@/icons/*": ["app/common/icons/*"],
       "@/skeletons/*": ["app/common/skeletons/*"],
       "@/types/*": ["lib/types/*"],
-      "@/hooks/*": ["app/common/hooks/*"],
+      "@/hooks": ["lib/hooks"],
       "@/lib/*": ["lib/*"]
     },
     "target": "es5",
