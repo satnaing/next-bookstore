@@ -1,3 +1,4 @@
+import Breadcrumb from "@/common-components/Breadcrumb"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import Link from "next/link"
 import AddAllToCart from "./components/AddAllToCart"
@@ -8,6 +9,7 @@ export default function Page() {
   return (
     <main className="main-container">
       <section>
+        <Breadcrumb />
         <WishlistTitle />
         <div className="my-4">
           <div className="table-wrapper min-h-[18rem] lg:col-span-2">

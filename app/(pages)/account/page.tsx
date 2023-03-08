@@ -1,9 +1,11 @@
 import LoginForm from "./LoginForm"
 import RegisterForm from "./RegisterForm"
+import Breadcrumb from "@/common-components/Breadcrumb"
 
 export default async function Page() {
   return (
     <main className="main-container">
+      <Breadcrumb />
       <h1 className="font-serif text-2xl font-semibold capitalize">
         My Account
       </h1>

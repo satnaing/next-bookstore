@@ -1,17 +1,49 @@
+"use client"
+
 import Link from "next/link"
+import { usePathname } from "next/navigation"
+
+const breadcrumbList = [
+  { name: "Categories", href: "/categories" },
+  { name: "Classic", href: "/classic" },
+]
 
 const Breadcrumb = () => {
+  const pathName = usePathname()
+  const breadcrumbList = pathName?.split("/").filter(n => n) || []
+
   return (
-    <nav aria-label="Breadcrumb" className="breadcrumb">
-      <ol className="flex gap-x-2">
-        <li className="after:ml-2 after:content-['>']">
-          <Link href="/">Home</Link>
+    <nav aria-label="Breadcrumb" className="breadcrumb mb-2">
+      <ul className="flex gap-x-2 text-skin-dark">
+        <li className="after:ml-2 after:opacity-60 after:content-['>']">
+          <Link href="/" className="opacity-60 hover:opacity-100">
+            Home
+          </Link>
         </li>
-        <li className="after:ml-2 after:content-['>']">
-          <Link href="/categories">Categories</Link>
-        </li>
-        <li aria-current="page">Classic</li>
-      </ol>
+        {breadcrumbList.map((breadcrumb, index) =>
+          index + 1 === breadcrumbList.length ? (
+            <li
+              key={breadcrumb}
+              aria-current="page"
+              className="capitalize opacity-100"
+            >
+              {breadcrumb}
+            </li>
+          ) : (
+            <li
+              key={breadcrumb}
+              className="after:ml-2 after:opacity-60 after:content-['>']"
+            >
+              <Link
+                href={`/${breadcrumb}`}
+                className="capitalize opacity-60 hover:opacity-100"
+              >
+                {breadcrumb}
+              </Link>
+            </li>
+          )
+        )}
+      </ul>
     </nav>
   )
 }

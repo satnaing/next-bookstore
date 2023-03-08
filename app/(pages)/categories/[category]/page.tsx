@@ -1,5 +1,6 @@
 import BooksContainer from "./layouts/BooksContainer"
 import { getBooksByCategory } from "app/api"
+import Breadcrumb from "@/common-components/Breadcrumb"
 
 let mockBooks: number[] = []
 for (let index = 1; index < 21; index++) {
@@ -18,6 +19,7 @@ export default async function Page({ params, searchParams }: Props) {
 
   return (
     <main className="main-container">
+      <Breadcrumb />
       <h1 className="font-serif text-2xl font-semibold capitalize">
         {params.category}
       </h1>

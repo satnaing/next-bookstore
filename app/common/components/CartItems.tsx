@@ -2,6 +2,7 @@
 
 import Link from "next/link"
 import Image from "next/image"
+import Breadcrumb from "@/common-components/Breadcrumb"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
@@ -18,6 +19,7 @@ export default function CartItems() {
 
   return (
     <section className="mb-20 lg:mb-auto">
+      <Breadcrumb />
       <h1 className="font-serif text-xl font-semibold md:text-2xl">My Cart</h1>
       <div className="my-4 lg:grid lg:grid-cols-3 lg:gap-x-6">
         <div className="table-wrapper lg:col-span-2 ">
