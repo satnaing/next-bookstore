@@ -3,11 +3,6 @@
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
-const breadcrumbList = [
-  { name: "Categories", href: "/categories" },
-  { name: "Classic", href: "/classic" },
-]
-
 const Breadcrumb = () => {
   const pathName = usePathname()
   const breadcrumbList = pathName?.split("/").filter(n => n) || []
