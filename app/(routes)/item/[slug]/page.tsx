@@ -1,4 +1,4 @@
-import BookDetails from "./BookDetails"
+import BookDetails from "./layouts/BookDetails"
 
 let mockBooks: number[] = []
 for (let index = 1; index < 21; index++) {

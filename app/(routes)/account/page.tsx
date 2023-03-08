@@ -1,5 +1,5 @@
-import LoginForm from "./LoginForm"
-import RegisterForm from "./RegisterForm"
+import LoginForm from "./layouts/LoginForm"
+import RegisterForm from "./layouts/RegisterForm"
 import Breadcrumb from "@/components/Breadcrumb"
 
 export default async function Page() {
