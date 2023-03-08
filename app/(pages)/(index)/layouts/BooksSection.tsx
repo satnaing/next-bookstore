@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query"
 import BookRow from "@/common-components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import { getFeaturedCategories } from "@/lib/api"
-import { Category } from "@/types/categoryQuery.types"
+import { Category } from "@/types/Category"
 
 const BooksSection = ({ categories }: { categories: Category }) => {
   const { data } = useQuery({

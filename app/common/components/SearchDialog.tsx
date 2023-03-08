@@ -5,10 +5,10 @@ import Link from "next/link"
 import Image from "next/image"
 import * as Dialog from "@radix-ui/react-dialog"
 import { useQuery } from "@tanstack/react-query"
-import useDebounce from "@/hooks/useDebounce"
 import SearchIcon from "@/icons/SearchIcon"
-import { Book } from "@/types/bookQuery.types"
+import useDebounce from "@/hooks/useDebounce"
 import { getBooksByTitle } from "@/lib/api"
+import { Book } from "@/types/Book"
 
 const SearchDialog = () => {
   const [open, setOpen] = useState(false)

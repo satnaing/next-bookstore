@@ -8,7 +8,7 @@
       "@/common-layouts/*": ["app/common/layouts/*"],
       "@/icons/*": ["app/common/icons/*"],
       "@/skeletons/*": ["app/common/skeletons/*"],
-      "@/types/*": ["app/common/types/*"],
+      "@/types/*": ["lib/types/*"],
       "@/hooks/*": ["app/common/hooks/*"],
       "@/lib/*": ["lib/*"]
     },

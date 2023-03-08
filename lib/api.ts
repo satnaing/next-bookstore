@@ -1,6 +1,6 @@
 import qs from "qs"
-import { Book } from "@/types/bookQuery.types"
-import { Category } from "@/types/categoryQuery.types"
+import { Book } from "@/types/Book"
+import { Category } from "@/types/Category"
 
 export async function getBook(slug: string): Promise<Book> {
   const res = await fetch(

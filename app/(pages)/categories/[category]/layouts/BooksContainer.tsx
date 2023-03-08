@@ -6,7 +6,7 @@ import Pagination from "@/common-components/Pagination"
 import CardSkeletons from "@/skeletons/CardSkeletons"
 import scrollToTop from "@/utils/scrollToTop"
 import { getBooksByCategory } from "@/lib/api"
-import { Book } from "@/types/bookQuery.types"
+import { Book } from "@/types/Book"
 
 type Props = {
   initialData: Book
