@@ -2,8 +2,8 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import Breadcrumb from "app/components/Breadcrumb"
-import CartItemSkeleton from "@/skeletons/CartItemSkeleton"
+import Breadcrumb from "@/components/Breadcrumb"
+import CartItemSkeleton from "@/loading-ui/CartItemSkeleton"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
