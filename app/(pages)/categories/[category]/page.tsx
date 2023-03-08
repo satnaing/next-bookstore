@@ -1,5 +1,5 @@
 import BooksContainer from "./layouts/BooksContainer"
-import { getBooksByCategory } from "app/api"
+import { getBooksByCategory } from "@/lib/api"
 import Breadcrumb from "@/common-components/Breadcrumb"
 
 let mockBooks: number[] = []

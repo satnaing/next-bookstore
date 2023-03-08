@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query"
 import ItemCard from "@/common-components/ItemCard"
 import CardSkeletons from "@/skeletons/CardSkeletons"
-import { getBooksBySlug } from "app/api"
+import { getBooksBySlug } from "@/lib/api"
 import { Book } from "@/types/bookQuery.types"
 
 type Props = {

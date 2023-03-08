@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 import CancelIcon from "@/icons/CancelIcon"
 import scrollToTop from "@/utils/scrollToTop"
 import useMounted from "@/hooks/useMounted"
-import { getBooksByIds } from "app/api"
+import { getBooksByIds } from "@/lib/api"
 import {
   useCartStore,
   useToastStore,

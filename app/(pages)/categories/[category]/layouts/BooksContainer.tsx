@@ -5,7 +5,7 @@ import ItemCard from "@/common-components/ItemCard"
 import Pagination from "@/common-components/Pagination"
 import CardSkeletons from "@/skeletons/CardSkeletons"
 import scrollToTop from "@/utils/scrollToTop"
-import { getBooksByCategory } from "app/api"
+import { getBooksByCategory } from "@/lib/api"
 import { Book } from "@/types/bookQuery.types"
 
 type Props = {

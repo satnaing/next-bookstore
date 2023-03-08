@@ -8,7 +8,7 @@ import ReactMarkdown from "react-markdown"
 import SocialGroup from "@/common-components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
 import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
-import { getBook } from "app/api"
+import { getBook } from "@/lib/api"
 import { useCartStore, useToastStore, useWishlistStore } from "@/lib/store"
 
 type Props = {

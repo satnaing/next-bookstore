@@ -8,7 +8,7 @@ import { useQuery } from "@tanstack/react-query"
 import useDebounce from "@/hooks/useDebounce"
 import SearchIcon from "@/icons/SearchIcon"
 import { Book } from "@/types/bookQuery.types"
-import { getBooksByTitle } from "app/api"
+import { getBooksByTitle } from "@/lib/api"
 
 const SearchDialog = () => {
   const [open, setOpen] = useState(false)

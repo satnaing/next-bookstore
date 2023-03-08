@@ -1,7 +1,6 @@
+import qs from "qs"
 import { Book } from "@/types/bookQuery.types"
 import { Category } from "@/types/categoryQuery.types"
-
-const qs = require("qs")
 
 export async function getBook(slug: string): Promise<Book> {
   const res = await fetch(

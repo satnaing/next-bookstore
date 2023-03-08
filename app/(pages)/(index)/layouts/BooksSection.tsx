@@ -4,7 +4,7 @@ import Link from "next/link"
 import { useQuery } from "@tanstack/react-query"
 import BookRow from "@/common-components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
-import { getFeaturedCategories } from "app/api"
+import { getFeaturedCategories } from "@/lib/api"
 import { Category } from "@/types/categoryQuery.types"
 
 const BooksSection = ({ categories }: { categories: Category }) => {

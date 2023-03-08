@@ -1,7 +1,6 @@
 import { useQuery } from "@tanstack/react-query"
-import { getBooksByIds } from "app/api"
-import { useCartStore } from "../../../lib/store"
-import { Book } from "../types/bookQuery.types"
+import { getBooksByIds } from "@/lib/api"
+import { useCartStore } from "@/lib/store"
 
 const useCart = () => {
   // Client Global State
