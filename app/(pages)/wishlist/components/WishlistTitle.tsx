@@ -1,7 +1,7 @@
 "use client"
 
 import { useMounted } from "@/hooks"
-import { useWishlistStore } from "@/lib/store"
+import { useWishlistStore } from "@/store"
 
 export default function WishlistTitle() {
   const mounted = useMounted()

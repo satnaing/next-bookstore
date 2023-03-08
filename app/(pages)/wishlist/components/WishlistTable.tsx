@@ -12,7 +12,7 @@ import {
   useToastStore,
   useWishlistStore,
   WishlistItem,
-} from "@/lib/store"
+} from "@/store"
 
 const fetchBooks = async (wishlistIds: number[]): Promise<WishlistItem[]> => {
   const response = await getBooksByIds(wishlistIds)

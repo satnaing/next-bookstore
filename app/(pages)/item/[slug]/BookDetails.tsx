@@ -9,7 +9,7 @@ import SocialGroup from "@/common-components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
 import BookDetailsSkeleton from "@/skeletons/BookDetailsSkeleton"
 import { getBook } from "@/lib/api"
-import { useCartStore, useToastStore, useWishlistStore } from "@/lib/store"
+import { useCartStore, useToastStore, useWishlistStore } from "@/store"
 
 type Props = {
   slug: string

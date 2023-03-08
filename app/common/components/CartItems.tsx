@@ -7,7 +7,7 @@ import CartItemSkeleton from "@/skeletons/CartItemSkeleton"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
-import { useCartStore } from "@/lib/store"
+import { useCartStore } from "@/store"
 import { useCart, useMounted } from "@/hooks"
 
 export default function CartItems() {

@@ -10,6 +10,7 @@
       "@/skeletons/*": ["app/common/skeletons/*"],
       "@/types/*": ["lib/types/*"],
       "@/hooks": ["lib/hooks"],
+      "@/store": ["lib/store"],
       "@/lib/*": ["lib/*"]
     },
     "target": "es5",

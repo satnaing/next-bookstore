@@ -6,7 +6,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import CartDropdownSkeleton from "@/skeletons/CartDropdownSkeleton"
 import CartIcon from "@/icons/CartIcon"
 import CancelIcon from "@/icons/CancelIcon"
-import { useCartStore } from "@/lib/store"
+import { useCartStore } from "@/store"
 import { useCart } from "@/hooks"
 
 const CartDropdown = () => {

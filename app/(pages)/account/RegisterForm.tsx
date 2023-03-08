@@ -8,7 +8,7 @@ import { SubmitHandler, useForm } from "react-hook-form"
 import Input from "@/common-components/Input"
 import AlertIcon from "@/icons/AlertIcon"
 import scrollToTop from "@/utils/scrollToTop"
-import { useAuthStore } from "@/lib/store"
+import { useAuthStore } from "@/store"
 import AuthAlert from "@/common-components/AuthAlert"
 
 type Inputs = {
