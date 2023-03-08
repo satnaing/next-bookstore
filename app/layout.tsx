@@ -3,7 +3,7 @@ import TopBar from "@/common-layouts/TopBar"
 import NavBar from "@/common-layouts/NavBar"
 import Footer from "@/common-layouts/Footer"
 import Toast from "@/common-layouts/Toast"
-import Providers from "./api/providers"
+import Providers from "./providers"
 import "./globals.css"
 
 const fraunces = Fraunces({
