@@ -1,4 +1,4 @@
-import { defaultStroke } from "app/common/utils/utilFuncs"
+import { defaultStroke } from "@/lib/utils/utilFuncs"
 
 const InstagramIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)

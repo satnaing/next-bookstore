@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import SocialGroup from "@/common-components/SocialGroup"
+import SocialGroup from "app/components/SocialGroup"
 import HeartIcon from "@/icons/HeartIcon"
 
 const Footer = () => {

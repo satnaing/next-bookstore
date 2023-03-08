@@ -1,5 +1,5 @@
 import Image from "next/image"
-import Breadcrumb from "@/common-components/Breadcrumb"
+import Breadcrumb from "@/components/Breadcrumb"
 import aboutBanner from "@/public/about.webp"
 import booksCollection from "@/public/books-collection.webp"
 

@@ -1,8 +1,8 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query"
-import ItemCard from "@/common-components/ItemCard"
-import CardSkeletons from "@/skeletons/CardSkeletons"
+import ItemCard from "@/components/ItemCard"
+import CardSkeletons from "@/loading-ui/CardSkeletons"
 import { getBooksBySlug } from "@/lib/api"
 
 type Props = {

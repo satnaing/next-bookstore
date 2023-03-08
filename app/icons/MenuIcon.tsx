@@ -1,4 +1,4 @@
-import { defaultStroke } from "app/common/utils/utilFuncs"
+import { defaultStroke } from "@/lib/utils/utilFuncs"
 
 const MenuIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)

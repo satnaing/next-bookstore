@@ -1,6 +1,6 @@
 import LoginForm from "./LoginForm"
 import RegisterForm from "./RegisterForm"
-import Breadcrumb from "@/common-components/Breadcrumb"
+import Breadcrumb from "@/components/Breadcrumb"
 
 export default async function Page() {
   return (

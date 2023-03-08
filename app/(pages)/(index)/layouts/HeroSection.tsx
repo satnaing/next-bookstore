@@ -1,6 +1,6 @@
 import Image from "next/image"
-import SearchInput from "@/common-components/SearchInput"
-import SocialGroup from "@/common-components/SocialGroup"
+import SearchInput from "@/components/SearchInput"
+import SocialGroup from "@/components/SocialGroup"
 import bookPic from "@/public/open-book.webp"
 
 const HeroSection = () => {

@@ -1,5 +1,5 @@
-import CartItems from "@/common-components/CartItems"
-import CartTotalMobile from "@/common-components/CartTotalMobile"
+import CartItems from "@/components/CartItems"
+import CartTotalMobile from "@/components/CartTotalMobile"
 
 export default function Page() {
   return (

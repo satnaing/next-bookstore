@@ -1,6 +1,5 @@
-import HeartIcon from "app/common/icons/HeartIcon"
-import SearchIcon from "app/common/icons/SearchIcon"
-import UserIcon from "app/common/icons/UserIcon"
+import HeartIcon from "@/icons/HeartIcon"
+import UserIcon from "@/icons/UserIcon"
 
 type Position = "top" | "top-only" | "main" | "main-mobile"
 

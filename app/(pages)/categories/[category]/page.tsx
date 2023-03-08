@@ -1,6 +1,6 @@
 import BooksContainer from "./layouts/BooksContainer"
 import { getBooksByCategory } from "@/lib/api"
-import Breadcrumb from "@/common-components/Breadcrumb"
+import Breadcrumb from "@/components/Breadcrumb"
 
 let mockBooks: number[] = []
 for (let index = 1; index < 21; index++) {

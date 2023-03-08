@@ -3,7 +3,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
-import CartDropdownSkeleton from "@/skeletons/CartDropdownSkeleton"
+import CartDropdownSkeleton from "@/loading-ui/CartDropdownSkeleton"
 import CartIcon from "@/icons/CartIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import { useCartStore } from "@/store"

@@ -5,11 +5,11 @@ import Error from "next/error"
 import axios, { AxiosError } from "axios"
 import { useMutation } from "@tanstack/react-query"
 import { SubmitHandler, useForm } from "react-hook-form"
-import Input from "@/common-components/Input"
+import AuthAlert from "@/components/AuthAlert"
+import Input from "@/components/Input"
 import AlertIcon from "@/icons/AlertIcon"
 import scrollToTop from "@/utils/scrollToTop"
 import { useAuthStore } from "@/store"
-import AuthAlert from "@/common-components/AuthAlert"
 
 type Inputs = {
   fullName: string

@@ -1,9 +1,9 @@
 "use client"
 
 import { useQuery } from "@tanstack/react-query"
-import ItemCard from "@/common-components/ItemCard"
-import Pagination from "@/common-components/Pagination"
-import CardSkeletons from "@/skeletons/CardSkeletons"
+import ItemCard from "app/components/ItemCard"
+import Pagination from "app/components/Pagination"
+import CardSkeletons from "@/loading-ui/CardSkeletons"
 import scrollToTop from "@/utils/scrollToTop"
 import { getBooksByCategory } from "@/lib/api"
 import { Book } from "@/types/Book"

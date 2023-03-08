@@ -1,6 +1,6 @@
-import { defaultStroke } from "app/common/utils/utilFuncs"
+import { defaultStroke } from "@/lib/utils/utilFuncs"
 
-const CaretDownIcon = ({ className = "" }: { className?: string }) => {
+const UserIcon = ({ className = "" }: { className?: string }) => {
   const stroke = defaultStroke(className)
   return (
     <svg
@@ -10,7 +10,7 @@ const CaretDownIcon = ({ className = "" }: { className?: string }) => {
       xmlns="http://www.w3.org/2000/svg"
     >
       <path
-        d="M6 9l6 6 6-6"
+        d="M5 20v-1a7 7 0 017-7v0a7 7 0 017 7v1M12 12a4 4 0 100-8 4 4 0 000 8z"
         strokeLinecap="round"
         strokeLinejoin="round"
       ></path>
@@ -18,4 +18,4 @@ const CaretDownIcon = ({ className = "" }: { className?: string }) => {
   )
 }
 
-export default CaretDownIcon
+export default UserIcon
