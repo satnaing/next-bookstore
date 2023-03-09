@@ -148,18 +148,20 @@ export default function BookDetails({ slug }: Props) {
           <button
             type="button"
             onClick={handleAddToCart}
-            className="flex w-full items-center justify-center gap-x-4 rounded bg-skin-accent py-2 text-center text-lg font-medium text-skin-base"
+            className="primary-btn-color flex w-full items-center justify-center gap-x-4 rounded py-2 text-center text-lg font-medium"
           >
             Add To Cart
           </button>
           <button
             type="button"
             onClick={handleAddToWishlist}
-            className="flex w-full items-center justify-center gap-x-4 rounded border-2 border-skin-accent bg-skin-base py-2 text-center text-lg font-medium text-skin-accent"
+            className="outline-btn-color flex w-full items-center justify-center gap-x-4 rounded border-2 py-2 text-center text-lg font-medium"
           >
             <HeartIcon
-              className={`stroke-skin-accent stroke-2 ${
-                hasWishlisted ? "fill-skin-accent" : ""
+              className={`stroke-2 ${
+                hasWishlisted
+                  ? "fill-skin-accent-dark stroke-skin-accent-dark"
+                  : ""
               }`}
             />
             {hasWishlisted ? "Wishlisted" : "Add To Wishlist"}

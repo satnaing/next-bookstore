@@ -7,7 +7,7 @@ import CaretDownIcon from "@/icons/CaretDownIcon"
 
 const TopBar = () => {
   return (
-    <div className="hidden bg-skin-card md:block">
+    <div className="hidden bg-skin-dark text-skin-base md:block">
       <NavigationMenu.Root className="max-width padding-x flex justify-between text-sm">
         <NavigationMenu.List className="flex gap-x-2">
           {navLinks
@@ -33,18 +33,18 @@ const TopBar = () => {
               English{" "}
               <CaretDownIcon
                 aria-hidden
-                className="dropdown-caret transition-transform ease-in-out"
+                className="dropdown-caret !stroke-skin-base transition-transform ease-in-out"
               />
             </NavigationMenu.Trigger>
             <NavigationMenu.Content
               id="site-languages"
-              className="absolute top-7 z-30 border bg-skin-base p-1 shadow-lg"
+              className="absolute top-7 z-30 border bg-skin-dark p-1 shadow-lg"
             >
               <ul className="List one">
                 <li>
                   <NavigationMenu.Link asChild>
                     <Link
-                      className="inline-block w-full p-1 hover:bg-skin-card"
+                      className="inline-block w-full p-1 hover:opacity-75"
                       href="#"
                     >
                       English
