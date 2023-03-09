@@ -2,14 +2,14 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/utils/*": ["app/common/utils/*"],
       "@/public/*": ["public/*"],
-      "@/common-components/*": ["app/common/components/*"],
-      "@/common-layouts/*": ["app/common/layouts/*"],
-      "@/icons/*": ["app/common/icons/*"],
-      "@/skeletons/*": ["app/common/skeletons/*"],
-      "@/types/*": ["app/common/types/*"],
-      "@/hooks/*": ["app/common/hooks/*"],
+      "@/components/*": ["app/components/*"],
+      "@/loading-ui/*": ["app/components/loading-ui/*"],
+      "@/icons/*": ["app/icons/*"],
+      "@/utils/*": ["lib/utils/*"],
+      "@/types/*": ["lib/types/*"],
+      "@/hooks": ["lib/hooks"],
+      "@/store": ["lib/store"],
       "@/lib/*": ["lib/*"]
     },
     "target": "es5",

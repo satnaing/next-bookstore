@@ -1,9 +1,9 @@
 import { Fraunces, Quicksand } from "next/font/google"
-import TopBar from "@/common-layouts/TopBar"
-import NavBar from "@/common-layouts/NavBar"
-import Footer from "@/common-layouts/Footer"
-import Toast from "@/common-layouts/Toast"
-import Providers from "./api/providers"
+import TopBar from "@/components/TopBar"
+import NavBar from "@/components/NavBar"
+import Footer from "@/components/Footer"
+import Toast from "@/components/Toast"
+import Providers from "./providers"
 import "./globals.css"
 
 const fraunces = Fraunces({
