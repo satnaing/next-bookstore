@@ -10,7 +10,7 @@ import CaretDownIcon from "@/icons/CaretDownIcon"
 import { useCartStore } from "@/store"
 import { useCart, useMounted } from "@/hooks"
 
-export default function CartItems() {
+export default function CartItemSection() {
   const { cartData, totalPrice, isLoading } = useCart()
   const { cart, removeFromCart, updateQuantity } = useCartStore()
 
