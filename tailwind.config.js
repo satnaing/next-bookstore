@@ -15,11 +15,15 @@ module.exports = {
       },
       colors: {
         skin: {
-          accent: "#F05945",
-          base: "#FFFCF7",
-          card: "#FEF4E1",
+          accent: {
+            DEFAULT: "#BAE8E0",
+            dark: "#53CAB5",
+          },
+          base: "#F9FFFF",
+          card: "#EDF4F4",
           dark: "#363636",
-          fill: "#F7F3E9",
+          fill: "#EEF2F2",
+          gray: "#D1DBD9",
         },
       },
       boxShadow: {
