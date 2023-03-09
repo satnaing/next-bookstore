@@ -74,7 +74,7 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
         <header className="h-10 line-clamp-2">
           <h3 className="text-sm">{title}</h3>
         </header>
-        <div className="price font-medium">
+        <div className="price mb-1 font-medium">
           <span>MMK: </span>
           <span>{price.toLocaleString()}</span>
         </div>
@@ -82,19 +82,21 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
           <button
             type="button"
             onClick={handleAddToCart}
-            className="flex-1 rounded bg-skin-accent px-1 text-sm font-semibold text-white hover:bg-[#F26E5D] active:bg-skin-accent"
+            className="primary-btn-color flex-1 rounded px-1 text-sm font-semibold"
           >
             Add To Cart
           </button>
           <button
             type="button"
-            className="basis-1/4 rounded border border-slate-300 p-1 hover:bg-skin-fill active:bg-skin-base"
+            className="outline-btn-color basis-1/4 rounded p-1"
             title="Add To Wishlist"
             onClick={handleAddToWishlist}
           >
             <HeartIcon
-              className={`!stroke-skin-accent stroke-2 ${
-                hasWished ? "fill-skin-accent" : ""
+              className={`${
+                hasWished
+                  ? "fill-skin-accent-dark !stroke-skin-accent-dark"
+                  : "!stroke-skin-dark"
               }`}
             />
           </button>

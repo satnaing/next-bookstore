@@ -8,7 +8,7 @@ import WishlistTitle from "./components/WishlistTitle"
 export default function Page() {
   return (
     <main className="main-container">
-      <section>
+      <section className="mb-20 lg:mb-auto">
         <Breadcrumb />
         <WishlistTitle />
         <div className="my-4">
@@ -17,7 +17,7 @@ export default function Page() {
             <hr />
             <button
               type="button"
-              className="mt-6 w-full rounded border-2 border-skin-accent py-1 font-sans text-skin-accent shadow hover:bg-skin-fill hover:shadow-md md:hidden lg:hidden"
+              className="outline-btn-color mt-6 w-full rounded border-2 py-1 font-sans shadow hover:shadow-md md:hidden lg:hidden"
             >
               Continue Shopping
             </button>

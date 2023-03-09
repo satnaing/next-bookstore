@@ -116,7 +116,7 @@ export default function LoginForm() {
 
           <button
             type="submit"
-            className="rounded bg-skin-accent py-2 px-8 font-sans font-medium text-skin-base md:py-1 md:px-5"
+            className="primary-btn-color rounded py-2 px-8 font-sans font-medium md:py-1 md:px-5"
           >
             Login
           </button>

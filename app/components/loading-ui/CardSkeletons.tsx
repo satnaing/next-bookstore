@@ -1,15 +1,10 @@
 import Skeleton from "react-loading-skeleton"
+import { generateUniqueArray } from "@/utils/utilFuncs"
 import "react-loading-skeleton/dist/skeleton.css"
 
 const CardSkeletons = ({ num, slug }: { num: number; slug: string }) => {
   // Generate Unique set of numbers array
-  let numbers = new Set()
-  while (numbers.size < num) {
-    let randomNum = Math.floor(Math.random() * (num - 1 + 1)) + 1
-    numbers.add(randomNum)
-  }
-
-  const numOfCards = Array.from(numbers)
+  const numOfCards = generateUniqueArray(num)
 
   return (
     <>

@@ -48,7 +48,7 @@ const NavBar = () => {
 
           <NavigationMenu.List className="flex basis-1/3 gap-x-2 text-xl md:gap-x-4">
             <NavigationMenu.Item
-              className="dropdown-menu hidden after:block after:w-0 after:border after:border-skin-accent 
+              className="dropdown-menu hidden after:block after:w-0 after:border after:border-skin-accent-dark 
               after:opacity-0 after:transition-all after:duration-300 after:ease-out md:list-item"
             >
               <NavigationMenu.Trigger
@@ -95,7 +95,7 @@ const NavBar = () => {
               </NavigationMenu.Content>
             </NavigationMenu.Item>
 
-            <NavigationMenu.Item className="after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100">
+            <NavigationMenu.Item className="after:block after:w-0 after:border after:border-skin-accent-dark after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100">
               <SearchDialog />
             </NavigationMenu.Item>
 
@@ -108,7 +108,7 @@ const NavBar = () => {
                     nav.position === "main"
                       ? "hidden md:list-item"
                       : "list-item"
-                  } after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100`}
+                  } after:block after:w-0 after:border after:border-skin-accent-dark after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100`}
                 >
                   <Link
                     href={nav.href}

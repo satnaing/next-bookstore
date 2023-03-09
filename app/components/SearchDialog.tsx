@@ -65,8 +65,8 @@ const SearchDialog = () => {
                 placeholder="Find your next favourite book"
                 type="text"
                 onChange={e => handleInput(e)}
-                className="block w-full rounded border-2 border-white 
-        border-opacity-40 bg-white py-3 pl-10
+                className="block w-full rounded border-2 border-skin-base 
+        border-opacity-40 bg-skin-base py-3 pl-10
         pr-16 caret-skin-accent placeholder:italic 
         placeholder:text-opacity-75 focus:border-skin-accent focus:outline-none"
               />
@@ -84,7 +84,7 @@ const SearchDialog = () => {
           </div>
           {result && result.data.length < 1 ? (
             <div
-              className={`mt-2 flex h-24 items-center justify-center rounded bg-white p-2`}
+              className={`mt-2 flex h-24 items-center justify-center rounded bg-skin-base p-2`}
             >
               <div>
                 <span className="opacity-80">No results for </span>
@@ -93,7 +93,7 @@ const SearchDialog = () => {
             </div>
           ) : (
             <div
-              className={`mt-2 h-80 rounded bg-white p-2 ${
+              className={`mt-2 h-80 rounded bg-skin-base p-2 ${
                 result ? "block" : "hidden"
               }`}
             >

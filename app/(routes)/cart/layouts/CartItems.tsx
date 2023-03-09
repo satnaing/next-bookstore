@@ -10,7 +10,7 @@ import CaretDownIcon from "@/icons/CaretDownIcon"
 import { useCartStore } from "@/store"
 import { useCart, useMounted } from "@/hooks"
 
-export default function CartItems() {
+export default function CartItemSection() {
   const { cartData, totalPrice, isLoading } = useCart()
   const { cart, removeFromCart, updateQuantity } = useCartStore()
 
@@ -68,7 +68,7 @@ export default function CartItems() {
                       <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-2">
                         <Link
                           href={`/item/${item.slug}`}
-                          className="font-medium italic underline decoration-slate-400 decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid md:!inline md:line-clamp-4"
+                          className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 opacity-80 line-clamp-2 hover:decoration-solid hover:opacity-100 md:!inline md:line-clamp-4"
                         >
                           {item.title}
                         </Link>
@@ -117,7 +117,7 @@ export default function CartItems() {
                           type="button"
                           onClick={() => removeFromCart(item.id)}
                         >
-                          <CancelIcon className="stroke-slate-600 hover:stroke-2" />
+                          <CancelIcon className="stroke-skin-dark hover:stroke-2" />
                         </button>
                       </td>
                     </tr>
@@ -147,7 +147,7 @@ export default function CartItems() {
               id="order-notes"
               name="order-notes"
               rows={4}
-              className="block w-full rounded border-2 border-[#DCD8D2] bg-skin-base py-1 px-2 outline-skin-accent"
+              className="block w-full rounded border-2 border-skin-gray bg-skin-base py-1 px-2 outline-skin-accent"
             ></textarea>
           </div>
           <hr />
@@ -161,7 +161,7 @@ export default function CartItems() {
             <input
               type="text"
               id="coupon-code"
-              className="block w-full rounded border-2 border-[#DCD8D2] bg-skin-base py-1 px-2 outline-skin-accent"
+              className="block w-full rounded border-2 border-skin-gray bg-skin-base py-1 px-2 outline-skin-accent"
             />
             <span className="font-sans text-sm italic opacity-70">
               Coupon code will be applied on the checkout
@@ -170,7 +170,7 @@ export default function CartItems() {
           <hr />
           <button
             type="button"
-            className="my-2 rounded border-2 border-skin-accent py-1 font-sans text-skin-accent shadow hover:bg-skin-fill hover:shadow-md lg:hidden"
+            className="outline-btn-color my-2 rounded border-2 py-1 font-sans shadow hover:shadow-md lg:hidden"
           >
             Continue Shopping
           </button>
@@ -181,9 +181,9 @@ export default function CartItems() {
             </div>
             <button
               type="button"
-              className="flex w-full items-center justify-center gap-x-4 bg-skin-accent py-2 text-center font-medium text-skin-base"
+              className="primary-btn-color group flex w-full items-center justify-center gap-x-4 py-2 text-center font-medium"
             >
-              <CartIcon className="stroke-skin-base stroke-2" />
+              <CartIcon className="stroke-skin-base stroke-2 group-focus-within:stroke-skin-accent" />
               Checkout
             </button>
           </div>

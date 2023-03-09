@@ -21,7 +21,7 @@ export default function AddAllToCart() {
     <button
       type="button"
       onClick={handleAddToCart}
-      className="w-full bg-skin-accent py-2 px-2 font-sans text-lg font-medium text-skin-base hover:bg-[#F26E5D] md:w-auto md:rounded md:py-1"
+      className="primary-btn-color w-full py-2 px-2 font-sans text-lg font-medium md:w-auto md:rounded md:py-1"
     >
       Add All To Cart
     </button>

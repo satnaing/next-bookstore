@@ -1,13 +1,13 @@
-import CartItems from "@/components/CartItems"
-import CartTotalMobile from "@/components/CartTotalMobile"
+import CartItemSection from "app/(routes)/cart/layouts/CartItems"
+import MobileCartTotal from "app/(routes)/cart/layouts/MobileCartTotal"
 
 export default function Page() {
   return (
     <>
       <main className="main-container">
-        <CartItems />
+        <CartItemSection />
       </main>
-      <CartTotalMobile />
+      <MobileCartTotal />
     </>
   )
 }

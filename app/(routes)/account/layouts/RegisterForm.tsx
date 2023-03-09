@@ -187,7 +187,7 @@ export default function RegisterForm() {
               <textarea
                 placeholder="No (27), 11 M, Hledan, Yangon"
                 rows={4}
-                className="my-1 block w-full rounded border-2 border-[#DCD8D2] bg-skin-base py-1 px-2 font-normal outline-skin-accent"
+                className="my-1 block w-full rounded border-2 border-skin-gray bg-skin-base py-1 px-2 font-normal outline-skin-accent"
                 // ref={register("address")}
                 {...register("address", {
                   required: {
@@ -203,7 +203,7 @@ export default function RegisterForm() {
           </div>
           <button
             type="submit"
-            className="mt-4 rounded bg-skin-accent py-2 px-8 font-sans font-medium text-skin-base md:py-1 md:px-5"
+            className="primary-btn-color mt-4 rounded py-2 px-8 font-sans font-medium md:py-1 md:px-5"
           >
             {mutation.isLoading ? "Loading" : "Register"}
           </button>

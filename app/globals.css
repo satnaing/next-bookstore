@@ -8,7 +8,7 @@
   }
   a,
   button {
-    @apply outline-skin-accent;
+    @apply outline-skin-accent-dark;
   }
 
   [data-state="open"] > .dropdown-caret {
@@ -55,7 +55,7 @@
   }
 }
 
-@layer components {
+@layer utilities {
   .padding-x {
     @apply px-4 md:px-8;
   }
@@ -77,5 +77,16 @@
   }
   .error {
     @apply border-rose-600 stroke-rose-600 text-rose-600;
+  }
+}
+
+@layer components {
+  .primary-btn-color {
+    @apply bg-skin-dark text-skin-base 
+    focus-within:bg-opacity-90 focus-within:text-skin-accent 
+    hover:bg-opacity-80 active:bg-opacity-90;
+  }
+  .outline-btn-color {
+    @apply border border-skin-dark text-skin-dark hover:bg-skin-card;
   }
 }

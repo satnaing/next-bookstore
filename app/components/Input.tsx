@@ -23,7 +23,7 @@ const Input = ({
         <input
           type={type}
           placeholder={placeholder}
-          className="my-1 block w-full rounded border-2 border-[#DCD8D2] bg-skin-base py-1 px-2 font-normal outline-skin-accent"
+          className="my-1 block w-full rounded border-2 border-skin-gray bg-skin-base py-1 px-2 font-normal outline-skin-accent"
           {...register}
         />
       </label>

@@ -70,7 +70,7 @@ export default function WishlistTable() {
   return (
     <div
       onLoad={() => scrollToTop()}
-      className="wishlist-table h-[70vh] overflow-y-auto rounded md:h-96"
+      className="wishlist-table overflow-y-auto rounded md:h-96"
     >
       <table className="w-full">
         <thead className="sticky top-0 z-10 hidden bg-skin-fill font-sans font-semibold shadow-sm md:table-header-group">
@@ -136,7 +136,7 @@ export default function WishlistTable() {
                   <button
                     type="button"
                     onClick={() => handleAddToCart(item.id)}
-                    className="rounded border-2 border-skin-accent py-1 px-2 text-sm font-medium text-skin-accent hover:bg-skin-fill"
+                    className="outline-btn-color rounded py-1 px-2 text-sm font-medium"
                   >
                     Add To Cart
                   </button>
