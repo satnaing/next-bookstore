@@ -8,7 +8,7 @@ import WishlistTitle from "./components/WishlistTitle"
 export default function Page() {
   return (
     <main className="main-container">
-      <section>
+      <section className="mb-20 lg:mb-auto">
         <Breadcrumb />
         <WishlistTitle />
         <div className="my-4">
