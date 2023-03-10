@@ -27,7 +27,6 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.43.5",
-    "react-loading-skeleton": "^3.2.0",
     "react-markdown": "^8.0.5",
     "typescript": "4.9.5",
     "zustand": "^4.3.6"
