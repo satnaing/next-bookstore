@@ -10,12 +10,14 @@ import BookDetailsSkeleton from "@/loading-ui/BookDetailsSkeleton"
 import HeartIcon from "@/icons/HeartIcon"
 import { getBook } from "@/lib/api"
 import { useCartStore, useToastStore, useWishlistStore } from "@/store"
+import { Book } from "@/types/Book"
 
 type Props = {
   slug: string
+  initialData: Book
 }
 
-export default function BookDetails({ slug }: Props) {
+export default function BookDetails({ slug, initialData }: Props) {
   // quantity state
   const [quantity, setQuantity] = useState(1)
 
@@ -29,6 +31,7 @@ export default function BookDetails({ slug }: Props) {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["books", "detail", { filters: slug }],
     queryFn: () => getBook(slug),
+    initialData,
   })
 
   if (isLoading) return <BookDetailsSkeleton />

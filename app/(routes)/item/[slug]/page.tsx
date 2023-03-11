@@ -1,3 +1,4 @@
+import { getBook } from "@/lib/api"
 import BookDetails from "./layouts/BookDetails"
 
 let mockBooks: number[] = []
@@ -9,10 +10,12 @@ type Props = {
   params: { slug: string }
 }
 
-export default function Page({ params }: Props) {
+export default async function Page({ params }: Props) {
+  const initialData = await getBook(params.slug)
+
   return (
     <main className="main-container font-sans">
-      <BookDetails slug={params.slug} />
+      <BookDetails slug={params.slug} initialData={initialData} />
     </main>
   )
 }
