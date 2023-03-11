@@ -1,7 +1,13 @@
-const LoadingIcon = ({ mb = false }: { mb?: boolean }) => {
+const LoadingIcon = ({
+  mb = false,
+  className = "w-12 h-12",
+}: {
+  mb?: boolean
+  className?: string
+}) => {
   return (
     <svg
-      className={`${mb ? "mb-4" : "mb-2"} h-12 w-12 animate-spin`}
+      className={`${mb ? "mb-4" : "mb-2"} ${className} animate-spin`}
       viewBox="3 3 18 18"
     >
       <path
