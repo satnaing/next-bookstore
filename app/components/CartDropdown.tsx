@@ -1,5 +1,6 @@
 "use client"
 
+import { MouseEventHandler } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
@@ -77,12 +78,14 @@ const CartDropdown = () => {
                       </div>
                     </div>
                     <div className="col-start-2 row-start-1 w-36">
-                      <Link
-                        href={`/item/${item.slug}`}
-                        className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid"
-                      >
-                        {item.title}
-                      </Link>
+                      <NavigationMenu.Link asChild>
+                        <Link
+                          href={`/item/${item.slug}`}
+                          className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid"
+                        >
+                          {item.title}
+                        </Link>
+                      </NavigationMenu.Link>
                     </div>
                     <div className="col-span-2 col-start-2 row-start-2">
                       <span className="">Price: </span>
@@ -144,18 +147,22 @@ const CartDropdown = () => {
           </span>
         </div>
         <div className="flex justify-between gap-x-2 text-base">
-          <Link
-            href={`/checkout`}
-            className="primary-btn-color w-full rounded-sm py-1 text-center"
-          >
-            Checkout
-          </Link>
-          <Link
-            href={`/cart`}
-            className="outline-btn-color w-full rounded-sm py-1 text-center transition-colors duration-200"
-          >
-            View Cart
-          </Link>
+          <NavigationMenu.Link asChild>
+            <Link
+              href={`/checkout`}
+              className="primary-btn-color w-full rounded-sm py-1 text-center"
+            >
+              Checkout
+            </Link>
+          </NavigationMenu.Link>
+          <NavigationMenu.Link asChild>
+            <Link
+              href={`/cart`}
+              className="outline-btn-color w-full rounded-sm py-1 text-center transition-colors duration-200"
+            >
+              View Cart
+            </Link>
+          </NavigationMenu.Link>
         </div>
       </NavigationMenu.Content>
     </NavigationMenu.Item>

@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react"
 import Link from "next/link"
 import * as Collapsible from "@radix-ui/react-collapsible"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
@@ -11,9 +12,15 @@ type Props = {
     name: string
     href: string
   }[]
+  onClick?: MouseEventHandler<HTMLAnchorElement>
 }
 
-const CollapsibleMenu = ({ title, mobile = false, menuList }: Props) => {
+const CollapsibleMenu = ({
+  title,
+  mobile = false,
+  menuList,
+  onClick,
+}: Props) => {
   return (
     <Collapsible.Root className={`${mobile ? "py-0" : "py-3"}`}>
       <Collapsible.Trigger
@@ -33,6 +40,7 @@ const CollapsibleMenu = ({ title, mobile = false, menuList }: Props) => {
                   className={`underline decoration-dotted hover:decoration-solid ${
                     mobile ? "block p-2 text-base hover:bg-skin-fill" : ""
                   }`}
+                  onClick={onClick}
                 >
                   {menu.name}
                 </Link>

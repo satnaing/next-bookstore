@@ -16,8 +16,8 @@ import navLinks from "@/lib/utils/navLinks"
 const NavBar = () => {
   const [openNav, setOpenNav] = useState(false)
 
-  const handleNavClick = () => {
-    setOpenNav(true)
+  const closeNav = () => {
+    setOpenNav(false)
   }
 
   useEffect(() => {
@@ -32,7 +32,11 @@ const NavBar = () => {
           className=" main-navigation padding-x max-width relative m-auto flex max-w-6xl items-center justify-between py-4"
         >
           <div className="flex basis-1/3 justify-start md:hidden">
-            <button title="menu" className="p-1" onClick={handleNavClick}>
+            <button
+              title="menu"
+              className="p-1"
+              onClick={() => setOpenNav(true)}
+            >
               <MenuIcon />
             </button>
           </div>
@@ -126,11 +130,12 @@ const NavBar = () => {
         </NavigationMenu.Root>
       </header>
 
+      {/* ===== Mobile Navigation ===== */}
       <div
         className={`fixed top-0 left-0 z-30 h-screen w-full bg-skin-dark transition-all delay-300 duration-500 md:hidden ${
           openNav ? "opacity-50" : "hidden opacity-0"
         }`}
-        onClick={() => setOpenNav(false)}
+        onClick={closeNav}
       />
       <div
         className={`fixed top-0 z-30 flex h-screen max-h-screen w-10/12 flex-col items-center overflow-y-scroll bg-skin-base p-4 transition-transform duration-300 md:hidden ${
@@ -141,7 +146,7 @@ const NavBar = () => {
           type="button"
           title="Close Menu"
           className="self-end p-1"
-          onClick={() => setOpenNav(false)}
+          onClick={closeNav}
         >
           <CancelIcon className="scale-125" />
         </button>
@@ -162,6 +167,7 @@ const NavBar = () => {
               <Link
                 href="/"
                 className={`flex items-center gap-x-2 py-1 px-2 text-xl`}
+                onClick={closeNav}
               >
                 <span>Home</span>
               </Link>
@@ -185,6 +191,7 @@ const NavBar = () => {
                         <Link
                           href="/categories/best-seller"
                           className="block p-2 font-serif underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
+                          onClick={closeNav}
                         >
                           Best Seller
                         </Link>
@@ -195,6 +202,7 @@ const NavBar = () => {
                         <Link
                           href="/categories/new-arrivals"
                           className="block p-2 font-serif underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
+                          onClick={closeNav}
                         >
                           New Arrivals
                         </Link>
@@ -205,6 +213,7 @@ const NavBar = () => {
                         title="Mystery & Suspense"
                         mobile
                         menuList={mysteryMenuList}
+                        onClick={closeNav}
                       />
                     </li>
                     <li>
@@ -212,6 +221,7 @@ const NavBar = () => {
                         title="Education & Profession"
                         mobile
                         menuList={educationMenuList}
+                        onClick={closeNav}
                       />
                     </li>
                     <li>
@@ -219,6 +229,7 @@ const NavBar = () => {
                         title="Literature & Fiction"
                         mobile
                         menuList={literatureList}
+                        onClick={closeNav}
                       />
                     </li>
                   </ul>
@@ -232,6 +243,7 @@ const NavBar = () => {
                 className={`flex w-full flex-col ${
                   nav.position === "main" ? "list-item" : "hidden"
                 }`}
+                onClick={closeNav}
               >
                 <Link
                   href={nav.href}
@@ -246,6 +258,7 @@ const NavBar = () => {
               <Link
                 href="/about-us"
                 className={`flex items-center gap-x-2 py-1 px-2 text-xl`}
+                onClick={closeNav}
               >
                 <span>About Us</span>
               </Link>
@@ -255,6 +268,7 @@ const NavBar = () => {
               <Link
                 href="/contact-us"
                 className={`flex items-center gap-x-2 py-1 px-2 text-xl`}
+                onClick={closeNav}
               >
                 <span>Contact Us</span>
               </Link>
@@ -278,10 +292,12 @@ const LinkItem = ({
   children: string
 }) => {
   return (
-    <Link href={`/categories/${href}`} className="p-2 hover:bg-skin-fill">
-      <div className="font-serif font-medium">{title}</div>
-      <p className="font-sans text-sm">{children}</p>
-    </Link>
+    <NavigationMenu.Link asChild>
+      <Link href={`/categories/${href}`} className="p-2 hover:bg-skin-fill">
+        <div className="font-serif font-medium">{title}</div>
+        <p className="font-sans text-sm">{children}</p>
+      </Link>
+    </NavigationMenu.Link>
   )
 }
 
