@@ -17,7 +17,7 @@ const CartDropdown = () => {
 
   return (
     <NavigationMenu.Item
-      className="dropdown-menu cart-dropdown after:block after:w-0 after:border after:border-skin-accent-dark
+      className="dropdown-menu cart-dropdown after:block after:w-0 after:border after:border-skin-accent
               after:opacity-0 after:transition-all after:duration-300 after:ease-out"
     >
       <NavigationMenu.Trigger
@@ -30,7 +30,7 @@ const CartDropdown = () => {
         {totalQuantity > 0 && (
           <span
             aria-label={`Number of items: ${totalQuantity}`}
-            className="bg-skin absolute -right-2 -top-2 inline-block rounded-full bg-skin-accent-dark py-1 px-2 text-xs text-skin-base md:-left-1 md:right-auto md:-top-1"
+            className="bg-skin absolute -right-2 -top-2 inline-block rounded-full bg-skin-accent py-1 px-2 text-xs text-skin-base md:-left-1 md:right-auto md:-top-1"
           >
             {totalQuantity}
           </span>

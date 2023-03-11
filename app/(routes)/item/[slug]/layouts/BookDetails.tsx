@@ -162,9 +162,7 @@ export default function BookDetails({ slug, initialData }: Props) {
           >
             <HeartIcon
               className={`stroke-2 ${
-                hasWishlisted
-                  ? "fill-skin-accent-dark stroke-skin-accent-dark"
-                  : ""
+                hasWishlisted ? "fill-skin-accent stroke-skin-accent" : ""
               }`}
             />
             {hasWishlisted ? "Wishlisted" : "Add To Wishlist"}

@@ -8,7 +8,7 @@
   }
   a,
   button {
-    @apply outline-skin-accent-dark;
+    @apply outline-skin-accent;
   }
 
   [data-state="open"] > .dropdown-caret {

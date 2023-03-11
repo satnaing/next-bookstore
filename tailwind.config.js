@@ -15,10 +15,7 @@ module.exports = {
       },
       colors: {
         skin: {
-          accent: {
-            DEFAULT: "#BAE8E0",
-            dark: "#53CAB5",
-          },
+          accent: "#53CAB5",
           base: "#F9FFFF",
           card: "#EDF4F4",
           dark: "#363636",

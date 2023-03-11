@@ -95,7 +95,7 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
             <HeartIcon
               className={`${
                 hasWished
-                  ? "fill-skin-accent-dark !stroke-skin-accent-dark"
+                  ? "fill-skin-accent !stroke-skin-accent"
                   : "!stroke-skin-dark"
               }`}
             />
