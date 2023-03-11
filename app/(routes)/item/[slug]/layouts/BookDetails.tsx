@@ -11,6 +11,8 @@ import HeartIcon from "@/icons/HeartIcon"
 import { getBook } from "@/lib/api"
 import { useCartStore, useToastStore, useWishlistStore } from "@/store"
 import { Book } from "@/types/Book"
+import { useMounted } from "@/hooks"
+import LoadingIcon from "@/icons/LoadingIcon"
 
 type Props = {
   slug: string
@@ -25,6 +27,8 @@ export default function BookDetails({ slug, initialData }: Props) {
   const { addToCart } = useCartStore()
   const { wishlist, toggleWishlist } = useWishlistStore()
   const { setToast } = useToastStore()
+
+  const mounted = useMounted()
 
   // This useQuery could just as well happen in some deeper child to
   // the "HydratedPosts"-component, data will be available immediately either way
@@ -103,16 +107,15 @@ export default function BookDetails({ slug, initialData }: Props) {
           <div>Categories :</div>
           <div className="md:col-span-2 lg:col-span-3">
             {categories.map((category, index) => (
-              <>
+              <span key={category.slug}>
                 {index > 0 ? ", " : ""}
                 <Link
-                  key={category.slug}
                   href={`/categories/${category.slug}`}
                   className="underline decoration-dashed hover:opacity-75"
                 >
                   {category.name}
                 </Link>
-              </>
+              </span>
             ))}
           </div>
 
@@ -160,12 +163,20 @@ export default function BookDetails({ slug, initialData }: Props) {
             onClick={handleAddToWishlist}
             className="outline-btn-color flex w-full items-center justify-center gap-x-4 rounded border-2 py-2 text-center text-lg font-medium"
           >
-            <HeartIcon
-              className={`stroke-2 ${
-                hasWishlisted ? "fill-skin-accent stroke-skin-accent" : ""
-              }`}
-            />
-            {hasWishlisted ? "Wishlisted" : "Add To Wishlist"}
+            {mounted ? (
+              <>
+                <HeartIcon
+                  className={`stroke-2 ${
+                    hasWishlisted ? "fill-skin-accent stroke-skin-accent" : ""
+                  }`}
+                />
+                {hasWishlisted ? "Wishlisted" : "Add To Wishlist"}
+              </>
+            ) : (
+              <span className="flex gap-x-4">
+                <LoadingIcon className="!mb-0 h-7 w-7" /> Loading ...
+              </span>
+            )}
           </button>
         </div>
 
