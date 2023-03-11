@@ -6,6 +6,7 @@ import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import CartDropdownSkeleton from "@/loading-ui/CartDropdownSkeleton"
 import CartIcon from "@/icons/CartIcon"
 import CancelIcon from "@/icons/CancelIcon"
+import EmptyCartIcon from "@/icons/EmptyCartIcon"
 import { useCartStore } from "@/store"
 import { useCart } from "@/hooks"
 
@@ -46,8 +47,11 @@ const CartDropdown = () => {
         <div className="mb-4 max-h-80 overflow-y-auto">
           {cart.length < 1 ? (
             <div className="flex h-36 items-center justify-center">
-              <div className="mx-3 w-64 text-center text-sm opacity-75">
-                Cart is empty!
+              <div className="mx-3 flex w-64 flex-col items-center">
+                <EmptyCartIcon className="h-12 w-12" />
+                <span className="text-center text-sm opacity-75">
+                  Cart is empty!
+                </span>
               </div>
             </div>
           ) : (

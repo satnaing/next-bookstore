@@ -7,6 +7,8 @@ import CartItemSkeleton from "@/loading-ui/CartItemSkeleton"
 import CancelIcon from "@/icons/CancelIcon"
 import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
+import EmptyCartIcon from "@/icons/EmptyCartIcon"
+import LoadingIcon from "@/icons/LoadingIcon"
 import { useCartStore } from "@/store"
 import { useCart, useMounted } from "@/hooks"
 
@@ -40,9 +42,12 @@ export default function CartItemSection() {
                 {!mounted || cart.length < 1 ? (
                   <tr>
                     <td colSpan={6} className="h-64 w-full text-center">
-                      <span>
-                        {mounted ? "Cart is empty!" : "Cart is loading"}
-                      </span>
+                      <div className="flex flex-col items-center">
+                        {mounted ? <EmptyCartIcon /> : <LoadingIcon />}
+                        <span>
+                          {mounted ? "Cart is empty!" : "Cart is loading..."}
+                        </span>
+                      </div>
                     </td>
                   </tr>
                 ) : isLoading ? (

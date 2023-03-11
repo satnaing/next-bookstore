@@ -4,6 +4,8 @@ import Image from "next/image"
 import Link from "next/link"
 import { useQuery } from "@tanstack/react-query"
 import CancelIcon from "@/icons/CancelIcon"
+import LoadingIcon from "@/icons/LoadingIcon"
+import EmptyBoxIcon from "@/icons/EmptyBoxIcon"
 import scrollToTop from "@/utils/scrollToTop"
 import { getBooksByIds } from "@/lib/api"
 import { useMounted } from "@/hooks"
@@ -90,9 +92,12 @@ export default function WishlistTable() {
           {!mounted || data.length < 1 ? (
             <tr>
               <td colSpan={6} className="h-80 w-full text-center">
-                <span>
-                  {mounted ? "Wishlist is empty!" : "Wishlist is loading"}
-                </span>
+                <div className="flex flex-col items-center">
+                  {mounted ? <EmptyBoxIcon /> : <LoadingIcon mb />}
+                  <span>
+                    {mounted ? "Wishlist is empty!" : "Wishlist is loading..."}
+                  </span>
+                </div>
               </td>
             </tr>
           ) : (
