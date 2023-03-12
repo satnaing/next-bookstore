@@ -111,18 +111,18 @@ export default function WishlistTable() {
                 key={item.id}
                 className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr_1fr] gap-x-2 border-b py-2 font-sans md:table-row"
               >
-                <td className="row-span-4 w-32 pl-2 md:w-20">
+                <td className="row-span-4 w-32 pl-2 md:w-28">
                   <div className="relative h-44 w-full md:h-36">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
                       sizes="(min-width: 640px) 20vw, 50vw"
-                      className="md:py-2"
+                      className="object-contain md:py-2"
                     />
                   </div>
                 </td>
-                <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-2">
+                <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-4">
                   <Link
                     href={`/item/${item.slug}`}
                     className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 opacity-75 line-clamp-2 hover:decoration-solid hover:opacity-100 md:!inline md:line-clamp-4"
