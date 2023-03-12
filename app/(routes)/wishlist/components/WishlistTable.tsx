@@ -6,7 +6,6 @@ import { useQuery } from "@tanstack/react-query"
 import CancelIcon from "@/icons/CancelIcon"
 import LoadingIcon from "@/icons/LoadingIcon"
 import EmptyBoxIcon from "@/icons/EmptyBoxIcon"
-import scrollToTop from "@/utils/scrollToTop"
 import { getBooksByIds } from "@/lib/api"
 import { useMounted } from "@/hooks"
 import {
@@ -16,21 +15,30 @@ import {
   WishlistItem,
 } from "@/store"
 
-const fetchBooks = async (wishlistIds: number[]): Promise<WishlistItem[]> => {
+const fetchBooks = async (wishlistIds: number[], wishlist: WishlistItem[]) => {
   const response = await getBooksByIds(wishlistIds)
   const data = response.data
 
-  const withlist = data.map(item => {
-    const { slug, title, price, image, in_stock } = item.attributes
-    return {
-      id: item.id,
-      slug: slug,
-      image: image.data[0].attributes.url,
-      title: title,
-      price: price,
-      inStock: in_stock,
-    }
+  // Timestamp Mapping
+  const timestampMap = new Map<number, number>()
+  wishlist.forEach(item => {
+    timestampMap.set(item.id, item.timestamp || 1)
   })
+
+  const withlist = data
+    .map(item => {
+      const { slug, title, price, image, in_stock } = item.attributes
+      return {
+        id: item.id,
+        slug: slug,
+        image: image.data[0].attributes.url,
+        title: title,
+        price: price,
+        inStock: in_stock,
+        timestamp: timestampMap.get(item.id) || 1,
+      }
+    })
+    .sort((a, b) => b.timestamp - a.timestamp)
 
   return withlist
 }
@@ -43,13 +51,12 @@ export default function WishlistTable() {
   const wishlistIds = wishlist.map(item => item.id)
   const { data, isLoading, isError } = useQuery({
     queryKey: ["wishlist", { wishlistIds }],
-    queryFn: () => fetchBooks(wishlistIds),
-    initialData: wishlist,
+    queryFn: () => fetchBooks(wishlistIds, wishlist),
+    keepPreviousData: true,
   })
 
   const mounted = useMounted()
 
-  if (isLoading) return null
   if (isError) return null
 
   const handleAddToCart = (id: number) => {
@@ -70,10 +77,7 @@ export default function WishlistTable() {
   }
 
   return (
-    <div
-      onLoad={() => scrollToTop()}
-      className="wishlist-table overflow-y-auto rounded md:h-96"
-    >
+    <div className="wishlist-table overflow-y-auto rounded md:h-96">
       <table className="w-full">
         <thead className="sticky top-0 z-10 hidden bg-skin-fill font-sans font-semibold shadow-sm md:table-header-group">
           <tr>
@@ -89,7 +93,7 @@ export default function WishlistTable() {
         </thead>
 
         <tbody>
-          {!mounted || data.length < 1 ? (
+          {!mounted || wishlist.length < 1 ? (
             <tr>
               <td colSpan={6} className="h-80 w-full text-center">
                 <div className="flex flex-col items-center">
@@ -101,6 +105,7 @@ export default function WishlistTable() {
               </td>
             </tr>
           ) : (
+            !isLoading &&
             data.map(item => (
               <tr
                 key={item.id}

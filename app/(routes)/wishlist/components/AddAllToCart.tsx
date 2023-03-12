@@ -8,9 +8,9 @@ export default function AddAllToCart() {
   const { setToast } = useToastStore()
 
   const handleAddToCart = () => {
-    wishlist.forEach(item => {
-      addToCart({ id: item.id, quantity: 1 })
-      toggleWishlist(item.id, item)
+    wishlist.forEach(({ id }) => {
+      addToCart({ id: id, quantity: 1 })
+      toggleWishlist(id)
     })
     setToast({
       status: "success",

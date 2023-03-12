@@ -44,7 +44,7 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
         hasWished ? "removed from" : "added to"
       } wishlist`,
     })
-    toggleWishlist(id, { id, slug, title, image, price })
+    toggleWishlist(id)
   }
 
   return (
