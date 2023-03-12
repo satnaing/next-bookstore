@@ -1,6 +1,5 @@
 "use client"
 
-import { MouseEventHandler } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
