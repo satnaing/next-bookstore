@@ -5,6 +5,7 @@ import { persist } from "zustand/middleware"
 type CartItem = {
   id: number
   quantity: number
+  timestamp?: number
 }
 
 type CartState = {
@@ -32,7 +33,8 @@ export const useCartStore = create<CartState>()(
 /* ===== Cart Store Util Functions ===== */
 function addCartItem(state: CartItem[], bookObj: CartItem) {
   const cartArray = state.filter(item => item.id !== bookObj.id)
-  return { cart: [...cartArray, bookObj] }
+  const newItem = { ...bookObj, timestamp: Date.now() }
+  return { cart: [...cartArray, newItem] }
 }
 
 function removeCartItem(state: CartItem[], id: number) {

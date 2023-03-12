@@ -26,22 +26,32 @@ export const useCart = () => {
       isError,
     }
 
-  const map = new Map<number, number>()
+  // Quantity Mapping
+  const qtyMap = new Map<number, number>()
   cart.forEach(item => {
-    map.set(item.id, item.quantity)
+    qtyMap.set(item.id, item.quantity)
   })
 
-  const cartData = data.data.map(item => {
-    const { title, slug, price, image } = item.attributes
-    return {
-      id: item.id,
-      title,
-      price,
-      slug,
-      image: image.data[0].attributes.url,
-      quantity: map.get(item.id) || 1,
-    }
+  // Timestamp Mapping
+  const timestampMap = new Map<number, number>()
+  cart.forEach(item => {
+    timestampMap.set(item.id, item.timestamp || 1)
   })
+
+  const cartData = data.data
+    .map(item => {
+      const { title, slug, price, image } = item.attributes
+      return {
+        id: item.id,
+        title,
+        price,
+        slug,
+        image: image.data[0].attributes.url,
+        quantity: qtyMap.get(item.id) || 1,
+        timestamp: timestampMap.get(item.id) || 1,
+      }
+    })
+    .sort((a, b) => b.timestamp - a.timestamp)
 
   let totalPrice = "0"
   let totalQuantity = 0
