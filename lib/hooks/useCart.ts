@@ -11,6 +11,7 @@ export const useCart = () => {
   const { data, isLoading, isError } = useQuery({
     queryKey: ["cart", { cartIds }],
     queryFn: () => getBooksByIds(cartIds),
+    keepPreviousData: true,
   })
 
   if (cart.length < 1)
