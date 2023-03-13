@@ -39,7 +39,7 @@ const CartDropdown = () => {
 
       <NavigationMenu.Content
         id="cart-content"
-        className="absolute top-14 right-0 rounded-sm bg-skin-base p-4 shadow-lg"
+        className="absolute top-14 right-0 rounded-sm border border-skin-fill bg-skin-base p-4 shadow-lg"
       >
         <div className="mb-4 text-center font-serif text-base font-semibold">
           My Shopping Cart

@@ -7,8 +7,8 @@ import CaretDownIcon from "@/icons/CaretDownIcon"
 
 const TopBar = () => {
   return (
-    <div className="hidden bg-skin-dark text-skin-base md:block">
-      <NavigationMenu.Root className="max-width padding-x flex justify-between text-sm">
+    <div className="hidden bg-skin-fill text-skin-dark md:block">
+      <NavigationMenu.Root className="max-width padding-x flex items-center justify-between text-sm">
         <NavigationMenu.List className="flex gap-x-2">
           {navLinks
             .filter(nav => ["top", "top-only"].includes(nav.position))
@@ -16,7 +16,7 @@ const TopBar = () => {
               <NavigationMenu.Item key={nav.name}>
                 <Link
                   href={nav.href}
-                  className="flex items-center gap-x-2 px-1 hover:opacity-75"
+                  className="flex items-center gap-x-2 px-1 opacity-75 hover:opacity-100"
                 >
                   {nav.name}
                 </Link>
@@ -33,18 +33,18 @@ const TopBar = () => {
               English{" "}
               <CaretDownIcon
                 aria-hidden
-                className="dropdown-caret !stroke-skin-base transition-transform ease-in-out"
+                className="dropdown-caret !stroke-skin-dark transition-transform ease-in-out"
               />
             </NavigationMenu.Trigger>
             <NavigationMenu.Content
               id="site-languages"
-              className="absolute top-7 z-30 border bg-skin-dark p-1 shadow-lg"
+              className="absolute top-7 z-30 border bg-skin-fill p-1 shadow-lg"
             >
               <ul className="List one">
                 <li>
                   <NavigationMenu.Link asChild>
                     <Link
-                      className="inline-block w-full p-1 hover:opacity-75"
+                      className="inline-block w-full p-1 hover:bg-skin-gray"
                       href="#"
                     >
                       English

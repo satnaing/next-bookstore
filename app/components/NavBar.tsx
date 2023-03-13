@@ -12,8 +12,12 @@ import SearchDialog from "app/components/SearchDialog"
 import MenuIcon from "@/icons/MenuIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import navLinks from "@/lib/utils/navLinks"
+import useScroll from "@/lib/hooks/useScroll"
 
 const NavBar = () => {
+  const [navClassList, setNavClassList] = useState<string[]>([])
+  const scroll = useScroll()
+
   const [openNav, setOpenNav] = useState(false)
 
   const closeNav = () => {
@@ -24,15 +28,27 @@ const NavBar = () => {
     document.body.style.overflowY = openNav ? "hidden" : "scroll"
   }, [openNav])
 
+  // add shadow to nav (with classList) on scroll
+  useEffect(() => {
+    const _classList = []
+
+    if (scroll.y > 25) _classList.push("!shadow")
+
+    setNavClassList(_classList)
+  }, [scroll.y])
+
   return (
     <>
-      <header className="sticky top-0 z-20 bg-skin-base shadow">
+      <header
+        className={`sticky top-0 z-20 bg-skin-base ${navClassList.join(" ")}`}
+      >
         <NavigationMenu.Root
           aria-label="primary"
           className=" main-navigation padding-x max-width relative m-auto flex max-w-6xl items-center justify-between py-4"
         >
           <div className="flex basis-1/3 justify-start md:hidden">
             <button
+              type="button"
               title="menu"
               className="p-1"
               onClick={() => setOpenNav(true)}
@@ -50,7 +66,7 @@ const NavBar = () => {
             </Link>
           </div>
 
-          <NavigationMenu.List className="flex basis-1/3 gap-x-2 text-xl md:gap-x-4">
+          <NavigationMenu.List className="flex basis-1/3 gap-x-2 text-lg md:gap-x-4">
             <NavigationMenu.Item
               className="dropdown-menu hidden after:block after:w-0 after:border after:border-skin-accent 
               after:opacity-0 after:transition-all after:duration-300 after:ease-out md:list-item"
@@ -68,7 +84,7 @@ const NavBar = () => {
               </NavigationMenu.Trigger>
               <NavigationMenu.Content
                 id="category-content"
-                className="absolute top-14 bg-skin-base p-4 shadow-lg lg:-left-1/2"
+                className="absolute top-14 border border-skin-fill bg-skin-base p-4 shadow-lg lg:-left-1/2"
               >
                 <div className="flex gap-x-4">
                   <div className="flex basis-1/2 flex-col gap-y-4">
