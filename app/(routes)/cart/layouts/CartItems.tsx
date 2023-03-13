@@ -186,7 +186,7 @@ export default function CartItemSection() {
             </div>
             <button
               type="button"
-              className="primary-btn-color group flex w-full items-center justify-center gap-x-4 py-2 text-center font-medium"
+              className="primary-btn-color group flex w-full items-center justify-center gap-x-4 rounded py-2 text-center font-medium"
             >
               <CartIcon className="stroke-skin-base stroke-2 group-focus-within:stroke-skin-accent" />
               Checkout
