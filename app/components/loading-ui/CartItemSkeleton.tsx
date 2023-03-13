@@ -20,7 +20,7 @@ const CartItemSkeleton = () => {
         <button
           type="button"
           title="Reduce Quantity"
-          className={`rounded border bg-skin-card px-3 py-1 text-2xl leading-none`}
+          className={`rounded border bg-skin-muted px-3 py-1 text-2xl leading-none`}
         >
           -
         </button>
@@ -30,7 +30,7 @@ const CartItemSkeleton = () => {
         <button
           type="button"
           title="Reduce Quantity"
-          className="rounded border bg-skin-card px-3 py-1 text-2xl leading-none"
+          className="rounded border bg-skin-muted px-3 py-1 text-2xl leading-none"
         >
           +
         </button>

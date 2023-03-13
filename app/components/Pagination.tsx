@@ -42,7 +42,7 @@ const Pagination = ({ pageCount, currentPage = 1 }: Props) => {
               href={`${slug}`}
               className={`${
                 currentPage === page
-                  ? "rounded-sm border border-skin-dark bg-skin-card"
+                  ? "rounded-sm border border-skin-dark bg-skin-muted"
                   : "border border-skin-base"
               } px-3 py-1`}
             >

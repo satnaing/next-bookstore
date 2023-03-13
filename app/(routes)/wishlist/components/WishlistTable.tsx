@@ -79,7 +79,7 @@ export default function WishlistTable() {
   return (
     <div className="wishlist-table overflow-y-auto rounded md:h-96">
       <table className="w-full">
-        <thead className="sticky top-0 z-10 hidden bg-skin-fill font-sans font-semibold shadow-sm md:table-header-group">
+        <thead className="sticky top-0 z-10 hidden bg-skin-muted font-sans font-semibold shadow-sm md:table-header-group">
           <tr>
             <th colSpan={2} className="py-1">
               Book Title

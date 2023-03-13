@@ -17,9 +17,8 @@ module.exports = {
         skin: {
           accent: { DEFAULT: "#53CAB5", dark: "#3CAF9A" },
           base: "#F9FFFF",
-          card: "#EDF4F4",
+          muted: "#EDF4F4",
           dark: "#363636",
-          fill: "#EEF2F2",
           gray: "#D1DBD9",
         },
       },

@@ -24,7 +24,7 @@ const CollapsibleMenu = ({
   return (
     <Collapsible.Root className={`${mobile ? "py-0" : "py-3"}`}>
       <Collapsible.Trigger
-        className={`flex w-full items-center justify-between p-2 font-serif text-lg font-medium hover:bg-skin-fill`}
+        className={`flex w-full items-center justify-between p-2 font-serif text-lg font-medium hover:bg-skin-muted`}
       >
         {title}
         <PlusIcon className="plus-icon" />
@@ -38,7 +38,7 @@ const CollapsibleMenu = ({
                 <Link
                   href={menu.href}
                   className={`underline decoration-dotted hover:decoration-solid ${
-                    mobile ? "block p-2 text-base hover:bg-skin-fill" : ""
+                    mobile ? "block p-2 text-base hover:bg-skin-muted" : ""
                   }`}
                   onClick={onClick}
                 >

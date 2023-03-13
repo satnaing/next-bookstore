@@ -26,7 +26,7 @@ export default function CartItemSection() {
         <div className="table-wrapper lg:col-span-2 ">
           <div className="lg:min-h-[20.25rem]">
             <table className="w-full">
-              <thead className="hidden bg-skin-fill font-sans font-semibold md:table-header-group">
+              <thead className="hidden bg-skin-muted font-sans font-semibold md:table-header-group">
                 <tr>
                   <th colSpan={2} className="w-[42.5%] py-1">
                     Book Title
@@ -89,9 +89,9 @@ export default function CartItemSection() {
                           type="button"
                           title="Reduce Quantity"
                           onClick={() => updateQuantity(item.id, "decrease")}
-                          className={`rounded border bg-skin-card px-3 py-1 text-2xl leading-none ${
+                          className={`rounded border bg-skin-muted px-3 py-1 text-2xl leading-none ${
                             item.quantity < 2
-                              ? "cursor-not-allowed bg-skin-card opacity-75"
+                              ? "cursor-not-allowed bg-skin-muted opacity-75"
                               : ""
                           }`}
                           tabIndex={item.quantity < 2 ? -1 : 0}
@@ -105,7 +105,7 @@ export default function CartItemSection() {
                           type="button"
                           title="Reduce Quantity"
                           onClick={() => updateQuantity(item.id, "increase")}
-                          className="rounded border bg-skin-card px-3 py-1 text-2xl leading-none"
+                          className="rounded border bg-skin-muted px-3 py-1 text-2xl leading-none"
                         >
                           +
                         </button>

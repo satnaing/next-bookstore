@@ -46,7 +46,7 @@ const BookDetailsSkeleton = () => {
               <button
                 type="button"
                 title="Reduce Quantity"
-                className="rounded border bg-skin-card px-2 text-2xl leading-none md:px-3 md:text-3xl"
+                className="rounded border bg-skin-muted px-2 text-2xl leading-none md:px-3 md:text-3xl"
               >
                 -
               </button>
@@ -54,7 +54,7 @@ const BookDetailsSkeleton = () => {
               <button
                 type="button"
                 title="Reduce Quantity"
-                className="rounded border bg-skin-card px-2 text-2xl leading-none md:px-3 md:text-3xl"
+                className="rounded border bg-skin-muted px-2 text-2xl leading-none md:px-3 md:text-3xl"
               >
                 +
               </button>

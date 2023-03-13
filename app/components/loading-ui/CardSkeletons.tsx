@@ -32,7 +32,7 @@ last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex
               </button>
               <button
                 type="button"
-                className="bg-skin-border-skin-fill basis-1/4 animate-pulse rounded border border-skin-fill p-1"
+                className="bg-skin-border-skin-muted basis-1/4 animate-pulse rounded border border-skin-muted p-1"
                 title="Add To Wishlist"
               >
                 <HeartIcon

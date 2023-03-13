@@ -39,7 +39,7 @@ const CartDropdown = () => {
 
       <NavigationMenu.Content
         id="cart-content"
-        className="absolute top-14 right-0 rounded-sm border border-skin-fill bg-skin-base p-4 shadow-lg"
+        className="absolute top-14 right-0 rounded-sm border border-skin-muted bg-skin-base p-4 shadow-lg"
       >
         <div className="mb-4 text-center font-serif text-base font-semibold">
           My Shopping Cart
@@ -97,9 +97,9 @@ const CartDropdown = () => {
                         type="button"
                         title="Reduce Quantity"
                         onClick={() => updateQuantity(item.id, "decrease")}
-                        className={`rounded-sm border bg-skin-card py-1 px-3 leading-none ${
+                        className={`rounded-sm border bg-skin-muted py-1 px-3 leading-none ${
                           item.quantity < 2
-                            ? "cursor-not-allowed bg-skin-card opacity-75"
+                            ? "cursor-not-allowed bg-skin-muted opacity-75"
                             : ""
                         }`}
                         tabIndex={item.quantity < 2 ? -1 : 0}
@@ -113,7 +113,7 @@ const CartDropdown = () => {
                         type="button"
                         title="Reduce Quantity"
                         onClick={() => updateQuantity(item.id, "increase")}
-                        className="rounded-sm border bg-skin-card py-1 px-3 leading-none"
+                        className="rounded-sm border bg-skin-muted py-1 px-3 leading-none"
                       >
                         +
                       </button>

@@ -15,7 +15,7 @@ const igPhotos = [
 
 const InstagramSection = () => {
   return (
-    <section className="mt-8 flex flex-col items-center gap-y-8 bg-skin-fill px-4 py-12 md:py-14 md:px-8 lg:py-16">
+    <section className="mt-8 flex flex-col items-center gap-y-8 bg-skin-muted px-4 py-12 md:py-14 md:px-8 lg:py-16">
       <h2 className="font-serif text-xl font-bold md:text-3xl lg:text-4xl">
         # Follow Us on Instagram
       </h2>

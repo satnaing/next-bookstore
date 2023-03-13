@@ -84,7 +84,7 @@ const NavBar = () => {
               </NavigationMenu.Trigger>
               <NavigationMenu.Content
                 id="category-content"
-                className="absolute top-14 border border-skin-fill bg-skin-base p-4 shadow-lg lg:-left-1/2"
+                className="absolute top-14 border border-skin-muted bg-skin-base p-4 shadow-lg lg:-left-1/2"
               >
                 <div className="flex gap-x-4">
                   <div className="flex basis-1/2 flex-col gap-y-4">
@@ -206,7 +206,7 @@ const NavBar = () => {
                       <NavigationMenu.Link asChild>
                         <Link
                           href="/categories/best-seller"
-                          className="block p-2 font-serif underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
+                          className="block p-2 font-serif underline decoration-dotted hover:bg-skin-muted hover:decoration-solid"
                           onClick={closeNav}
                         >
                           Best Seller
@@ -217,7 +217,7 @@ const NavBar = () => {
                       <NavigationMenu.Link asChild>
                         <Link
                           href="/categories/new-arrivals"
-                          className="block p-2 font-serif underline decoration-dotted hover:bg-skin-fill hover:decoration-solid"
+                          className="block p-2 font-serif underline decoration-dotted hover:bg-skin-muted hover:decoration-solid"
                           onClick={closeNav}
                         >
                           New Arrivals
@@ -309,7 +309,7 @@ const LinkItem = ({
 }) => {
   return (
     <NavigationMenu.Link asChild>
-      <Link href={`/categories/${href}`} className="p-2 hover:bg-skin-fill">
+      <Link href={`/categories/${href}`} className="p-2 hover:bg-skin-muted">
         <div className="font-serif font-medium">{title}</div>
         <p className="font-sans text-sm">{children}</p>
       </Link>

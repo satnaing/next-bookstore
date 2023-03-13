@@ -105,7 +105,7 @@ const SearchDialog = () => {
                       <Link
                         href={`item/${slug}`}
                         onClick={() => setOpen(false)}
-                        className="mb-1 flex gap-x-4 rounded p-2 hover:bg-skin-fill hover:bg-opacity-50"
+                        className="mb-1 flex gap-x-4 rounded p-2 hover:bg-skin-muted hover:bg-opacity-50"
                       >
                         <div className="relative h-32 w-28 overflow-hidden">
                           <Image

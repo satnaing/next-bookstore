@@ -7,7 +7,7 @@ import CaretDownIcon from "@/icons/CaretDownIcon"
 
 const TopBar = () => {
   return (
-    <div className="hidden bg-skin-fill text-skin-dark md:block">
+    <div className="hidden bg-skin-muted text-skin-dark md:block">
       <NavigationMenu.Root className="max-width padding-x flex items-center justify-between text-sm">
         <NavigationMenu.List className="flex gap-x-2">
           {navLinks
@@ -38,7 +38,7 @@ const TopBar = () => {
             </NavigationMenu.Trigger>
             <NavigationMenu.Content
               id="site-languages"
-              className="absolute top-7 z-30 border bg-skin-fill p-1 shadow-lg"
+              className="absolute top-7 z-30 border bg-skin-muted p-1 shadow-lg"
             >
               <ul className="List one">
                 <li>

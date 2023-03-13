@@ -74,7 +74,7 @@ export default function BookDetails({ slug, initialData }: Props) {
   return (
     <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
       <div
-        className={`image-wrapper mx-auto w-full max-w-[20rem] rounded bg-skin-card p-8 md:w-2/5 md:max-w-none md:self-start md:p-8 lg:p-16`}
+        className={`image-wrapper mx-auto w-full max-w-[20rem] rounded bg-skin-muted p-8 md:w-2/5 md:max-w-none md:self-start md:p-8 lg:p-16`}
       >
         <div className="relative h-72 w-full overflow-hidden transition-transform duration-500 hover:scale-110 md:h-80 xl:h-96">
           <Image
@@ -125,7 +125,7 @@ export default function BookDetails({ slug, initialData }: Props) {
               type="button"
               title="Reduce Quantity"
               onClick={() => setQuantity(prev => prev - (prev > 1 ? 1 : 0))}
-              className="rounded border bg-skin-card px-2 text-2xl leading-none md:px-3 md:text-3xl"
+              className="rounded border bg-skin-muted px-2 text-2xl leading-none md:px-3 md:text-3xl"
             >
               -
             </button>
@@ -134,7 +134,7 @@ export default function BookDetails({ slug, initialData }: Props) {
               type="button"
               title="Reduce Quantity"
               onClick={() => setQuantity(prev => prev + 1)}
-              className="rounded border bg-skin-card px-2 text-2xl leading-none md:px-3 md:text-3xl"
+              className="rounded border bg-skin-muted px-2 text-2xl leading-none md:px-3 md:text-3xl"
             >
               +
             </button>

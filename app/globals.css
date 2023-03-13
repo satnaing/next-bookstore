@@ -87,6 +87,6 @@
     hover:bg-opacity-80 active:bg-opacity-90;
   }
   .outline-btn-color {
-    @apply border border-skin-dark text-skin-dark hover:bg-skin-card;
+    @apply border border-skin-dark text-skin-dark hover:bg-skin-muted;
   }
 }
