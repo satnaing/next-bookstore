@@ -105,7 +105,7 @@ export default function BookDetails({ slug, initialData }: Props) {
                 {index > 0 ? ", " : ""}
                 <Link
                   href={`/categories/${category.slug}`}
-                  className="underline decoration-dashed hover:opacity-75"
+                  className="text-link italic"
                 >
                   {category.name}
                 </Link>

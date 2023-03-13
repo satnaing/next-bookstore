@@ -35,7 +35,7 @@ const Footer = () => {
             <div key={id}>
               <Link
                 href={href}
-                className="inline-block py-1 font-sans underline decoration-dotted hover:decoration-solid"
+                className="text-link inline-block py-1 font-sans"
               >
                 {title}
               </Link>
@@ -49,7 +49,7 @@ const Footer = () => {
             <div key={id}>
               <Link
                 href={href}
-                className="inline-block py-1 font-sans underline decoration-dotted hover:decoration-solid"
+                className="text-link inline-block py-1 font-sans"
               >
                 {title}
               </Link>
@@ -70,7 +70,7 @@ const Footer = () => {
             by{" "}
             <Link
               href="https://satnaing.dev"
-              className="underline decoration-dotted underline-offset-2 hover:decoration-solid"
+              className="underline decoration-dashed underline-offset-2 hover:decoration-solid"
             >
               Sat Naing
             </Link>

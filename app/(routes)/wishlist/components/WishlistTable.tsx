@@ -125,7 +125,7 @@ export default function WishlistTable() {
                 <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-4">
                   <Link
                     href={`/item/${item.slug}`}
-                    className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 opacity-75 line-clamp-2 hover:decoration-solid hover:opacity-100 md:!inline md:line-clamp-4"
+                    className="text-link font-medium italic line-clamp-2 md:!inline md:line-clamp-4"
                   >
                     {item.title}
                   </Link>

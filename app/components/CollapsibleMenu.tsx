@@ -37,7 +37,7 @@ const CollapsibleMenu = ({
               <NavigationMenu.Link asChild>
                 <Link
                   href={menu.href}
-                  className={`underline decoration-dotted hover:decoration-solid ${
+                  className={`text-link ${
                     mobile ? "block p-2 text-base hover:bg-skin-muted" : ""
                   }`}
                   onClick={onClick}

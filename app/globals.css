@@ -89,4 +89,7 @@
   .outline-btn-color {
     @apply border border-skin-dark text-skin-dark hover:bg-skin-muted;
   }
+  .text-link {
+    @apply text-skin-dark underline decoration-dashed decoration-from-font underline-offset-2 opacity-80 hover:decoration-solid hover:opacity-100;
+  }
 }

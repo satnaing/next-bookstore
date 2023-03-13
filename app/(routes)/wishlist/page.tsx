@@ -24,7 +24,7 @@ export default function Page() {
             <div className="fixed bottom-0 left-0 mt-6 w-full items-center justify-between md:static md:flex">
               <Link
                 href="/"
-                className="hidden items-center font-sans underline decoration-dotted underline-offset-4 hover:decoration-solid md:inline-flex"
+                className="text-link hidden items-center font-sans underline-offset-8 md:inline-flex"
               >
                 <CaretDownIcon className="rotate-90 stroke-skin-dark stroke-1" />{" "}
                 Continue Shopping

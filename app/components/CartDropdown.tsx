@@ -65,7 +65,10 @@ const CartDropdown = () => {
                     className="grid grid-cols-[auto_2fr_auto] grid-rows-[2fr_1fr_1fr] gap-x-2 border-b py-2 font-sans text-sm"
                   >
                     <div className="row-span-4 w-24">
-                      <div className="relative h-32 w-full">
+                      <Link
+                        href={`/item/${item.slug}`}
+                        className="relative inline-block h-32 w-full"
+                      >
                         <Image
                           src={item.image}
                           alt={item.title}
@@ -74,13 +77,13 @@ const CartDropdown = () => {
                           sizes="(min-width: 640px) 20vw, 50vw"
                           priority
                         />
-                      </div>
+                      </Link>
                     </div>
                     <div className="col-start-2 row-start-1 w-36">
                       <NavigationMenu.Link asChild>
                         <Link
                           href={`/item/${item.slug}`}
-                          className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 line-clamp-2 hover:decoration-solid"
+                          className="text-link font-medium italic line-clamp-2"
                         >
                           {item.title}
                         </Link>

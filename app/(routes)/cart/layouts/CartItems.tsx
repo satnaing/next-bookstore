@@ -73,7 +73,7 @@ export default function CartItemSection() {
                       <td className="col-start-2 row-start-1 md:max-w-[10rem] md:pl-2">
                         <Link
                           href={`/item/${item.slug}`}
-                          className="font-medium italic underline decoration-skin-dark decoration-dashed underline-offset-2 opacity-80 line-clamp-2 hover:decoration-solid hover:opacity-100 md:!inline md:line-clamp-4"
+                          className="text-link font-medium italic opacity-80 line-clamp-2 md:!inline md:line-clamp-4"
                         >
                           {item.title}
                         </Link>
@@ -134,7 +134,7 @@ export default function CartItemSection() {
           <hr />
           <Link
             href="/"
-            className="mt-4 hidden items-center font-sans underline decoration-dotted underline-offset-4 hover:decoration-solid lg:inline-flex"
+            className="text-link mt-4 hidden items-center font-sans underline-offset-8 lg:inline-flex"
           >
             <CaretDownIcon className="rotate-90 stroke-skin-dark stroke-1" />{" "}
             Continue Shopping
