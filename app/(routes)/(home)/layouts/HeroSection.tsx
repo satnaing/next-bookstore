@@ -19,7 +19,7 @@ const HeroSection = () => {
         <h1 className="font-serif text-4xl font-semibold md:!leading-tight lg:text-5xl xl:text-6xl">
           Best Place to Find <br />
           Your Favourite <br />
-          Books
+          Books.
         </h1>
 
         <p className="font-sans xl:text-lg">
@@ -31,7 +31,7 @@ const HeroSection = () => {
         <div>
           <a
             href="#main"
-            className="inline-block rounded bg-skin-accent-dark py-2 px-4 font-semibold text-skin-base contrast-125 focus-within:bg-skin-accent"
+            className="inline-block rounded bg-skin-accent-dark py-2 px-4 font-semibold text-skin-base contrast-125 focus-within:bg-skin-accent hover:bg-skin-accent"
           >
             Browse
             <DownArrowIcon className="ml-2 animate-bounce !stroke-skin-base stroke-2" />

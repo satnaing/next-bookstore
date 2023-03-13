@@ -19,7 +19,7 @@ const SocialGroup = ({ className = "", placeBottom = false }: Props) => {
       {socialData.map(social => (
         <li key={social.name}>
           <Link
-            className="rounded bg-skin-gray bg-opacity-0 p-3 hover:bg-opacity-30"
+            className="rounded  bg-skin-gray bg-opacity-0 p-2 hover:bg-opacity-30"
             href={social.href}
           >
             {social.icon}
