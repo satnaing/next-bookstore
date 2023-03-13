@@ -12,13 +12,16 @@ type Props = {
 const SocialGroup = ({ className = "", placeBottom = false }: Props) => {
   return (
     <ul
-      className={`${className} my-6 flex justify-center gap-4 ${
+      className={`${className} flex justify-center gap-x-4 py-2 ${
         placeBottom ? "mt-auto mb-0" : ""
       }`}
     >
       {socialData.map(social => (
         <li key={social.name}>
-          <Link className="p-2" href={social.href}>
+          <Link
+            className="rounded bg-skin-gray bg-opacity-0 p-3 hover:bg-opacity-30"
+            href={social.href}
+          >
             {social.icon}
           </Link>
         </li>
@@ -31,22 +34,30 @@ const socialData = [
   {
     name: "Facebook",
     href: "https://fb.com/satnaing.dev",
-    icon: <FacebookIcon className="scale-125" />,
+    icon: (
+      <FacebookIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
+    ),
   },
   {
     name: "Instagram",
     href: "https://ig.com/satnaing.dev",
-    icon: <InstagramIcon className="scale-125" />,
+    icon: (
+      <InstagramIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
+    ),
   },
   {
     name: "Telegram",
     href: "https://telegram.com/satnaing.dev",
-    icon: <TelegramIcon className="scale-125" />,
+    icon: (
+      <TelegramIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
+    ),
   },
   {
     name: "Email",
     href: "mailto:contact@satnaing.dev",
-    icon: <MailIcon className="scale-125" />,
+    icon: (
+      <MailIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
+    ),
   },
 ]
 
