@@ -67,10 +67,7 @@ const NavBar = () => {
           </div>
 
           <NavigationMenu.List className="flex basis-1/3 gap-x-2 text-lg md:gap-x-4">
-            <NavigationMenu.Item
-              className="dropdown-menu hidden after:block after:w-0 after:border after:border-skin-accent 
-              after:opacity-0 after:transition-all after:duration-300 after:ease-out md:list-item"
-            >
+            <NavigationMenu.Item className="nav-menu-dropdown hidden md:list-item">
               <NavigationMenu.Trigger
                 id="learn"
                 className="flex h-full items-center gap-1 outline-8"
@@ -115,7 +112,7 @@ const NavBar = () => {
               </NavigationMenu.Content>
             </NavigationMenu.Item>
 
-            <NavigationMenu.Item className="after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100">
+            <NavigationMenu.Item className="nav-menu">
               <SearchDialog />
             </NavigationMenu.Item>
 
@@ -128,7 +125,7 @@ const NavBar = () => {
                     nav.position === "main"
                       ? "hidden md:list-item"
                       : "list-item"
-                  } after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:delay-200 after:duration-300 after:ease-out after:content-[''] after:hover:w-full after:hover:opacity-100`}
+                  } nav-menu`}
                 >
                   <Link
                     href={nav.href}

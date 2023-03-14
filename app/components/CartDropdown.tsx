@@ -16,10 +16,7 @@ const CartDropdown = () => {
   const { cartData, totalPrice, totalQuantity, isLoading } = useCart()
 
   return (
-    <NavigationMenu.Item
-      className="dropdown-menu cart-dropdown after:block after:w-0 after:border after:border-skin-accent
-              after:opacity-0 after:transition-all after:duration-300 after:ease-out"
-    >
+    <NavigationMenu.Item className="nav-menu-dropdown cart-dropdown">
       <NavigationMenu.Trigger
         id="learn"
         className="relative flex h-full items-center justify-center gap-x-2 px-2"

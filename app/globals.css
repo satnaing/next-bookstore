@@ -14,7 +14,7 @@
   [data-state="open"] > .dropdown-caret {
     @apply -rotate-180;
   }
-  .dropdown-menu:has(> [data-state="open"]) {
+  .nav-menu-dropdown:has(> [data-state="open"]) {
     @apply after:w-full after:opacity-100;
   }
   [data-state="open"] > .plus-icon {
@@ -94,5 +94,11 @@
   }
   .cards-container {
     @apply my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5;
+  }
+  .nav-menu-dropdown {
+    @apply after:block after:w-0 after:border after:border-skin-accent after:opacity-0 after:transition-all after:duration-300 after:ease-out;
+  }
+  .nav-menu {
+    @apply nav-menu-dropdown after:hover:w-full after:hover:opacity-100;
   }
 }
