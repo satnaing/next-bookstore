@@ -14,7 +14,7 @@ export default function CartTotalMobile() {
       </div>
       <button
         type="button"
-        className="flex w-full items-center justify-center gap-x-4 bg-skin-accent py-2 text-center font-medium text-skin-base"
+        className="flex w-full items-center justify-center gap-x-4 bg-skin-accent-dark py-4 text-center font-medium text-skin-base"
       >
         <CartIcon className="stroke-skin-base stroke-2" />
         Checkout
