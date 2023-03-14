@@ -101,3 +101,23 @@ export async function getBooksByTitle(searchTearm: string): Promise<Book> {
 
   return res.json()
 }
+
+export async function getRelatedBooks(
+  author: number,
+  categories: number[]
+): Promise<Book> {
+  const url = `http://localhost:1337/api/book/random?categories=${categories.toString()}&author=${author}`
+
+  console.log(url)
+  const res = await fetch(
+    `http://localhost:1337/api/book/random?categories=${categories.toString()}&author=${author}`
+  )
+
+  // Recommendation: handle errors
+  if (!res.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch books")
+  }
+
+  return res.json()
+}

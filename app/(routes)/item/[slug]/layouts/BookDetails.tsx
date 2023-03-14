@@ -8,11 +8,11 @@ import ReactMarkdown from "react-markdown"
 import SocialGroup from "@/components/SocialGroup"
 import BookDetailsSkeleton from "@/loading-ui/BookDetailsSkeleton"
 import HeartIcon from "@/icons/HeartIcon"
+import LoadingIcon from "@/icons/LoadingIcon"
 import { getBook } from "@/lib/api"
+import { useMounted } from "@/hooks"
 import { useCartStore, useToastStore, useWishlistStore } from "@/store"
 import { Book } from "@/types/Book"
-import { useMounted } from "@/hooks"
-import LoadingIcon from "@/icons/LoadingIcon"
 
 type Props = {
   slug: string
@@ -72,7 +72,7 @@ export default function BookDetails({ slug, initialData }: Props) {
   }
 
   return (
-    <div className="flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
+    <div className="mb-12 flex flex-col gap-6 md:flex-row md:gap-10 lg:gap-16">
       <div
         className={`image-wrapper mx-auto w-full max-w-[20rem] rounded bg-skin-muted p-8 md:w-2/5 md:max-w-none md:self-start md:p-8 lg:p-16`}
       >
