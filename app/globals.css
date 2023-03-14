@@ -92,4 +92,7 @@
   .text-link {
     @apply text-skin-dark underline decoration-dashed decoration-from-font underline-offset-2 opacity-80 hover:decoration-solid hover:opacity-100;
   }
+  .cards-container {
+    @apply my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5;
+  }
 }

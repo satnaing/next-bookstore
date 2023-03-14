@@ -20,7 +20,7 @@ export default function BookRow({ slug }: Props) {
   if (isError) return <div>is Error ...</div>
 
   return (
-    <>
+    <div className="cards-container">
       {data.data.map(({ id, attributes }) => {
         const { slug, price, title, image } = attributes
         return (
@@ -35,6 +35,6 @@ export default function BookRow({ slug }: Props) {
           />
         )
       })}
-    </>
+    </div>
   )
 }

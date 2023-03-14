@@ -1,12 +1,12 @@
 import HeartIcon from "@/icons/HeartIcon"
 import { generateUniqueArray } from "@/utils/utilFuncs"
 
-const CardSkeletons = ({ num, slug }: { num: number; slug: string }) => {
+const CardSkeletons = ({ num, slug }: { num: number; slug?: string }) => {
   // Generate Unique set of numbers array
   const numOfCards = generateUniqueArray(num)
 
   return (
-    <>
+    <div className="cards-container">
       {numOfCards.map(id => (
         <div
           key={`${slug}${id}`}
@@ -43,7 +43,7 @@ last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex
           </div>
         </div>
       ))}
-    </>
+    </div>
   )
 }
 

@@ -29,9 +29,7 @@ const BooksSection = ({ categories }: { categories: Category }) => {
             </h2>
             <SeeAll href={`/categories/${slug}`} />
           </div>
-          <div className="item-wrapper my-4 grid grid-cols-2 gap-x-4 gap-y-6 sm:grid-cols-3 md:grid-cols-4 md:gap-x-6 lg:grid-cols-5">
-            <BookRow key={slug} slug={slug} />
-          </div>
+          <BookRow key={slug} slug={slug} />
           <div className="mt-8 flex items-center justify-center md:hidden">
             <SeeAll href={`/categories/${slug}`} bottom />
           </div>
