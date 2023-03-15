@@ -27,6 +27,10 @@
     @apply flex basis-1/3 justify-end;
   }
 
+  .shipping-options > div:has(button[data-state="checked"]) {
+    @apply outline outline-skin-accent-dark;
+  }
+
   .book-desc p {
     @apply my-2;
   }
