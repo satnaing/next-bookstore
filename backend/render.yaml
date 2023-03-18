@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: strapi
+    env: node
+    plan: starter
+    buildCommand: npm install && npm run build
+    startCommand: rsync -a public/ /data/public/ && npm start
+    healthCheckPath: /_health
+    autoDeploy: false
+    disk:
+      name: strapi-data
+      mountPath: /data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: ~16.14.2
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_FILENAME
+        value: /data/strapi.db
+      - key: JWT_SECRET
+        generateValue: true
+      - key: ADMIN_JWT_SECRET
+        generateValue: true
+      - key: APP_KEYS
+        generateValue: true
