@@ -31,7 +31,10 @@ export default function LoginForm() {
 
   const mutation = useMutation({
     mutationFn: (userData: Inputs) =>
-      axios.post("http://localhost:1337/api/auth/local/", userData),
+      axios.post(
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/local/`,
+        userData
+      ),
     onError: (error: Error | AxiosError) => {
       if (axios.isAxiosError(error)) {
         if (error.code === "ERR_NETWORK") {
