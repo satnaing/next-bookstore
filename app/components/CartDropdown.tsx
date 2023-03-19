@@ -15,6 +15,8 @@ const CartDropdown = () => {
 
   const { cartData, totalPrice, totalQuantity, isLoading } = useCart()
 
+  const isCartEmpty = cart.length < 1
+
   return (
     <NavigationMenu.Item className="nav-menu-dropdown cart-dropdown">
       <NavigationMenu.Trigger
@@ -148,8 +150,11 @@ const CartDropdown = () => {
         <div className="flex justify-between gap-x-2 text-base">
           <NavigationMenu.Link asChild>
             <Link
-              href={`/checkout`}
-              className="primary-btn-color w-full rounded-sm py-1 text-center"
+              href={isCartEmpty ? "#" : "/checkout"}
+              tabIndex={isCartEmpty ? -1 : 0}
+              className={`primary-btn-color w-full rounded-sm py-1 text-center ${
+                isCartEmpty ? "disabled-btn" : ""
+              }`}
             >
               Checkout
             </Link>
