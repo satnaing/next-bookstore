@@ -381,7 +381,7 @@ export default function CheckoutSection() {
 
           <Link
             href={`/cart`}
-            className="outline-btn-color rounded border-2 py-2 font-sans font-semibold shadow hover:shadow-md md:hidden"
+            className="outline-btn-color rounded border-2 py-2 text-center font-sans font-semibold shadow hover:shadow-md md:hidden"
           >
             Return to Cart
           </Link>
