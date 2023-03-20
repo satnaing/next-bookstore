@@ -56,19 +56,19 @@ export const metadata = {
     index: true,
   },
   icons: {
-    icon: "icons/icon.png",
-    shortcut: "icons/favicon.ico",
-    apple: "icons/apple-touch-icon.png",
+    icon: `${process.env.NEXT_PUBLIC_SITE_URL}/icons/icon.png`,
+    shortcut: `${process.env.NEXT_PUBLIC_SITE_URL}/icons/favicon.ico`,
+    apple: `${process.env.NEXT_PUBLIC_SITE_URL}/icons/apple-touch-icon.png`,
     other: [
       {
         rel: "icon",
         sizes: "16x16",
-        url: "icons/favicon-16x16.png",
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/icons/favicon-16x16.png`,
       },
       {
         rel: "icon",
         sizes: "32x32",
-        url: "icons/favicon-32x32.png",
+        url: `${process.env.NEXT_PUBLIC_SITE_URL}/icons/favicon-32x32.png`,
       },
     ],
   },
