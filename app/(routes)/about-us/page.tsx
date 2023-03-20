@@ -3,6 +3,15 @@ import Breadcrumb from "@/components/Breadcrumb"
 import aboutBanner from "@/public/about.webp"
 import booksCollection from "@/public/books-collection.webp"
 
+export const metadata = {
+  title: "About",
+  openGraph: {
+    title: "About",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/about-us`,
+  },
+  twitter: { title: "About" },
+}
+
 export default function Page() {
   return (
     <>

@@ -1,5 +1,5 @@
 import BooksContainer from "./layouts/BooksContainer"
-import { getBooksByCategory } from "@/lib/api"
+import { getBooksByCategory, getCategoryBySlug } from "@/lib/api"
 import Breadcrumb from "@/components/Breadcrumb"
 
 let mockBooks: number[] = []
@@ -10,6 +10,23 @@ for (let index = 1; index < 21; index++) {
 type Props = {
   params: { category: string }
   searchParams: { page: number }
+}
+
+type MetaProps = {
+  params: { category: string }
+}
+
+export async function generateMetadata({ params }: MetaProps) {
+  const bookData = await getCategoryBySlug(params.category)
+  const title = bookData.data[0].attributes.name
+  return {
+    title,
+    openGraph: {
+      title,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/categories/${params.category}`,
+    },
+    twitter: { title },
+  }
 }
 
 export default async function Page({ params, searchParams }: Props) {

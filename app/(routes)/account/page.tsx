@@ -2,6 +2,15 @@ import LoginForm from "./layouts/LoginForm"
 import RegisterForm from "./layouts/RegisterForm"
 import Breadcrumb from "@/components/Breadcrumb"
 
+export const metadata = {
+  title: "Account",
+  openGraph: {
+    title: "Account",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/account`,
+  },
+  twitter: { title: "Account" },
+}
+
 export default async function Page() {
   return (
     <main className="main-container">

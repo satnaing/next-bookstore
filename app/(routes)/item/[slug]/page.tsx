@@ -22,7 +22,7 @@ export default async function Page({ params }: Props) {
   )
 
   return (
-    <main className="main-container font-sans">
+    <>
       <BookDetails slug={params.slug} initialData={initialData} />
       <hr className="border border-skin-dark opacity-5" />
       <RelatedBooks
@@ -30,6 +30,6 @@ export default async function Page({ params }: Props) {
         categories={categoryIds}
         currentBookId={currentBookId}
       />
-    </main>
+    </>
   )
 }

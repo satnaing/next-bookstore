@@ -5,6 +5,15 @@ import AddAllToCart from "./components/AddAllToCart"
 import WishlistTable from "./components/WishlistTable"
 import WishlistTitle from "./components/WishlistTitle"
 
+export const metadata = {
+  title: "Wishlist",
+  openGraph: {
+    title: "Wishlist",
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/wishlist`,
+  },
+  twitter: { title: "Wishlist" },
+}
+
 export default function Page() {
   return (
     <main className="main-container">
