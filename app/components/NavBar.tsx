@@ -69,7 +69,6 @@ const NavBar = () => {
           <NavigationMenu.List className="flex basis-1/3 gap-x-2 text-lg md:gap-x-4">
             <NavigationMenu.Item className="nav-menu-dropdown hidden md:list-item">
               <NavigationMenu.Trigger
-                id="learn"
                 className="flex h-full items-center gap-1 outline-8"
                 aria-controls="category-content"
               >

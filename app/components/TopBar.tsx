@@ -26,7 +26,6 @@ const TopBar = () => {
         <NavigationMenu.List>
           <NavigationMenu.Item>
             <NavigationMenu.Trigger
-              id="learn"
               className="flex h-full items-center gap-1"
               aria-controls="site-languages"
             >

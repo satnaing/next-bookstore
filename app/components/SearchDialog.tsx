@@ -48,6 +48,7 @@ const SearchDialog = () => {
       <Dialog.Trigger asChild>
         <button
           type="button"
+          aria-label="Search"
           className="flex h-full items-center gap-x-2 py-1 pl-1 pr-2"
         >
           <SearchIcon /> <span className="hidden md:inline">Search</span>
