@@ -20,7 +20,6 @@ const CartDropdown = () => {
   return (
     <NavigationMenu.Item className="nav-menu-dropdown cart-dropdown">
       <NavigationMenu.Trigger
-        id="learn"
         aria-label="Cart"
         className="relative flex h-full items-center justify-center gap-x-2 px-2"
         aria-controls="cart-content"
