@@ -31,17 +31,11 @@ const HeroSection = () => {
         <div>
           <a
             href="#main"
-            className="inline-block rounded bg-skin-accent-dark py-2 px-4 font-semibold text-skin-base contrast-125 focus-within:bg-skin-accent hover:bg-skin-accent"
+            className="primary-btn-color inline-block rounded py-2 px-4 font-semibold text-skin-accent outline-offset-2 hover:bg-opacity-80 active:bg-opacity-100"
           >
             Browse
-            <DownArrowIcon className="ml-2 animate-bounce !stroke-skin-base stroke-2" />
+            <DownArrowIcon className="ml-2 animate-bounce !stroke-skin-accent stroke-2" />
           </a>
-          <Link
-            href={`/about-us`}
-            className="ml-4 p-2 font-semibold text-skin-accent-dark hover:text-skin-accent"
-          >
-            Learn More
-          </Link>
         </div>
 
         <SocialGroup className="!justify-start" />
