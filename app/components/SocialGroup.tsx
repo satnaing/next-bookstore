@@ -16,13 +16,14 @@ const SocialGroup = ({ className = "", placeBottom = false }: Props) => {
         placeBottom ? "mt-auto mb-0" : ""
       }`}
     >
-      {socialData.map(social => (
-        <li key={social.name}>
+      {socialData.map(({ id, title, href, icon }) => (
+        <li key={id}>
           <Link
+            href={href}
+            title={title}
             className="rounded  bg-skin-gray bg-opacity-0 p-2 hover:bg-opacity-30"
-            href={social.href}
           >
-            {social.icon}
+            {icon}
           </Link>
         </li>
       ))}
@@ -32,28 +33,32 @@ const SocialGroup = ({ className = "", placeBottom = false }: Props) => {
 
 const socialData = [
   {
-    name: "Facebook",
+    id: 1,
+    title: "Follow NextBookstore on Facebook",
     href: "https://fb.com/satnaing.dev",
     icon: (
       <FacebookIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
     ),
   },
   {
-    name: "Instagram",
+    id: 2,
+    title: "Follow NextBookstore on Instagram",
     href: "https://ig.com/satnaing.dev",
     icon: (
       <InstagramIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
     ),
   },
   {
-    name: "Telegram",
+    id: 3,
+    title: "Join NextBookstore Telegram channel",
     href: "https://telegram.com/satnaing.dev",
     icon: (
       <TelegramIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
     ),
   },
   {
-    name: "Email",
+    id: 4,
+    title: "Send NextBookstore an Email",
     href: "mailto:contact@satnaing.dev",
     icon: (
       <MailIcon className="stroke-skin-dark stroke-2 opacity-80 hover:opacity-100" />
