@@ -1,34 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Next Bookstore (Beta)
 
-## Getting Started
+![Next Bookstore by Sat Naing](next-bookstore.png)
 
-First, run the development server:
+An e-commerce project for an online bookstore developed using NextJS 13 and its experimental `appDir`. Frontend UI is crafted with radix-ui and TailwindCSS. To manage server and client state, TanStack Query and Zustand are used respectively. StrapiCMS serves as the backend for this project.
+
+> I designed the entire UI/UX using Figma and created the database design myself. Additionally, I developed this web application from scratch, handling all aspects of the development process.
+
+## Features
+
+- Responsive Design
+- Search Functionality
+- Add To Cart
+- Add To Wishlist
+- SEO-friendly
+- Accessible
+
+## Features (Coming Soon 👀)
+
+The following are the features and functionalities to be added in the future.
+
+- Order Processing
+- Filtering Items
+- Better Pagination
+- Better Error Handling
+- Better Loading UI with Next 13
+- Accessibility enhancements
+- Security improvements
+- PWA? 🤷🏻‍♂️
+- Testing? 🤷🏻‍♂️
+
+## Technologies Used
+
+- **NextJS 13 with appDir** - _frontend development_
+- **TypeScript** - _type checking_
+- **Radix UI** - _accessible components_
+- **TailwindCSS** - _styling_
+- **Zustand** - _client state_
+- **Tanstack-Query & Axios** - _data fetching and server state_
+- **React-hook-form** - _form management_
+- **Eslint** - _linting_
+- **Figma** - _UI/UX_
+- **StrapiCMS** - _backend_
+- **Vercel & Railway** - _frontend & backend hosting_
+
+## Installation
+
+To run the project locally, follow these steps:
+
+Clone the repository:
+
+```bash
+git clone https://github.com/satnaing/next-bookstore.git
+```
+
+Install dependencies for frontend:
+
+```bash
+cd next-bookstore && npm install
+```
+
+Install dependencies for backend:
+
+```bash
+cd backend && npm install
+```
+
+Start the frontend:
 
 ```bash
 npm run dev
-# or
-yarn dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Start the backend:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+cd backend && npm run develop
+```
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Open your browser and go to <http://localhost:3000>
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Important Note
 
-## Learn More
+I have intentionally committed the `backend/.tmp/data.db` file to the GitHub repository. This is because I did not want to set up a separate database for the project and connect it to my free backend hosting. Please note that this approach is not recommended for production-level applications. In a real-world scenario, I would use a more robust DBMS like PostgreSQL, with proper hosting and security configurations.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contributions are welcome! If you find a bug or want to suggest an improvement, please open an issue or submit a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+This project is licensed under the MIT License. See the LICENSE file for details.

@@ -12,3 +12,4 @@
 !postcss.config.js
 !tailwind.config.js
 !/lib
+!README.md
