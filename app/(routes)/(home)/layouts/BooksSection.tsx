@@ -20,7 +20,7 @@ const BooksSection = ({ categories }: { categories: Category }) => {
   }))
 
   return (
-    <>
+    <div id="books" className="py-14">
       {categoriesArray.map(({ name, slug }) => (
         <section key={slug} className="mx-auto max-w-6xl px-4 py-6 md:px-8">
           <div className="flex items-baseline justify-between">
@@ -35,7 +35,7 @@ const BooksSection = ({ categories }: { categories: Category }) => {
           </div>
         </section>
       ))}
-    </>
+    </div>
   )
 }
 

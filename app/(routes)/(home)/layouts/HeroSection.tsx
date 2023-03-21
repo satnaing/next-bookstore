@@ -6,7 +6,7 @@ import cafeBookPic from "@/public/cafe-book.webp"
 
 const HeroSection = () => {
   return (
-    <div className="mx-auto flex max-w-6xl flex-col gap-y-4 px-4 py-6 md:flex-row-reverse md:gap-x-4 md:px-8 lg:pb-24 lg:pt-16">
+    <div className="mx-auto flex max-w-6xl flex-col gap-y-4 px-4 py-6 md:flex-row-reverse md:gap-x-4 md:px-8 lg:py-14">
       <div className="image-wrapper flex-1 p-4 lg:p-0">
         <Image
           src={cafeBookPic}
@@ -30,11 +30,11 @@ const HeroSection = () => {
 
         <div>
           <a
-            href="#main"
-            className="primary-btn-color inline-block rounded py-2 px-4 font-semibold text-skin-accent outline-offset-2 hover:bg-opacity-80 active:bg-opacity-100"
+            href="#books"
+            className="outline-btn-color inline-block rounded py-2 px-4 text-lg font-semibold"
           >
             Browse
-            <DownArrowIcon className="ml-2 animate-bounce !stroke-skin-accent stroke-2" />
+            <DownArrowIcon className="ml-2 animate-bounce !stroke-skin-dark stroke-2" />
           </a>
         </div>
 
