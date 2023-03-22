@@ -26,7 +26,13 @@ export default function BookRow({ slug }: Props) {
         return (
           <ItemCard
             key={id}
-            className="last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex"
+            className={`${
+              data.data.length >= 5
+                ? "last:hidden sm:last:flex sm:even:hidden md:last:hidden md:even:flex lg:last:flex"
+                : data.data.length === 4
+                ? "sm:last:hidden md:sm:last:flex"
+                : ""
+            }`}
             id={id}
             price={price}
             slug={slug}
