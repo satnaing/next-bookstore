@@ -87,7 +87,7 @@ export interface ImageAttributes {
 }
 
 export interface Formats {
-  small: Small
+  small?: Small
   thumbnail: Small
 }
 

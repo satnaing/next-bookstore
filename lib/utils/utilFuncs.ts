@@ -1,3 +1,5 @@
+import { Image } from "@/types/Book"
+
 export const defaultStroke = (className: string): string =>
   new RegExp("stroke-*", "g").test(className) ? "" : "stroke-2 stroke-skin-dark"
 
@@ -10,3 +12,6 @@ export const generateUniqueArray = (num: number) => {
 
   return Array.from(numbers)
 }
+
+export const getOptimizedImage = (image: Image) =>
+  image.data[0].attributes.formats.small?.url || image.data[0].attributes.url

@@ -6,6 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 import CancelIcon from "@/icons/CancelIcon"
 import LoadingIcon from "@/icons/LoadingIcon"
 import EmptyBoxIcon from "@/icons/EmptyBoxIcon"
+import { getOptimizedImage } from "@/utils/utilFuncs"
 import { getBooksByIds } from "@/lib/api"
 import { useMounted } from "@/hooks"
 import {
@@ -31,7 +32,7 @@ const fetchBooks = async (wishlistIds: number[], wishlist: WishlistItem[]) => {
       return {
         id: item.id,
         slug: slug,
-        image: image.data[0].attributes.formats.small.url,
+        image: getOptimizedImage(image),
         title: title,
         price: price,
         inStock: in_stock,

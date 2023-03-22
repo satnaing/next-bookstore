@@ -3,6 +3,7 @@
 import { useQuery } from "@tanstack/react-query"
 import ItemCard from "@/components/ItemCard"
 import CardSkeletons from "@/loading-ui/CardSkeletons"
+import { getOptimizedImage } from "@/utils/utilFuncs"
 import { getBooksBySlug } from "@/lib/api"
 
 type Props = {
@@ -37,7 +38,7 @@ export default function BookRow({ slug }: Props) {
             price={price}
             slug={slug}
             title={title}
-            image={image.data[0].attributes.formats.small.url}
+            image={getOptimizedImage(image)}
           />
         )
       })}

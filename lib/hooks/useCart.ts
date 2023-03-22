@@ -1,4 +1,5 @@
 import { useQuery } from "@tanstack/react-query"
+import { getOptimizedImage } from "@/utils/utilFuncs"
 import { getBooksByIds } from "@/lib/api"
 import { useCartStore } from "@/store"
 
@@ -46,7 +47,7 @@ export const useCart = () => {
         title,
         price,
         slug,
-        image: image.data[0].attributes.formats.small.url,
+        image: getOptimizedImage(image),
         quantity: qtyMap.get(item.id) || 1,
         timestamp: timestampMap.get(item.id) || 1,
       }

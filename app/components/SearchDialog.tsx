@@ -6,6 +6,7 @@ import Image from "next/image"
 import * as Dialog from "@radix-ui/react-dialog"
 import { useQuery } from "@tanstack/react-query"
 import SearchIcon from "@/icons/SearchIcon"
+import { getOptimizedImage } from "@/utils/utilFuncs"
 import { getBooksByTitle } from "@/lib/api"
 import { useDebounce } from "@/hooks"
 import { Book } from "@/types/Book"
@@ -110,7 +111,7 @@ const SearchDialog = () => {
                       >
                         <div className="relative h-32 w-28 overflow-hidden">
                           <Image
-                            src={image.data[0].attributes.formats.small.url}
+                            src={getOptimizedImage(image)}
                             alt={title}
                             fill
                             sizes="

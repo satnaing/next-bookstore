@@ -6,6 +6,7 @@ import Pagination from "app/components/Pagination"
 import CardSkeletons from "@/loading-ui/CardSkeletons"
 import scrollToTop from "@/utils/scrollToTop"
 import { getBooksByCategory } from "@/lib/api"
+import { getOptimizedImage } from "@/utils/utilFuncs"
 import { Book } from "@/types/Book"
 
 type Props = {
@@ -39,6 +40,7 @@ export default function BooksContainer({
       <div className="cards-container">
         {data.data.map(({ id, attributes }) => {
           const { slug, price, title, image } = attributes
+
           return (
             <ItemCard
               key={id}
@@ -47,7 +49,7 @@ export default function BooksContainer({
               price={price}
               slug={slug}
               title={title}
-              image={image.data[0].attributes.formats.small.url}
+              image={getOptimizedImage(image)}
             />
           )
         })}
