@@ -46,7 +46,7 @@ export const useCart = () => {
         title,
         price,
         slug,
-        image: image.data[0].attributes.url,
+        image: image.data[0].attributes.formats.small.url,
         quantity: qtyMap.get(item.id) || 1,
         timestamp: timestampMap.get(item.id) || 1,
       }

@@ -47,7 +47,7 @@ export default function BooksContainer({
               price={price}
               slug={slug}
               title={title}
-              image={image.data[0].attributes.url}
+              image={image.data[0].attributes.formats.small.url}
             />
           )
         })}

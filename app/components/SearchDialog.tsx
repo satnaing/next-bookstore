@@ -110,7 +110,7 @@ const SearchDialog = () => {
                       >
                         <div className="relative h-32 w-28 overflow-hidden">
                           <Image
-                            src={image.data[0].attributes.url}
+                            src={image.data[0].attributes.formats.small.url}
                             alt={title}
                             fill
                             sizes="

@@ -31,7 +31,7 @@ const fetchBooks = async (wishlistIds: number[], wishlist: WishlistItem[]) => {
       return {
         id: item.id,
         slug: slug,
-        image: image.data[0].attributes.url,
+        image: image.data[0].attributes.formats.small.url,
         title: title,
         price: price,
         inStock: in_stock,
