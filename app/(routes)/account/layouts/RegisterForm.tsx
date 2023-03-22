@@ -44,12 +44,9 @@ export default function RegisterForm() {
         if (error.code === "ERR_NETWORK") {
           setErrorMsg("Network error occurs.")
         } else if (error.code === "ERR_BAD_REQUEST") {
-          setErrorMsg(
-            error.response?.data.error.message.replace(
-              "This attribute",
-              "Phone"
-            )
-          )
+          console.log(error)
+          const errMsg = (error?.response?.data as any).error?.message || ""
+          setErrorMsg(errMsg.replace("This attribute", "Phone"))
         } else {
           setErrorMsg("An error occurs.")
         }
