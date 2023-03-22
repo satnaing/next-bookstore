@@ -4,6 +4,7 @@ import Image from "next/image"
 import Link from "next/link"
 import * as NavigationMenu from "@radix-ui/react-navigation-menu"
 import CartDropdownSkeleton from "@/loading-ui/CartDropdownSkeleton"
+import CheckoutButton from "./CheckoutButton"
 import CartIcon from "@/icons/CartIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import EmptyCartIcon from "@/icons/EmptyCartIcon"
@@ -14,8 +15,6 @@ const CartDropdown = () => {
   const { cart, removeFromCart, updateQuantity } = useCartStore()
 
   const { cartData, totalPrice, totalQuantity, isLoading } = useCart()
-
-  const isCartEmpty = cart.length < 1
 
   return (
     <NavigationMenu.Item className="nav-menu-dropdown cart-dropdown">
@@ -149,15 +148,10 @@ const CartDropdown = () => {
         </div>
         <div className="flex justify-between gap-x-2 text-base">
           <NavigationMenu.Link asChild>
-            <Link
-              href={isCartEmpty ? "#" : "/checkout"}
-              tabIndex={isCartEmpty ? -1 : 0}
-              className={`primary-btn-color w-full rounded-sm py-1 text-center ${
-                isCartEmpty ? "disabled-btn" : ""
-              }`}
-            >
-              Checkout
-            </Link>
+            <CheckoutButton
+              className="rounded-sm"
+              isDisabled={cart.length < 1}
+            />
           </NavigationMenu.Link>
           <NavigationMenu.Link asChild>
             <Link

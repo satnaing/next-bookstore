@@ -4,8 +4,8 @@ import Link from "next/link"
 import Image from "next/image"
 import Breadcrumb from "@/components/Breadcrumb"
 import CartItemSkeleton from "@/loading-ui/CartItemSkeleton"
+import CheckoutButton from "@/components/CheckoutButton"
 import CancelIcon from "@/icons/CancelIcon"
-import CartIcon from "@/icons/CartIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import EmptyCartIcon from "@/icons/EmptyCartIcon"
 import LoadingIcon from "@/icons/LoadingIcon"
@@ -184,13 +184,11 @@ export default function CartItemSection() {
               <span className="text-base">Total Price :</span>
               <span className="font-semibold">{totalPrice} Ks</span>
             </div>
-            <button
-              type="button"
-              className="primary-btn-color group flex w-full items-center justify-center gap-x-4 rounded py-2 text-center font-medium"
-            >
-              <CartIcon className="stroke-skin-base stroke-2 group-focus-within:stroke-skin-accent" />
-              Checkout
-            </button>
+            <CheckoutButton
+              includeIcon
+              className="rounded py-2 font-medium"
+              isDisabled={cart.length < 1}
+            />
           </div>
         </div>
       </div>
