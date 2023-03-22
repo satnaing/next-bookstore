@@ -41,6 +41,7 @@ The following are the features and functionalities to be added in the future.
 - **Eslint** - _linting_
 - **Figma** - _UI/UX_
 - **StrapiCMS** - _backend_
+- **Cloudinary** - _image hosting_
 - **Vercel & Railway** - _frontend & backend hosting_
 
 ## Installation 🔮
