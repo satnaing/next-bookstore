@@ -136,11 +136,6 @@ export async function getRelatedBooks(
   author: number,
   categories: number[]
 ): Promise<Book> {
-  const url = `${
-    process.env.NEXT_PUBLIC_BACKEND_URL
-  }/api/book/random?categories=${categories.toString()}&author=${author}`
-
-  console.log(url)
   const res = await fetch(
     `${
       process.env.NEXT_PUBLIC_BACKEND_URL
