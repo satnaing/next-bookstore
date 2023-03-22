@@ -6,7 +6,7 @@ An e-commerce project for an online bookstore developed using NextJS 13 and its 
 
 > I designed the entire UI/UX using Figma and created the database design myself. Additionally, I developed this web application from scratch, handling all aspects of the development process.
 
-## Features
+## Features 🔥
 
 - Responsive Design
 - Search Functionality
@@ -15,7 +15,7 @@ An e-commerce project for an online bookstore developed using NextJS 13 and its 
 - SEO-friendly
 - Accessible
 
-## Features (Coming Soon 👀)
+## Features (Coming Soon 👀) 🚧
 
 The following are the features and functionalities to be added in the future.
 
@@ -29,7 +29,7 @@ The following are the features and functionalities to be added in the future.
 - PWA? 🤷🏻‍♂️
 - Testing? 🤷🏻‍♂️
 
-## Technologies Used
+## Technologies Used 👨🏻‍💻
 
 - **NextJS 13 with appDir** - _frontend development_
 - **TypeScript** - _type checking_
@@ -43,7 +43,7 @@ The following are the features and functionalities to be added in the future.
 - **StrapiCMS** - _backend_
 - **Vercel & Railway** - _frontend & backend hosting_
 
-## Installation
+## Installation 🔮
 
 To run the project locally, follow these steps:
 
@@ -65,7 +65,7 @@ Install dependencies for backend:
 cd backend && npm install
 ```
 
-Start the frontend:
+Start the frontend: (at the root /)
 
 ```bash
 npm run dev
@@ -79,14 +79,20 @@ cd backend && npm run develop
 
 Open your browser and go to <http://localhost:3000>
 
-## Important Note
+## Important Note ⚠️
 
 I have intentionally committed the `backend/.tmp/data.db` file to the GitHub repository. This is because I did not want to set up a separate database for the project and connect it to my free backend hosting. Please note that this approach is not recommended for production-level applications. In a real-world scenario, I would use a more robust DBMS like PostgreSQL, with proper hosting and security configurations.
 
-## Contributing
+## Photo Credits 📸
+
+- Hero section image: [Photo by Evgeny Tchebotarev from Pexels](https://www.pexels.com/photo/the-world-atlas-of-coffee-book-2187601/)
+- About Page background: [Photo by Min An from Pexels](https://www.pexels.com/photo/pile-of-assorted-novel-books-694740/)
+- About Page other image: [Photo by Marta Dzedyshko from Pexels](https://www.pexels.com/photo/assorted-title-books-collection-2067569/)
+
+## Contributing ✨
 
 Contributions are welcome! If you find a bug or want to suggest an improvement, please open an issue or submit a pull request.
 
-## License
+## License 📜
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
