@@ -5,10 +5,10 @@ export interface Book {
 
 export interface BookDatum {
   id: number
-  attributes: PurpleAttributes
+  attributes: BookAttributes
 }
 
-export interface PurpleAttributes {
+export interface BookAttributes {
   title: string
   description: string
   price: number
@@ -45,10 +45,10 @@ export interface Categories {
 
 export interface CategoriesDatum {
   id: number
-  attributes: FluffyAttributes
+  attributes: CategoryAttributes
 }
 
-export interface FluffyAttributes {
+export interface CategoryAttributes {
   name: string
   description: null
   createdAt: Date
@@ -64,10 +64,10 @@ export interface Image {
 
 export interface ImageDatum {
   id: number
-  attributes: TentacledAttributes
+  attributes: ImageAttributes
 }
 
-export interface TentacledAttributes {
+export interface ImageAttributes {
   name: string
   alternativeText: null
   caption: null
