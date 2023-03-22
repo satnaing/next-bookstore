@@ -8,15 +8,12 @@ import HeartIcon from "@/icons/HeartIcon"
 const Footer = () => {
   const pathname = usePathname()
 
-  // hide Footer on /cart and /wishlist on mobile
-  const hideOnMobile = ["/cart", "/wishlist"].includes(pathname || "")
+  // hide Footer on /cart and /wishlist on mobile/tablet
+  const hideOnMobile = pathname === "/cart" ? "hidden lg:block" : ""
+  const hideOnTablet = pathname === "/wishlist" ? "hidden md:block" : ""
 
   return (
-    <footer
-      className={`mt-auto shadow-inner ${
-        hideOnMobile ? "hidden md:block" : ""
-      }`}
-    >
+    <footer className={`mt-auto shadow-inner ${hideOnMobile} ${hideOnTablet}`}>
       <div className="footer-container mx-auto grid max-w-6xl grid-cols-2 gap-6 px-4 py-10 md:grid-cols-4 md:grid-rows-4 md:gap-x-6 md:gap-y-0 md:px-8 lg:gap-x-8 lg:gap-y-2">
         <div className="bookstore-desc col-span-2 md:row-span-3">
           <h2 className="my-2 font-serif text-xl font-semibold">
