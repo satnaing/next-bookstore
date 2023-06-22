@@ -14,7 +14,7 @@ import {
   useToastStore,
   useWishlistStore,
   WishlistItem,
-} from "@/store"
+} from "@/store/client"
 
 const fetchBooks = async (wishlistIds: number[], wishlist: WishlistItem[]) => {
   const response = await getBooksByIds(wishlistIds)

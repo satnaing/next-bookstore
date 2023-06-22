@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react"
 import * as RadixToast from "@radix-ui/react-toast"
-import { useToastStore } from "@/store"
+import { useToastStore } from "@/store/client"
 import CancelIcon from "@/icons/CancelIcon"
 
 const Toast = () => {

@@ -11,7 +11,7 @@ import HeartIcon from "@/icons/HeartIcon"
 import LoadingIcon from "@/icons/LoadingIcon"
 import { getBook } from "@/lib/api"
 import { useMounted } from "@/hooks"
-import { useCartStore, useToastStore, useWishlistStore } from "@/store"
+import { useCartStore, useToastStore, useWishlistStore } from "@/store/client"
 import { Book } from "@/types/Book"
 
 type Props = {

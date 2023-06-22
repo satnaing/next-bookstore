@@ -8,7 +8,7 @@ import CheckoutButton from "./CheckoutButton"
 import CartIcon from "@/icons/CartIcon"
 import CancelIcon from "@/icons/CancelIcon"
 import EmptyCartIcon from "@/icons/EmptyCartIcon"
-import { useCartStore } from "@/store"
+import { useCartStore } from "@/store/client"
 import { useCart } from "@/hooks"
 
 const CartDropdown = () => {

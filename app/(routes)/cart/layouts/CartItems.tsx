@@ -9,7 +9,7 @@ import CancelIcon from "@/icons/CancelIcon"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import EmptyCartIcon from "@/icons/EmptyCartIcon"
 import LoadingIcon from "@/icons/LoadingIcon"
-import { useCartStore } from "@/store"
+import { useCartStore } from "@/store/client"
 import { useCart, useMounted } from "@/hooks"
 
 export default function CartItemSection() {

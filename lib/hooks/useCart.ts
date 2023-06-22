@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { getOptimizedImage } from "@/utils/utilFuncs"
 import { getBooksByIds } from "@/lib/api"
-import { useCartStore } from "@/store"
+import { useCartStore } from "@/store/client"
 
 export const useCart = () => {
   // Client Global State

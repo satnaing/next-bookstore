@@ -1,6 +1,6 @@
 "use client"
 
-import { useCartStore, useToastStore, useWishlistStore } from "@/store"
+import { useCartStore, useToastStore, useWishlistStore } from "@/store/client"
 
 export default function AddAllToCart() {
   const { wishlist, toggleWishlist } = useWishlistStore()

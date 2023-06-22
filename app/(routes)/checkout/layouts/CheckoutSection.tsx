@@ -10,7 +10,7 @@ import LoadingOverlay from "@/components/loading-ui/LoadingOverlay"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import AlertIcon from "@/icons/AlertIcon"
 import { useCart, useMounted } from "@/hooks"
-import { useCartStore } from "@/store"
+import { useCartStore } from "@/store/client"
 
 type Inputs = {
   fullName: string

@@ -9,7 +9,7 @@ import Input from "@/components/Input"
 import AuthAlert from "@/components/AuthAlert"
 import AlertIcon from "@/icons/AlertIcon"
 import scrollToTop from "@/utils/scrollToTop"
-import { useAuthStore } from "@/store"
+import { useAuthStore } from "@/store/client"
 
 type Inputs = {
   identifier: string

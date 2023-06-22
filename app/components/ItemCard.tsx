@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import HeartIcon from "@/icons/HeartIcon"
-import { useCartStore, useToastStore, useWishlistStore } from "@/store"
+import { useCartStore, useToastStore, useWishlistStore } from "@/store/client"
 
 type Props = {
   className?: string
