@@ -8,14 +8,14 @@ import "./globals.css"
 
 const fraunces = Fraunces({
   variable: "--font-fraunces",
+  subsets: ["latin"],
   display: "swap",
-  preload: false, // quick fix for font not loading when build
 })
 
 const quicksand = Quicksand({
   variable: "--font-quicksand",
+  subsets: ["latin"],
   display: "swap",
-  preload: false, // https://github.com/vercel/next.js/pull/44594
 })
 
 export const metadata = {
