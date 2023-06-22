@@ -29,7 +29,6 @@
     "zustand": "^4.3.8"
   },
   "devDependencies": {
-    "@tailwindcss/line-clamp": "^0.4.4",
     "@types/node": "20.3.1",
     "@types/qs": "^6.9.7",
     "@types/react": "18.2.13",
