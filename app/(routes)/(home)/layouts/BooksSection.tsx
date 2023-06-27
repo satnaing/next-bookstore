@@ -1,27 +1,17 @@
 "use client"
 
 import Link from "next/link"
-import { useQuery } from "@tanstack/react-query"
 import BookRow from "@/components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
-import { getFeaturedCategories } from "@/lib/api"
 import { Category } from "@/types/Category"
+import { useCategories } from "@/store/server/categories/queries"
 
 const BooksSection = ({ categories }: { categories: Category }) => {
-  const { data } = useQuery({
-    queryKey: ["categories", { filters: true }],
-    queryFn: getFeaturedCategories,
-    initialData: categories,
-  })
-
-  const categoriesArray = data.data.map(({ attributes }) => ({
-    name: attributes.name,
-    slug: attributes.slug,
-  }))
+  const { data } = useCategories({ categories, featured: true })
 
   return (
     <div id="books" className="py-14">
-      {categoriesArray.map(({ name, slug }) => (
+      {data.map(({ name, slug }) => (
         <section key={slug} className="mx-auto max-w-6xl px-4 py-6 md:px-8">
           <div className="flex items-baseline justify-between">
             <h2 className="font-serif text-2xl font-medium capitalize md:text-2xl">

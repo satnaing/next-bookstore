@@ -14,7 +14,7 @@ interface CategoriesSectionProps {
 export default function CategoriesSection({
   categories,
 }: CategoriesSectionProps) {
-  const { data } = useCategories(categories)
+  const { data } = useCategories({ categories })
 
   return (
     <>
