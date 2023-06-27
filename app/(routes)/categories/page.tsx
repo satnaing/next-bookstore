@@ -3,12 +3,12 @@ import { getCategories } from "@/store/server/categories/queries"
 import CategoriesSection from "./CategoriesSection"
 
 export default async function Home() {
-  const initialData = await getCategories()
+  const categories = await getCategories()
 
   return (
     <main className="main-container">
       <Breadcrumb />
-      <CategoriesSection categories={initialData} />
+      <CategoriesSection categories={categories} />
     </main>
   )
 }

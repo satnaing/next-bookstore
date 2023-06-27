@@ -2,7 +2,9 @@ import axios from "@/lib/api/axios"
 import { useQuery } from "@tanstack/react-query"
 import { Categories } from "./types"
 
-export const getCategories = async (featured: boolean): Promise<Categories> => {
+export const getCategories = async (
+  featured?: boolean
+): Promise<Categories> => {
   const params = featured
     ? "?filters[featured][$eq]=true&sort=featured_order"
     : ""
