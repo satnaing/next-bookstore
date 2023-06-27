@@ -1,6 +1,5 @@
-import { Book, BookQueryProps, Books } from "./types"
+import { BookQueryProps, Books } from "./types"
 import axios from "@/lib/api/axios"
-import { GetResponse } from "@/types/api"
 import { generateBookQuery } from "@/utils/utilFuncs"
 import { useQuery } from "@tanstack/react-query"
 
