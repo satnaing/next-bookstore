@@ -1,28 +1,25 @@
 "use client"
 
 import Link from "next/link"
-import { useQuery } from "@tanstack/react-query"
 import BookRow from "@/components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
-import { getAllCategories } from "@/lib/api"
-import { Category } from "@/types/Category"
+import { useCategories } from "@/store/server/categories/queries"
+import { Category } from "@/store/server/categories/types"
+import { GetResponse } from "@/types/api"
 
-const CategoriesSection = ({ categories }: { categories: Category }) => {
-  const { data } = useQuery({
-    queryKey: ["categories"],
-    queryFn: getAllCategories,
-    initialData: categories,
-  })
+interface CategoriesSectionProps {
+  categories: GetResponse<Category[]>
+}
 
-  const categoriesArray = data.data.map(({ attributes }) => ({
-    name: attributes.name,
-    slug: attributes.slug,
-  }))
+export default function CategoriesSection({
+  categories,
+}: CategoriesSectionProps) {
+  const { data } = useCategories(categories)
 
   return (
     <>
-      {categoriesArray.length > 0 &&
-        categoriesArray.map(({ name, slug }) => (
+      {data.length > 0 &&
+        data.map(({ name, slug }) => (
           <section key={slug} className="pb-6">
             <div className="flex items-baseline justify-between">
               <h2 className="font-serif text-2xl font-medium capitalize md:text-2xl">
@@ -56,5 +53,3 @@ const SeeAll = ({ href, bottom = false }: SeeAllType) => (
     <CaretDownIcon className="-rotate-90 scale-75" />
   </Link>
 )
-
-export default CategoriesSection
