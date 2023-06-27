@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import HeartIcon from "@/icons/HeartIcon"
 import { useCartStore, useToastStore, useWishlistStore } from "@/store/client"
+import { useMounted } from "@/hooks"
 
 type Props = {
   className?: string
@@ -46,6 +47,8 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
     })
     toggleWishlist(id)
   }
+
+  const mounted = useMounted()
 
   return (
     <article
@@ -94,7 +97,7 @@ const ItemCard = ({ className = "", id, title, price, slug, image }: Props) => {
           >
             <HeartIcon
               className={`${
-                hasWished
+                mounted && hasWished
                   ? "fill-skin-accent !stroke-skin-accent"
                   : "!stroke-skin-dark"
               }`}

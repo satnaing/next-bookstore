@@ -4,15 +4,17 @@ import Link from "next/link"
 import BookRow from "@/components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
 import { useCategories } from "@/store/server/categories/queries"
-import { Category } from "@/store/server/categories/types"
-import { GetResponse } from "@/types/api"
+import { Categories } from "@/store/server/categories/types"
+import { Books } from "@/store/server/books/types"
 
 interface CategoriesSectionProps {
-  categories: GetResponse<Category[]>
+  categories: Categories
+  books: Record<string, Books>
 }
 
 export default function CategoriesSection({
   categories,
+  books,
 }: CategoriesSectionProps) {
   const { data } = useCategories({ categories })
 
@@ -27,7 +29,7 @@ export default function CategoriesSection({
               </h2>
               <SeeAll href={`/categories/${slug}`} />
             </div>
-            <BookRow key={slug} slug={slug} />
+            <BookRow key={slug} slug={slug} books={books} />
             <div className="mt-8 flex items-center justify-center md:hidden">
               <SeeAll href={`/categories/${slug}`} bottom />
             </div>

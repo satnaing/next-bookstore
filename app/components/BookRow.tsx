@@ -1,28 +1,27 @@
 "use client"
 
-import { useQuery } from "@tanstack/react-query"
 import ItemCard from "@/components/ItemCard"
 import CardSkeletons from "@/loading-ui/CardSkeletons"
 import { getOptimizedImage } from "@/utils/utilFuncs"
-import { getBooksBySlug } from "@/lib/api"
+import { Books } from "@/store/server/books/types"
+import { useBooks } from "@/store/server/books/queries"
 
 type Props = {
   slug: string
+  books: Record<string, Books>
 }
 
-export default function BookRow({ slug }: Props) {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["books", { filters: { category: slug }, limit: 5 }],
-    queryFn: () => getBooksBySlug(slug, 5),
+export default function BookRow({ slug, books }: Props) {
+  const { data, isError, isLoading } = useBooks({
+    initialData: books[slug],
+    filter: { slug, limit: 5 },
   })
 
-  if (isLoading) return <CardSkeletons num={5} slug={slug} />
-
-  if (isError) return <div>is Error ...</div>
+  if (isLoading || isError) return <CardSkeletons num={5} slug={slug} />
 
   return (
     <div className="cards-container">
-      {data.data.map(({ id, attributes }) => {
+      {data?.data.map(({ id, attributes }) => {
         const { slug, price, title, image } = attributes
         return (
           <ItemCard

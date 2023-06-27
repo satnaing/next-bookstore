@@ -3,10 +3,17 @@
 import Link from "next/link"
 import BookRow from "@/components/BookRow"
 import CaretDownIcon from "@/icons/CaretDownIcon"
-import { Category } from "@/types/Category"
 import { useCategories } from "@/store/server/categories/queries"
+import { Books } from "@/store/server/books/types"
+import { Categories } from "@/store/server/categories/types"
 
-const BooksSection = ({ categories }: { categories: Category }) => {
+const BooksSection = ({
+  categories,
+  books,
+}: {
+  categories: Categories
+  books: Record<string, Books>
+}) => {
   const { data } = useCategories({ categories, featured: true })
 
   return (
@@ -19,7 +26,7 @@ const BooksSection = ({ categories }: { categories: Category }) => {
             </h2>
             <SeeAll href={`/categories/${slug}`} />
           </div>
-          <BookRow key={slug} slug={slug} />
+          <BookRow key={slug} slug={slug} books={books} />
           <div className="mt-8 flex items-center justify-center md:hidden">
             <SeeAll href={`/categories/${slug}`} bottom />
           </div>
