@@ -1,11 +1,8 @@
 import axios from "@/lib/api/axios"
 import { useQuery } from "@tanstack/react-query"
-import { Category } from "./types"
-import { GetResponse } from "@/types/api"
+import { Categories } from "./types"
 
-export const getCategories = async (
-  featured: boolean
-): Promise<GetResponse<Category[]>> => {
+export const getCategories = async (featured: boolean): Promise<Categories> => {
   const params = featured
     ? "?filters[featured][$eq]=true&sort=featured_order"
     : ""
@@ -17,7 +14,7 @@ export const useCategories = ({
   categories,
   featured = false,
 }: {
-  categories: GetResponse<Category[]>
+  categories: Categories
   featured?: boolean
 }) =>
   useQuery({
