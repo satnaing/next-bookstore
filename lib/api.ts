@@ -2,48 +2,6 @@ import qs from "qs"
 import { Book } from "@/types/Book"
 import { Category } from "@/types/Category"
 
-export async function getBook(slug: string): Promise<Book> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/books?filters[slug][$eq]]=${slug}&populate=*`
-  )
-
-  // Recommendation: handle errors
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch books")
-  }
-
-  return res.json()
-}
-
-export async function getFeaturedCategories(): Promise<Category> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/categories?filters[featured][$eq]=true&sort=featured_order`
-  )
-
-  // Recommendation: handle errors
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch categories")
-  }
-
-  return res.json()
-}
-
-export async function getBooksBySlug(slug: string, limit = 25): Promise<Book> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/books?filters[categories][slug][$eq]]=${slug}&populate=*&pagination[limit]=${limit}`
-  )
-
-  // Recommendation: handle errors
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch books")
-  }
-
-  return res.json()
-}
-
 export async function getBooksByCategory(
   slug: string,
   pageNum = 1

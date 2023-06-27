@@ -9,14 +9,15 @@ import SocialGroup from "@/components/SocialGroup"
 import BookDetailsSkeleton from "@/loading-ui/BookDetailsSkeleton"
 import HeartIcon from "@/icons/HeartIcon"
 import LoadingIcon from "@/icons/LoadingIcon"
-import { getBook } from "@/lib/api"
 import { useMounted } from "@/hooks"
 import { useCartStore, useToastStore, useWishlistStore } from "@/store/client"
 import { Book } from "@/types/Book"
+import { Books } from "@/store/server/books/types"
+import { useBook } from "@/store/server/books/queries"
 
 type Props = {
   slug: string
-  initialData: Book
+  initialData: Books
 }
 
 export default function BookDetails({ slug, initialData }: Props) {
@@ -30,17 +31,9 @@ export default function BookDetails({ slug, initialData }: Props) {
 
   const mounted = useMounted()
 
-  // This useQuery could just as well happen in some deeper child to
-  // the "HydratedPosts"-component, data will be available immediately either way
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["books", "detail", { filters: slug }],
-    queryFn: () => getBook(slug),
-    initialData,
-  })
+  const { data, isLoading, isError } = useBook({ initialData, slug })
 
-  if (isLoading) return <BookDetailsSkeleton />
-
-  if (isError) return <div>is Error ...</div>
+  if (isLoading || isError) return <BookDetailsSkeleton />
 
   const id = data.data[0].id
   const bookData = data.data[0].attributes

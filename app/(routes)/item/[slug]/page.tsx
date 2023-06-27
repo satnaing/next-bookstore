@@ -1,4 +1,4 @@
-import { getBook } from "@/lib/api"
+import { getBook } from "@/store/server/books/queries"
 import BookDetails from "./layouts/BookDetails"
 import RelatedBooks from "./layouts/RelatedBooks"
 

@@ -1,8 +1,10 @@
-import { BookQueryProps, Books } from "./types"
+import { Book, BookQueryProps, Books } from "./types"
 import axios from "@/lib/api/axios"
+import { GetResponse } from "@/types/api"
 import { generateBookQuery } from "@/utils/utilFuncs"
 import { useQuery } from "@tanstack/react-query"
 
+/* ========== Get Multiple Books ========== */
 export const getBooks = async (props: BookQueryProps): Promise<Books> => {
   const queryString = generateBookQuery(props)
   const response = await axios.get(`/api/books?populate=*&${queryString}`)
@@ -18,5 +20,26 @@ export const useBooks = ({ initialData, filter }: UseBooks) =>
   useQuery({
     queryKey: ["books", filter],
     queryFn: () => getBooks(filter),
+    initialData,
+  })
+
+/* ========== Get Single Book ========== */
+export const getBook = async (slug: string): Promise<Books> => {
+  const response = await axios.get(
+    `/api/books?filters[slug][$eq]]=${slug}&populate=*`
+  )
+  return response.data
+}
+
+export const useBook = ({
+  initialData,
+  slug,
+}: {
+  initialData: Books
+  slug: string
+}) =>
+  useQuery({
+    queryKey: ["books", slug],
+    queryFn: () => getBook(slug),
     initialData,
   })

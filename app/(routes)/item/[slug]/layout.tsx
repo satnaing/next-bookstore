@@ -1,4 +1,4 @@
-import { getBook } from "@/lib/api"
+import { getBook } from "@/store/server/books/queries"
 
 type MetaProps = {
   params: { slug: string }
