@@ -13,13 +13,15 @@ export const getBooks = async (props: BookQueryProps): Promise<Books> => {
 interface UseBooks {
   initialData?: Books
   filter: BookQueryProps
+  enabled?: boolean
 }
 
-export const useBooks = ({ initialData, filter }: UseBooks) =>
+export const useBooks = ({ initialData, filter, enabled = true }: UseBooks) =>
   useQuery({
     queryKey: ["books", filter],
     queryFn: () => getBooks(filter),
     initialData,
+    enabled: enabled,
   })
 
 /* ========== Get Single Book ========== */

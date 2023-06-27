@@ -48,20 +48,6 @@ export async function getBooksByIds(ids: number[]): Promise<Book> {
   return res.json()
 }
 
-export async function getBooksByTitle(searchTearm: string): Promise<Book> {
-  const res = await fetch(
-    `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/books?filters[title][$containsi]=${searchTearm}&populate=*`
-  )
-
-  // Recommendation: handle errors
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch books")
-  }
-
-  return res.json()
-}
-
 export async function getCategoryBySlug(slug: string): Promise<Category> {
   const res = await fetch(
     `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/categories?filters[slug][$eq]]=${slug}&populate=*`

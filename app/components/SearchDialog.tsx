@@ -4,12 +4,11 @@ import { ChangeEvent, useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import * as Dialog from "@radix-ui/react-dialog"
-import { useQuery } from "@tanstack/react-query"
 import SearchIcon from "@/icons/SearchIcon"
 import { getOptimizedImage } from "@/utils/utilFuncs"
-import { getBooksByTitle } from "@/lib/api"
 import { useDebounce } from "@/hooks"
-import { Book } from "@/types/Book"
+import { useBooks } from "@/store/server/books/queries"
+import { Books } from "@/store/server/books/types"
 
 const SearchDialog = () => {
   const [open, setOpen] = useState(false)
@@ -17,16 +16,15 @@ const SearchDialog = () => {
   const [searchTerm, setSearchTerm] = useState("")
 
   // Search result
-  const [result, setResult] = useState<Book | null>(null)
+  const [result, setResult] = useState<Books | null>(null)
 
   const [debouncedSearchTerm, setDebouncedSearchTerm] = useDebounce(
     searchTerm,
     500
   )
 
-  const { data } = useQuery({
-    queryKey: ["search", debouncedSearchTerm],
-    queryFn: () => getBooksByTitle(debouncedSearchTerm),
+  const { data } = useBooks({
+    filter: { searchTerm },
     enabled: Boolean(debouncedSearchTerm),
   })
 
