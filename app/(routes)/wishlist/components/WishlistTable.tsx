@@ -7,7 +7,6 @@ import CancelIcon from "@/icons/CancelIcon"
 import LoadingIcon from "@/icons/LoadingIcon"
 import EmptyBoxIcon from "@/icons/EmptyBoxIcon"
 import { getOptimizedImage } from "@/utils/utilFuncs"
-import { getBooksByIds } from "@/lib/api"
 import { useMounted } from "@/hooks"
 import {
   useCartStore,
@@ -15,9 +14,10 @@ import {
   useWishlistStore,
   WishlistItem,
 } from "@/store/client"
+import { getBooks } from "@/store/server/books/queries"
 
 const fetchBooks = async (wishlistIds: number[], wishlist: WishlistItem[]) => {
-  const response = await getBooksByIds(wishlistIds)
+  const response = await getBooks({ ids: wishlistIds })
   const data = response.data
 
   // Timestamp Mapping
