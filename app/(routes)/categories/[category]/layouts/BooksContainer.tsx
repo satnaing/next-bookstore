@@ -5,12 +5,15 @@ import ItemCard from "app/components/ItemCard"
 import Pagination from "app/components/Pagination"
 import CardSkeletons from "@/loading-ui/CardSkeletons"
 import scrollToTop from "@/utils/scrollToTop"
-import { getBooksByCategory } from "@/lib/api"
 import { getOptimizedImage } from "@/utils/utilFuncs"
-import { Book } from "@/types/Book"
+import { Books } from "@/store/server/books/types"
+import {
+  getBooksByCategory,
+  useBooksByCategory,
+} from "@/store/server/books/queries"
 
 type Props = {
-  initialData: Book
+  initialData: Books
   category: string
   currentPage: number
 }
@@ -20,15 +23,13 @@ export default function BooksContainer({
   category,
   currentPage,
 }: Props) {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["books", { filters: { category } }, { currentPage }],
-    queryFn: () => getBooksByCategory(category, currentPage),
+  const { data, isLoading, isError } = useBooksByCategory({
+    slug: category,
+    pageNum: currentPage,
     initialData,
   })
 
-  if (isLoading) return <CardSkeletons num={10} slug={category} />
-
-  if (isError) return <div>is Error ...</div>
+  if (isLoading || isError) return <CardSkeletons num={10} slug={category} />
 
   const { page, pageSize, pageCount, total } = data.meta.pagination
 

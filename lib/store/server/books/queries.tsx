@@ -45,6 +45,35 @@ export const useBook = ({
     initialData,
   })
 
+/* ========== Get Books by Category ========== */
+export const getBooksByCategory = async ({
+  slug,
+  pageNum = 1,
+}: {
+  slug: string
+  pageNum?: number
+}): Promise<Books> => {
+  const response = await axios.get(
+    `/api/books?filters[categories][slug][$eq]]=${slug}&populate=*&pagination[page]=${pageNum}&pagination[pageSize]=10`
+  )
+  return response.data
+}
+
+export const useBooksByCategory = ({
+  slug,
+  pageNum,
+  initialData,
+}: {
+  slug: string
+  pageNum?: number
+  initialData: Books
+}) =>
+  useQuery({
+    queryKey: ["books", { slug, pageNum }],
+    queryFn: () => getBooksByCategory({ slug, pageNum }),
+    initialData,
+  })
+
 /* ========== Get Related Books ========== */
 interface RelatedBooks {
   author: number

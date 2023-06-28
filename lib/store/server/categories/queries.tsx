@@ -2,6 +2,7 @@ import axios from "@/lib/api/axios"
 import { useQuery } from "@tanstack/react-query"
 import { Categories } from "./types"
 
+/* ========== Get All/Featured Categories ========== */
 export const getCategories = async (
   featured?: boolean
 ): Promise<Categories> => {
@@ -29,3 +30,11 @@ export const useCategories = ({
         slug: attributes.slug,
       })),
   })
+
+/* ========== Get Category by Slug ========== */
+export const getCategoryBySlug = async (slug: string): Promise<Categories> => {
+  const response = await axios.get(
+    `/api/categories?filters[slug][$eq]]=${slug}&populate=*`
+  )
+  return response.data
+}

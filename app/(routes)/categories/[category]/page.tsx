@@ -1,6 +1,8 @@
 import BooksContainer from "./layouts/BooksContainer"
-import { getBooksByCategory, getCategoryBySlug } from "@/lib/api"
+// import { getBooksByCategory } from "@/lib/api"
 import Breadcrumb from "@/components/Breadcrumb"
+import { getBooksByCategory } from "@/store/server/books/queries"
+import { getCategoryBySlug } from "@/store/server/categories/queries"
 
 let mockBooks: number[] = []
 for (let index = 1; index < 21; index++) {
@@ -19,6 +21,7 @@ type MetaProps = {
 export async function generateMetadata({ params }: MetaProps) {
   const bookData = await getCategoryBySlug(params.category)
   const title = bookData.data[0].attributes.name
+  console.log(bookData)
   return {
     title,
     openGraph: {
@@ -32,7 +35,10 @@ export async function generateMetadata({ params }: MetaProps) {
 export default async function Page({ params, searchParams }: Props) {
   const currentPage = Number(searchParams.page) || 1
 
-  const initialData = await getBooksByCategory(params.category, currentPage)
+  const initialData = await getBooksByCategory({
+    slug: params.category,
+    pageNum: currentPage,
+  })
 
   return (
     <main className="main-container">
