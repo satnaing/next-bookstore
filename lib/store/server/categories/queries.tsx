@@ -9,7 +9,7 @@ export const getCategories = async (
   const params = featured
     ? "?filters[featured][$eq]=true&sort=featured_order"
     : ""
-  const response = await axios.get(`/api/categories${params}`)
+  const response = await axios.get(`/categories${params}`)
   return response.data
 }
 
@@ -34,7 +34,7 @@ export const useCategories = ({
 /* ========== Get Category by Slug ========== */
 export const getCategoryBySlug = async (slug: string): Promise<Categories> => {
   const response = await axios.get(
-    `/api/categories?filters[slug][$eq]]=${slug}&populate=*`
+    `/categories?filters[slug][$eq]]=${slug}&populate=*`
   )
   return response.data
 }

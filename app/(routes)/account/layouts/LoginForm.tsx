@@ -32,7 +32,7 @@ export default function LoginForm() {
   const mutation = useMutation({
     mutationFn: (userData: Inputs) =>
       axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/local/`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/local/`,
         userData
       ),
     onError: (error: Error | AxiosError) => {

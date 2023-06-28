@@ -36,7 +36,7 @@ export default function RegisterForm() {
   const mutation = useMutation({
     mutationFn: (userData: Inputs) =>
       axios.post(
-        `${process.env.NEXT_PUBLIC_BACKEND_URL}/api/auth/local/register`,
+        `${process.env.NEXT_PUBLIC_BACKEND_URL}/auth/local/register`,
         userData
       ),
     onError: (error: Error | AxiosError) => {

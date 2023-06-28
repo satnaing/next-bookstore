@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query"
 /* ========== Get Multiple Books ========== */
 export const getBooks = async (props: BookQueryProps): Promise<Books> => {
   const queryString = generateBookQuery(props)
-  const response = await axios.get(`/api/books?populate=*&${queryString}`)
+  const response = await axios.get(`/books?populate=*&${queryString}`)
   return response.data
 }
 
@@ -27,7 +27,7 @@ export const useBooks = ({ initialData, filter, enabled = true }: UseBooks) =>
 /* ========== Get Single Book ========== */
 export const getBook = async (slug: string): Promise<Books> => {
   const response = await axios.get(
-    `/api/books?filters[slug][$eq]]=${slug}&populate=*`
+    `/books?filters[slug][$eq]]=${slug}&populate=*`
   )
   return response.data
 }
@@ -54,7 +54,7 @@ export const getBooksByCategory = async ({
   pageNum?: number
 }): Promise<Books> => {
   const response = await axios.get(
-    `/api/books?filters[categories][slug][$eq]]=${slug}&populate=*&pagination[page]=${pageNum}&pagination[pageSize]=10`
+    `/books?filters[categories][slug][$eq]]=${slug}&populate=*&pagination[page]=${pageNum}&pagination[pageSize]=10`
   )
   return response.data
 }
@@ -85,7 +85,7 @@ export const getRelatedBooks = async ({
   categories,
 }: RelatedBooks): Promise<Books> => {
   const response = await axios.get(
-    `/api/book/random?categories=${categories.toString()}&author=${author}`
+    `/book/random?categories=${categories.toString()}&author=${author}`
   )
   return response.data
 }
