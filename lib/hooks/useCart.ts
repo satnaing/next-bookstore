@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query"
 import { getOptimizedImage } from "@/utils/utilFuncs"
 import { useCartStore } from "@/store/client"
-import { useBooks } from "@/store/server/books/queries"
+import { getBooks } from "@/store/server/books/queries"
 
 export const useCart = () => {
   // Client Global State
@@ -9,7 +9,11 @@ export const useCart = () => {
 
   // Server State
   const cartIds = cart.map(item => item.id)
-  const { data, isLoading, isError } = useBooks({ filter: { ids: cartIds } })
+  const { data, isLoading, isError } = useQuery({
+    queryKey: ["cart", { cartIds }],
+    queryFn: () => getBooks({ ids: cartIds }),
+    keepPreviousData: true,
+  })
 
   if (cart.length < 1)
     return { cartData: [], totalPrice: "0", totalQuantity: 0 }
@@ -35,7 +39,7 @@ export const useCart = () => {
     timestampMap.set(item.id, item.timestamp || 1)
   })
 
-  const cartData = data?.data
+  const cartData = data.data
     .map(item => {
       const { title, slug, price, image } = item.attributes
       return {
