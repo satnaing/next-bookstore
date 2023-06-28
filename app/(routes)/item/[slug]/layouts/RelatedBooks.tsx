@@ -2,8 +2,7 @@
 
 import ItemCard from "@/components/ItemCard"
 import CardSkeletons from "@/components/loading-ui/CardSkeletons"
-import { getRelatedBooks } from "@/lib/api"
-import { useQuery } from "@tanstack/react-query"
+import { useRelatedBooks } from "@/store/server/books/queries"
 
 type Props = {
   currentBookId: number
@@ -16,13 +15,7 @@ export default function RelatedBooks({
   author,
   categories,
 }: Props) {
-  const { data, isLoading, isError } = useQuery({
-    queryKey: ["relatedBooks", { author, categories }],
-    queryFn: () => getRelatedBooks(author, categories),
-    refetchOnWindowFocus: false,
-  })
-
-  if (isError) return <div>is Error ...</div>
+  const { data, isLoading, isError } = useRelatedBooks({ author, categories })
 
   const relatedBooks = data?.data
     .filter(book => book.id !== currentBookId)
@@ -32,7 +25,7 @@ export default function RelatedBooks({
   return (
     <div className="my-12">
       <h2 className="mb-8 font-serif text-2xl font-bold">Related Books</h2>
-      {isLoading ? (
+      {isLoading || isError ? (
         <CardSkeletons num={5} />
       ) : (
         <div className="cards-container">

@@ -44,3 +44,27 @@ export const useBook = ({
     queryFn: () => getBook(slug),
     initialData,
   })
+
+/* ========== Get Related Books ========== */
+interface RelatedBooks {
+  author: number
+  categories: number[]
+}
+
+export const getRelatedBooks = async ({
+  author,
+  categories,
+}: RelatedBooks): Promise<Books> => {
+  const response = await axios.get(
+    `/api/book/random?categories=${categories.toString()}&author=${author}`
+  )
+  return response.data
+}
+
+export const useRelatedBooks = (relatedBooks: RelatedBooks) =>
+  useQuery({
+    queryKey: ["relatedBooks", relatedBooks],
+    queryFn: () => getRelatedBooks(relatedBooks),
+    refetchOnWindowFocus: false,
+    staleTime: 1000 * 60,
+  })

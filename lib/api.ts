@@ -61,22 +61,3 @@ export async function getCategoryBySlug(slug: string): Promise<Category> {
 
   return res.json()
 }
-
-export async function getRelatedBooks(
-  author: number,
-  categories: number[]
-): Promise<Book> {
-  const res = await fetch(
-    `${
-      process.env.NEXT_PUBLIC_BACKEND_URL
-    }/api/book/random?categories=${categories.toString()}&author=${author}`
-  )
-
-  // Recommendation: handle errors
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch books")
-  }
-
-  return res.json()
-}
